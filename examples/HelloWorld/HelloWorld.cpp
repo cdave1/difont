@@ -28,7 +28,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
         delete m_font;
         m_font = NULL;
     } else {
-        const uint32_t HELLO_WORLD_FONT_SIZE = 400;
+        const uint32_t HELLO_WORLD_FONT_SIZE = 300;
         m_font->FaceSize(HELLO_WORLD_FONT_SIZE);
         m_font->CharMap(FT_ENCODING_ADOBE_LATIN_1);
     }
@@ -39,7 +39,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
         delete m_textureFont;
         m_textureFont = NULL;
     } else {
-        const uint32_t HELLO_WORLD_FONT_SIZE = 400;
+        const uint32_t HELLO_WORLD_FONT_SIZE = 300;
         m_textureFont->FaceSize(HELLO_WORLD_FONT_SIZE);
         m_textureFont->CharMap(FT_ENCODING_ADOBE_LATIN_1);
     }
@@ -52,6 +52,13 @@ void HelloWorld::Render() {
     glOrtho(0.0f, m_width * m_scale, 0.0f, m_height * m_scale, 0.0f, 100.0f);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+
+    const unsigned MAX_COLORS = 3;
+    color4_t colors[MAX_COLORS];
+    vec4Set(colors[0], 0.8f, 0.1f, 0.0f, 1.0f);
+    vec4Set(colors[1], 0.8f, 0.1f, 0.0f, 1.0f);
+    vec4Set(colors[2], 0.8f, 0.1f, 0.0f, 1.0f);
+
 
     if (m_font) {
         difont::FontMeshSet::Begin();

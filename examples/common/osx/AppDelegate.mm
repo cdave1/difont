@@ -55,15 +55,15 @@ static HelloWorld *helloWorld;
 
     NSOpenGLPixelFormatAttribute attrs[] = {
         NSOpenGLPFANoRecovery,
-		NSOpenGLPFAAccelerated,
-		NSOpenGLPFADoubleBuffer,
+        NSOpenGLPFAAccelerated,
+        NSOpenGLPFADoubleBuffer,
         NSOpenGLPFAMultisample,
         NSOpenGLPFASampleBuffers, (NSOpenGLPixelFormatAttribute)1,
         NSOpenGLPFASamples, (NSOpenGLPixelFormatAttribute)4,
         0
     };
 
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Diavlo_BLACK_II_37.otf"];
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DIN Alternate Bold.ttf"];
     helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
     helloWorld->SetupFonts([path UTF8String]);
 
@@ -87,13 +87,13 @@ static HelloWorld *helloWorld;
 
 
 - (void) createFailed {
-	[NSApp terminate:self];
+    [NSApp terminate:self];
 }
 
 
 - (void) dealloc {
-	[self.glView release];
-	[super dealloc];
+    [self.glView release];
+    [super dealloc];
 }
 
 @end

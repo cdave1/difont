@@ -45,9 +45,9 @@
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 
     glShadeModel(GL_SMOOTH);
-	glClearDepth(1.0f);
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LEQUAL);
+    glClearDepth(1.0f);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LEQUAL);
     glEnable(GL_MULTISAMPLE);
     glPointSize(1.0f);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
@@ -98,6 +98,6 @@
 
 
 - (void) dealloc {
-	[super dealloc];
+    [super dealloc];
 }
 @end
