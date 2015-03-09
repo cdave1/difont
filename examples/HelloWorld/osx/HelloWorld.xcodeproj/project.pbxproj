@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		559939571832EE52000819D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 559939531832EE52000819D6 /* InfoPlist.strings */; };
 		6318E9461339AAC6008BCE29 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6318E9451339AAC6008BCE29 /* OpenGL.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		E41875431AABB81C0005AC43 /* libdifont.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41875421AABB8090005AC43 /* libdifont.a */; };
 		E418756A1AABBB0A0005AC43 /* CommonMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E418755F1AABBB0A0005AC43 /* CommonMath.cpp */; };
 		E418756B1AABBB0A0005AC43 /* OpenGLShim.osx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E41875631AABBB0A0005AC43 /* OpenGLShim.osx.cpp */; };
 		E418756C1AABBB0A0005AC43 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E41875661AABBB0A0005AC43 /* AppDelegate.mm */; };
@@ -24,9 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E41875411AABB8090005AC43 /* PBXContainerItemProxy */ = {
+		E41879E81AAE4ED80005AC43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E418753D1AABB8090005AC43 /* difont.osx.xcodeproj */;
+			containerPortal = E41879E41AAE4ED80005AC43 /* difont.osx.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E41BB13919B0736D00F9D8DF;
 			remoteInfo = difont;
@@ -42,7 +41,6 @@
 		6318E9451339AAC6008BCE29 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		636290C816BCEF7000094B03 /* BaseInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BaseInfo.plist; sourceTree = "<group>"; };
 		636290C916BCEF7000094B03 /* BasePrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasePrefix.pch; sourceTree = "<group>"; };
-		E418753D1AABB8090005AC43 /* difont.osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = difont.osx.xcodeproj; path = ../../../build/xcode/difont.osx.xcodeproj; sourceTree = "<group>"; };
 		E418755F1AABBB0A0005AC43 /* CommonMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonMath.cpp; sourceTree = "<group>"; };
 		E41875601AABBB0A0005AC43 /* CommonMath.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = CommonMath.h; sourceTree = "<group>"; };
 		E41875621AABBB0A0005AC43 /* OpenGLShim.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = OpenGLShim.h; sourceTree = "<group>"; };
@@ -57,6 +55,7 @@
 		E41875821AABDC370005AC43 /* HelloWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorld.cpp; path = ../HelloWorld.cpp; sourceTree = "<group>"; };
 		E41875831AABDC370005AC43 /* HelloWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorld.h; path = ../HelloWorld.h; sourceTree = "<group>"; };
 		E41879DE1AAD6BA60005AC43 /* DIN Alternate Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Alternate Bold.ttf"; sourceTree = "<group>"; };
+		E41879E41AAE4ED80005AC43 /* difont.osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = difont.osx.xcodeproj; path = ../../../platforms/xcode/difont.osx.xcodeproj; sourceTree = "<group>"; };
 		E451DDBF191767680001651D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E4B4061A19A22BA5004D48E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -67,7 +66,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E41875781AABCED00005AC43 /* AppKit.framework in Frameworks */,
-				E41875431AABB81C0005AC43 /* libdifont.a in Frameworks */,
 				E451DDC0191767680001651D /* CoreFoundation.framework in Frameworks */,
 				6318E9461339AAC6008BCE29 /* OpenGL.framework in Frameworks */,
 			);
@@ -102,8 +100,8 @@
 		6318E9271339AA3C008BCE29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E41879E41AAE4ED80005AC43 /* difont.osx.xcodeproj */,
 				E41875771AABCED00005AC43 /* AppKit.framework */,
-				E418753D1AABB8090005AC43 /* difont.osx.xcodeproj */,
 				E451DDBF191767680001651D /* CoreFoundation.framework */,
 				6318E9451339AAC6008BCE29 /* OpenGL.framework */,
 				6318E9281339AA3C008BCE29 /* Cocoa.framework */,
@@ -129,14 +127,6 @@
 			);
 			name = resources;
 			path = ../../Resources;
-			sourceTree = "<group>";
-		};
-		E418753E1AABB8090005AC43 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E41875421AABB8090005AC43 /* libdifont.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		E418755D1AABBB0A0005AC43 /* common */ = {
@@ -190,6 +180,14 @@
 			path = ../../common/Fonts;
 			sourceTree = "<group>";
 		};
+		E41879E51AAE4ED80005AC43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E41879E91AAE4ED80005AC43 /* libdifont.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,8 +229,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = E418753E1AABB8090005AC43 /* Products */;
-					ProjectRef = E418753D1AABB8090005AC43 /* difont.osx.xcodeproj */;
+					ProductGroup = E41879E51AAE4ED80005AC43 /* Products */;
+					ProjectRef = E41879E41AAE4ED80005AC43 /* difont.osx.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -243,11 +241,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E41875421AABB8090005AC43 /* libdifont.a */ = {
+		E41879E91AAE4ED80005AC43 /* libdifont.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libdifont.a;
-			remoteRef = E41875411AABB8090005AC43 /* PBXContainerItemProxy */;
+			remoteRef = E41879E81AAE4ED80005AC43 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
