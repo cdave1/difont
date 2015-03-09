@@ -19,6 +19,7 @@
 		E41875841AABDC370005AC43 /* HelloWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E41875821AABDC370005AC43 /* HelloWorld.cpp */; };
 		E41879DF1AAD6BA60005AC43 /* DIN Alternate Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E41879DE1AAD6BA60005AC43 /* DIN Alternate Bold.ttf */; };
 		E451DDC0191767680001651D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E451DDBF191767680001651D /* CoreFoundation.framework */; };
+		E497DDF11AAE4F8200F9C748 /* libdifont.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41879E91AAE4ED80005AC43 /* libdifont.a */; };
 		E4B4061B19A22BA5004D48E5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B4061919A22BA5004D48E5 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E497DDF11AAE4F8200F9C748 /* libdifont.a in Frameworks */,
 				E41875781AABCED00005AC43 /* AppKit.framework in Frameworks */,
 				E451DDC0191767680001651D /* CoreFoundation.framework in Frameworks */,
 				6318E9461339AAC6008BCE29 /* OpenGL.framework in Frameworks */,

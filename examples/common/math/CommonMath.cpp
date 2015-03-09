@@ -92,9 +92,7 @@ void Math::Normalize3(vec3_t vOut, const vec3_t vec) {
 
 
 void Math::MatrixLookAtRH(float *mOut, const vec3_t pos, const vec3_t target, const vec3_t up) {
-    vec3_t f, vUpActual, s, u;
-    float t[16];
-    vec3_t x_axis, y_axis, z_axis;
+    vec3_t f, x_axis, y_axis, z_axis;
 
     f[0] = pos[0] - target[0];
     f[1] = pos[1] - target[1];
