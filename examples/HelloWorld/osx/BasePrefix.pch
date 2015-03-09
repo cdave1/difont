@@ -1,0 +1,12 @@
+//
+// Prefix header for all source files of the 'skeleton' target in the 'skeleton' project
+//
+
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
+#include <math.h>
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
