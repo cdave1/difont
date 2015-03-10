@@ -42,9 +42,7 @@ static HelloWorld *helloWorld;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
-    NSRect viewRect = NSMakeRect(0.0, 0.0,
-                                 std::min(mainDisplayRect.size.width, 19240.0),
-                                 std::min(mainDisplayRect.size.height, 10840.0));
+    NSRect viewRect = NSMakeRect(0.0, 0.0, mainDisplayRect.size.width, mainDisplayRect.size.height);
     self.window = [[FullScreenWindow alloc] initWithContentRect:viewRect
                                                       styleMask:NSBorderlessWindowMask
                                                         backing:NSBackingStoreBuffered
@@ -63,10 +61,6 @@ static HelloWorld *helloWorld;
         0
     };
 
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DIN Alternate Bold.ttf"];
-    helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
-    helloWorld->SetupFonts([path UTF8String]);
-
     NSOpenGLPixelFormat* pixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes:attrs];
     self.glView = [[AppView alloc] initWithFrame:viewRect pixelFormat: pixelFormat];
     [self.window setContentView: self.glView];
@@ -74,6 +68,10 @@ static HelloWorld *helloWorld;
     [self.glView setRenderProxy:self];
     [self.window makeKeyAndOrderFront:self];
     [self.window makeFirstResponder:self.glView];
+
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DIN Alternate Bold.ttf"];
+    helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
+    helloWorld->SetupFonts([path UTF8String]);
 }
 
 
@@ -82,7 +80,9 @@ static HelloWorld *helloWorld;
 
 
 - (void) render {
-    helloWorld->Render();
+    if (helloWorld) {
+        helloWorld->Render();
+    }
 }
 
 
