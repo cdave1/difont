@@ -24,8 +24,8 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef _DIFONT_PixmapGlyphImpl__
-#define _DIFONT_PixmapGlyphImpl__
+#ifndef _DIFONT_PIXMAP_GLYPH_IMPL_H_
+#define _DIFONT_PIXMAP_GLYPH_IMPL_H_
 
 #include "GlyphImpl.h"
 
