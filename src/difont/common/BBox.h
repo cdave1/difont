@@ -34,7 +34,7 @@
  * BBox is a convenience class for handling bounding boxes.
  */
 namespace difont {
-    class FTGL_EXPORT BBox {
+    class BBox {
     public:
         /**
          * Default constructor. Bounding box is set to zero.

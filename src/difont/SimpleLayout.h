@@ -41,7 +41,7 @@
 namespace difont {
     class Font;
 
-    class FTGL_EXPORT SimpleLayout : public Layout {
+    class SimpleLayout : public Layout {
     public:
         /**
          * Initializes line spacing to 1.0, alignment to

@@ -35,7 +35,7 @@
  * glyphs.
  */
 namespace difont {
-    class FTGL_EXPORT TextureGlyph : public Glyph {
+    class TextureGlyph : public Glyph {
     public:
         /**
          * Constructor

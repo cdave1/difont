@@ -25,15 +25,15 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef _DIFONT_INTERNALS_H__
-#define _DIFONT_INTERNALS_H__
+#ifndef _DIFONT_INTERNALS_H_
+#define _DIFONT_INTERNALS_H_
 
-#include  <difont/difont.h>
+#include <difont/difont.h>
 
 #include <stdlib.h>
 #include <stdio.h>
 
-
+/*
 // Fixes for deprecated identifiers in 2.1.5
 #ifndef FT_OPEN_MEMORY
     #define FT_OPEN_MEMORY (FT_Open_Flags)1
@@ -46,7 +46,7 @@
 #ifndef FT_RENDER_MODE_NORMAL
     #define FT_RENDER_MODE_NORMAL ft_render_mode_normal
 #endif
-
+*/
 
 #ifdef WIN32
 
@@ -64,8 +64,7 @@
 
 #else
 
-#include "difont/ftglesGlue.h"
-#include "difont/FontMesh.h"
+#include "difont/OpenGLInterface.h"
 
 #endif
 

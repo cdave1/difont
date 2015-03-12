@@ -32,7 +32,7 @@
  * BufferGlyph is a specialisation of Glyph for memory buffer rendering.
  */
 namespace difont {
-    class FTGL_EXPORT BufferGlyph : public Glyph {
+    class BufferGlyph : public Glyph {
     public:
         /**
          * Constructor

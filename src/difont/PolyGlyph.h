@@ -36,7 +36,7 @@
  * polygon glyphs.
  */
 namespace difont {
-    class FTGL_EXPORT PolygonGlyph : public Glyph {
+    class PolygonGlyph : public Glyph {
     public:
         /**
          * Constructor. Sets the Error to Invalid_Outline if the glyphs

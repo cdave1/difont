@@ -34,7 +34,7 @@
  * PixmapGlyph is a specialisation of Glyph for creating pixmaps.
  */
 namespace difont {
-    class FTGL_EXPORT PixmapGlyph : public Glyph {
+    class PixmapGlyph : public Glyph {
     public:
         /**
          * Constructor

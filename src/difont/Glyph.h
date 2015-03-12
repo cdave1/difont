@@ -43,7 +43,7 @@
 namespace difont {
     class GlyphImpl;
 
-    class FTGL_EXPORT Glyph {
+    class Glyph {
     protected:
         /**
          * Create a glyph.

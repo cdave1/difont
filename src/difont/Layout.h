@@ -44,7 +44,7 @@
 namespace difont {
     class LayoutImpl;
 
-    class FTGL_EXPORT Layout {
+    class Layout {
     protected:
         Layout();
 

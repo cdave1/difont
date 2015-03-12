@@ -37,7 +37,7 @@
  * @see     Font
  */
 namespace difont {
-    class FTGL_EXPORT OutlineFont : public Font {
+    class OutlineFont : public Font {
     public:
         /**
          * Open and read a font file. Sets Error flag.

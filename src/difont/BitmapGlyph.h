@@ -34,7 +34,7 @@
  * BitmapGlyph is a specialisation of Glyph for creating bitmaps.
  */
 namespace difont {
-    class FTGL_EXPORT BitmapGlyph : public Glyph {
+    class BitmapGlyph : public Glyph {
     public:
         /**
          * Constructor

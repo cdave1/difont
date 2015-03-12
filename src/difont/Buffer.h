@@ -38,7 +38,7 @@
  * @see BufferFont
  */
 namespace difont {
-    class FTGL_EXPORT Buffer {
+    class Buffer {
     public:
         /**
          * Default constructor.

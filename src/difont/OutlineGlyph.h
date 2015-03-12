@@ -34,7 +34,7 @@
  * OutlineGlyph is a specialisation of Glyph for creating outlines.
  */
 namespace difont {
-    class FTGL_EXPORT OutlineGlyph : public Glyph {
+    class OutlineGlyph : public Glyph {
     public:
         /**
          * Constructor. Sets the Error to Invalid_Outline if the glyphs isn't

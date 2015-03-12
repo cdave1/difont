@@ -35,7 +35,7 @@
  * extruded polygon glyphs.
  */
 namespace difont {
-    class FTGL_EXPORT ExtrudeGlyph : public Glyph {
+    class ExtrudeGlyph : public Glyph {
     public:
         /**
          * Constructor. Sets the Error to Invalid_Outline if the glyph isn't

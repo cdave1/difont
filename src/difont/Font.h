@@ -49,7 +49,7 @@
 namespace difont {
     class FontImpl;
 
-    class FTGL_EXPORT Font {
+    class Font {
     protected:
         /**
          * Open and read a font file. Sets Error flag.

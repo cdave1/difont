@@ -38,7 +38,7 @@
  * @see PolygonFont
  */
 namespace difont {
-    class FTGL_EXPORT ExtrudeFont : public Font
+    class ExtrudeFont : public Font
     {
     public:
         /**

@@ -32,7 +32,7 @@
  * difont::Point class is a basic 3-dimensional point or vector.
  */
 namespace difont {
-    class FTGL_EXPORT Point {
+    class Point {
     public:
         /**
          * Default constructor. Point is set to zero.

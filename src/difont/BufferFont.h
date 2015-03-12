@@ -35,7 +35,7 @@
  * @see     Font
  */
 namespace difont {
-    class FTGL_EXPORT BufferFont : public Font
+    class BufferFont : public Font
     {
     public:
         /**

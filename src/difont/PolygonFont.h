@@ -37,7 +37,7 @@
  * @see     Font
  */
 namespace difont {
-    class FTGL_EXPORT PolygonFont : public Font {
+    class PolygonFont : public Font {
     public:
         /**
          * Open and read a font file. Sets Error flag.
