@@ -22,8 +22,8 @@
  
  */
 
-#ifndef _DIFONT_GRAPHICS_GLUE_H_
-#define _DIFONT_GRAPHICS_GLUE_H_
+#ifndef _DIFONT_OPEN_GL_INTERFACE_H_
+#define _DIFONT_OPEN_GL_INTERFACE_H_
 
 #include <stdio.h>
 #include <assert.h>
@@ -36,7 +36,14 @@
 #include "TargetConditionals.h"
 #endif
 
-#if TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1
+#ifdef WIN32
+#include <windows.h>
+#ifndef __gl_h_
+#include <GL/gl.h>
+#include <GL/glu.h>
+#define ftglprintf(...) printf(__VA_ARGS__)
+#endif
+#elif TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1
 #define ftglprintf(...) printf(__VA_ARGS__)
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
@@ -51,8 +58,6 @@
 #include <OpenGL/OpenGL.h>
 #include <OpenGL/gl.h>
 #endif
-
-
 
 #ifdef __cplusplus
 extern "C" {
@@ -79,13 +84,9 @@ extern "C" {
     extern uint32_t ftglVertexCount();
 
     extern void ftglCopyMesh(void *dataPointer, void *dataLen, uint32_t *vertexCount);
-    
-    
 	
 #ifdef __cplusplus
 }
 #endif
-
-
 
 #endif

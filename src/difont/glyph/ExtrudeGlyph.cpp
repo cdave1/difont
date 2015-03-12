@@ -137,20 +137,20 @@ const difont::Point& ExtrudeGlyphImpl::RenderImpl(const difont::Point& pen,
     glTranslatef(pen.Xf(), pen.Yf(), pen.Zf());
     if(glList)
     {
-        if(renderMode & FTGL::RENDER_FRONT)
+        if(renderMode & difont::RENDER_FRONT)
             glCallList(glList + 0);
-        if(renderMode & FTGL::RENDER_BACK)
+        if(renderMode & difont::RENDER_BACK)
             glCallList(glList + 1);
-        if(renderMode & FTGL::RENDER_SIDE)
+        if(renderMode & difont::RENDER_SIDE)
             glCallList(glList + 2);
     }
     else if(vectoriser)
     {
-        if(renderMode & FTGL::RENDER_FRONT)
+        if(renderMode & difont::RENDER_FRONT)
             RenderFront();
-        if(renderMode & FTGL::RENDER_BACK)
+        if(renderMode & difont::RENDER_BACK)
             RenderBack();
-        if(renderMode & FTGL::RENDER_SIDE)
+        if(renderMode & difont::RENDER_SIDE)
             RenderSide();
     }
     glTranslatef(-pen.Xf(), -pen.Yf(), -pen.Zf());
@@ -242,7 +242,7 @@ void ExtrudeGlyphImpl::RenderSide()
             difont::Point normal = difont::Point(0.f, 0.f, 1.f) ^ (frontPt - nextPt);
             if(normal != difont::Point(0.0f, 0.0f, 0.0f))
             {
-                glNormal3dv(static_cast<const FTGL_DOUBLE*>(normal.Normalise()));
+                glNormal3dv(static_cast<const double*>(normal.Normalise()));
             }
 
             glTexCoord2f(frontPt.Xf() / hscale, frontPt.Yf() / vscale);

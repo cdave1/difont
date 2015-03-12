@@ -166,17 +166,17 @@ namespace difont {
         /**
          * Compute the vector norm
          */
-        inline FTGL_DOUBLE NormVector(const difont::Point &v);
+        inline double NormVector(const difont::Point &v);
 
         /**
          * Compute a rotation matrix from a vector
          */
-        inline void RotationMatrix(const difont::Point &a, const difont::Point &b, FTGL_DOUBLE *matRot, FTGL_DOUBLE *invRot);
+        inline void RotationMatrix(const difont::Point &a, const difont::Point &b, double *matRot, double *invRot);
 
         /**
          * Matrix and vector multiplication
          */
-        inline void MultMatrixVect(FTGL_DOUBLE *mat, difont::Point &v);
+        inline void MultMatrixVect(double *mat, difont::Point &v);
 
         /**
          * Compute the vector bisecting from a vector 'v' and a distance 'd'

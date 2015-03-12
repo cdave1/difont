@@ -51,8 +51,8 @@ namespace difont {
          * @param y Second component
          * @param z Third component
          */
-        inline Point(const FTGL_DOUBLE x, const FTGL_DOUBLE y,
-                     const FTGL_DOUBLE z = 0)
+        inline Point(const double x, const double y,
+                     const double z = 0)
         {
             values[0] = x;
             values[1] = y;
@@ -227,9 +227,9 @@ namespace difont {
 
 
         /**
-         * Cast to FTGL_DOUBLE*
+         * Cast to double*
          */
-        inline operator const FTGL_DOUBLE*() const
+        inline operator const double*() const
         {
             return values;
         }
@@ -238,26 +238,26 @@ namespace difont {
         /**
          * Setters
          */
-        inline void X(FTGL_DOUBLE x) { values[0] = x; };
-        inline void Y(FTGL_DOUBLE y) { values[1] = y; };
-        inline void Z(FTGL_DOUBLE z) { values[2] = z; };
+        inline void X(double x) { values[0] = x; };
+        inline void Y(double y) { values[1] = y; };
+        inline void Z(double z) { values[2] = z; };
 
 
         /**
          * Getters
          */
-        inline FTGL_DOUBLE X() const { return values[0]; };
-        inline FTGL_DOUBLE Y() const { return values[1]; };
-        inline FTGL_DOUBLE Z() const { return values[2]; };
-        inline FTGL_FLOAT Xf() const { return static_cast<FTGL_FLOAT>(values[0]); };
-        inline FTGL_FLOAT Yf() const { return static_cast<FTGL_FLOAT>(values[1]); };
-        inline FTGL_FLOAT Zf() const { return static_cast<FTGL_FLOAT>(values[2]); };
+        inline double X() const { return values[0]; };
+        inline double Y() const { return values[1]; };
+        inline double Z() const { return values[2]; };
+        inline float Xf() const { return static_cast<float>(values[0]); };
+        inline float Yf() const { return static_cast<float>(values[1]); };
+        inline float Zf() const { return static_cast<float>(values[2]); };
         
     private:
         /**
          * The point data
          */
-        FTGL_DOUBLE values[3];
+        double values[3];
     };
 }
 

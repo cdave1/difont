@@ -64,8 +64,8 @@ namespace difont {
         /**
          * Add a point to the mesh.
          */
-        void AddPoint(const FTGL_DOUBLE x, const FTGL_DOUBLE y,
-                      const FTGL_DOUBLE z)
+        void AddPoint(const double x, const double y,
+                      const double z)
         {
             pointList.push_back(difont::Point(x, y, z));
         }
@@ -123,14 +123,14 @@ namespace difont {
         /**
          * Add a point to the mesh
          */
-        void AddPoint(const FTGL_DOUBLE x, const FTGL_DOUBLE y,
-                      const FTGL_DOUBLE z);
+        void AddPoint(const double x, const double y,
+                      const double z);
 
         /**
          *  Create a combine point for the gluTesselator
          */
-        const FTGL_DOUBLE* Combine(const FTGL_DOUBLE x, const FTGL_DOUBLE y,
-                                   const FTGL_DOUBLE z);
+        const double* Combine(const double x, const double y,
+                                   const double z);
 
         /**
          * Begin a new polygon
@@ -191,8 +191,8 @@ namespace difont {
     };
 }
 
-const FTGL_DOUBLE FTGL_FRONT_FACING = 1.0;
-const FTGL_DOUBLE FTGL_BACK_FACING = -1.0;
+const double FTGL_FRONT_FACING = 1.0;
+const double FTGL_BACK_FACING = -1.0;
 
 /**
  * difont::Vectoriser class is a helper class that converts font outlines into
@@ -232,7 +232,7 @@ namespace difont {
          *  2 : Back
          * @param outsetSize Specify the outset size contour
          */
-        void MakeMesh(FTGL_DOUBLE zNormal = FTGL_FRONT_FACING, int outsetType = 0, float outsetSize = 0.0f);
+        void MakeMesh(double zNormal = FTGL_FRONT_FACING, int outsetType = 0, float outsetSize = 0.0f);
 
         /**
          * Get the current mesh.

@@ -92,7 +92,7 @@ namespace difont {
          */
         virtual void Render(const char *string, const int len = -1,
                             difont::Point position = difont::Point(),
-                            int renderMode = FTGL::RENDER_ALL);
+                            int renderMode = difont::RENDER_ALL);
 
         /**
          * Render a string of characters.
@@ -106,7 +106,7 @@ namespace difont {
          */
         virtual void Render(const wchar_t *string, const int len = -1,
                             difont::Point position = difont::Point(),
-                            int renderMode = FTGL::RENDER_ALL);
+                            int renderMode = difont::RENDER_ALL);
 
         /**
          * Set the font to use for rendering the text.
@@ -140,12 +140,12 @@ namespace difont {
          *
          * @param Alignment The new alignment mode.
          */
-        void SetAlignment(const FTGL::TextAlignment Alignment);
+        void SetAlignment(const difont::TextAlignment Alignment);
 
         /**
          * @return The text alignment mode.
          */
-        FTGL::TextAlignment GetAlignment() const;
+        difont::TextAlignment GetAlignment() const;
 
         /**
          * Sets the line height.

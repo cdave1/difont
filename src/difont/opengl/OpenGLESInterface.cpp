@@ -22,7 +22,7 @@
  
  */
 
-#include "ftglesGlue.h"
+#include "OpenGLInterface.h"
 #define FTGLES_GLUE_MAX_VERTICES 32768
 
 #include <OpenGLES/ES1/gl.h>

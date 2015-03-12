@@ -197,7 +197,7 @@ namespace difont {
          * The text alignment mode used to distribute
          * space within a line or rendered text.
          */
-        FTGL::TextAlignment alignment;
+        difont::TextAlignment alignment;
 
         /**
          * The height of each line of text expressed as

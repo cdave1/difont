@@ -25,10 +25,10 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <difont/difont.h>
-
 #ifndef _DIFONT_FONT_H_
 #define _DIFONT_FONT_H_
+
+#include <difont/difont.h>
 
 /**
  * Font is the public interface for the FTGL library.
@@ -330,7 +330,7 @@ namespace difont {
         virtual difont::Point Render(const char* string, const int len = -1,
                                      difont::Point position = difont::Point(),
                                      difont::Point spacing = difont::Point(),
-                                     int renderMode = FTGL::RENDER_ALL);
+                                     int renderMode = difont::RENDER_ALL);
 
         /**
          * Render a string of characters
@@ -348,7 +348,7 @@ namespace difont {
         virtual difont::Point Render(const wchar_t *string, const int len = -1,
                                      difont::Point position = difont::Point(),
                                      difont::Point spacing = difont::Point(),
-                                     int renderMode = FTGL::RENDER_ALL);
+                                     int renderMode = difont::RENDER_ALL);
 
 
         virtual void PreRender();

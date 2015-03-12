@@ -104,7 +104,7 @@ namespace difont {
          */
         virtual void Render(const char *string, const int len = -1,
                             difont::Point position = difont::Point(),
-                            int renderMode = FTGL::RENDER_ALL) = 0;
+                            int renderMode = difont::RENDER_ALL) = 0;
 
         /**
          * Render a string of characters.
@@ -118,7 +118,7 @@ namespace difont {
          */
         virtual void Render(const wchar_t *string, const int len = -1,
                             difont::Point position = difont::Point(),
-                            int renderMode = FTGL::RENDER_ALL) = 0;
+                            int renderMode = difont::RENDER_ALL) = 0;
 
         /**
          * Queries the Layout for errors.

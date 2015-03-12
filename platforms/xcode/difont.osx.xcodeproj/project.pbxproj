@@ -225,8 +225,6 @@
 		E4A8F3681AB130620025DA68 /* Library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F34D1AB130620025DA68 /* Library.cpp */; };
 		E4A8F3691AB130620025DA68 /* Library.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F34E1AB130620025DA68 /* Library.h */; };
 		E4A8F36A1AB130620025DA68 /* Unicode.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F34F1AB130620025DA68 /* Unicode.h */; };
-		E4A8F36B1AB130620025DA68 /* OpenGLES2Interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3511AB130620025DA68 /* OpenGLES2Interface.cpp */; };
-		E4A8F36C1AB130620025DA68 /* OpenGLESInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3521AB130620025DA68 /* OpenGLESInterface.cpp */; };
 		E4A8F36D1AB130620025DA68 /* OpenGLInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3531AB130620025DA68 /* OpenGLInterface.h */; };
 		E4A8F36E1AB130620025DA68 /* OpenGLInterface.osx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3541AB130620025DA68 /* OpenGLInterface.osx.cpp */; };
 		E4A8F36F1AB130620025DA68 /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3561AB130620025DA68 /* Contour.cpp */; };
@@ -509,7 +507,7 @@
 		E497DDF91AAEA8B600F9C748 /* Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buffer.h; sourceTree = "<group>"; };
 		E497DDFA1AAEA8B600F9C748 /* BufferFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferFont.h; sourceTree = "<group>"; };
 		E497DDFB1AAEA8B600F9C748 /* BufferGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferGlyph.h; sourceTree = "<group>"; };
-		E497DE001AAEA8B600F9C748 /* difont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = difont.h; sourceTree = "<group>"; };
+		E497DE001AAEA8B600F9C748 /* difont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = difont.h; sourceTree = "<group>"; };
 		E497DE011AAEA8B600F9C748 /* ExtrdFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrdFont.h; sourceTree = "<group>"; };
 		E497DE021AAEA8B600F9C748 /* ExtrdGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrdGlyph.h; sourceTree = "<group>"; };
 		E497DE061AAEA8B600F9C748 /* BitmapFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BitmapFont.cpp; sourceTree = "<group>"; };
@@ -528,7 +526,7 @@
 		E497DE131AAEA8B600F9C748 /* PolygonFontImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonFontImpl.h; sourceTree = "<group>"; };
 		E497DE141AAEA8B600F9C748 /* TextureFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureFont.cpp; sourceTree = "<group>"; };
 		E497DE151AAEA8B600F9C748 /* TextureFontImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureFontImpl.h; sourceTree = "<group>"; };
-		E497DE161AAEA8B600F9C748 /* Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
+		E497DE161AAEA8B600F9C748 /* Font.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Font.h; sourceTree = "<group>"; };
 		E497DE1E1AAEA8B600F9C748 /* BitmapGlyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BitmapGlyph.cpp; sourceTree = "<group>"; };
 		E497DE1F1AAEA8B600F9C748 /* BitmapGlyphImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapGlyphImpl.h; sourceTree = "<group>"; };
 		E497DE201AAEA8B600F9C748 /* BufferGlyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferGlyph.cpp; sourceTree = "<group>"; };
@@ -575,8 +573,6 @@
 		E4A8F34D1AB130620025DA68 /* Library.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Library.cpp; sourceTree = "<group>"; };
 		E4A8F34E1AB130620025DA68 /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
 		E4A8F34F1AB130620025DA68 /* Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unicode.h; sourceTree = "<group>"; };
-		E4A8F3511AB130620025DA68 /* OpenGLES2Interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGLES2Interface.cpp; sourceTree = "<group>"; };
-		E4A8F3521AB130620025DA68 /* OpenGLESInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGLESInterface.cpp; sourceTree = "<group>"; };
 		E4A8F3531AB130620025DA68 /* OpenGLInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLInterface.h; sourceTree = "<group>"; };
 		E4A8F3541AB130620025DA68 /* OpenGLInterface.osx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGLInterface.osx.cpp; sourceTree = "<group>"; };
 		E4A8F3561AB130620025DA68 /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Contour.cpp; sourceTree = "<group>"; };
@@ -1193,8 +1189,6 @@
 		E4A8F3501AB130620025DA68 /* opengl */ = {
 			isa = PBXGroup;
 			children = (
-				E4A8F3511AB130620025DA68 /* OpenGLES2Interface.cpp */,
-				E4A8F3521AB130620025DA68 /* OpenGLESInterface.cpp */,
 				E4A8F3531AB130620025DA68 /* OpenGLInterface.h */,
 				E4A8F3541AB130620025DA68 /* OpenGLInterface.osx.cpp */,
 			);
@@ -1450,7 +1444,6 @@
 				E41878981AACEF170005AC43 /* ftstream.c in Sources */,
 				E41876631AAC306A0005AC43 /* glue.c in Sources */,
 				E497DE5C1AAEA8B600F9C748 /* BufferFont.cpp in Sources */,
-				E4A8F36B1AB130620025DA68 /* OpenGLES2Interface.cpp in Sources */,
 				E41878851AACEF170005AC43 /* basepic.c in Sources */,
 				E41876621AAC306A0005AC43 /* error.c in Sources */,
 				E4A8F3661AB130620025DA68 /* GlyphContainer.cpp in Sources */,
@@ -1483,7 +1476,6 @@
 				E418764F1AAC306A0005AC43 /* memalloc.c in Sources */,
 				E497DE711AAEA8B600F9C748 /* BitmapGlyph.cpp in Sources */,
 				E497DE771AAEA8B600F9C748 /* Glyph.cpp in Sources */,
-				E4A8F36C1AB130620025DA68 /* OpenGLESInterface.cpp in Sources */,
 				E497DE5E1AAEA8B600F9C748 /* ExtrudeFont.cpp in Sources */,
 				E418765C1AAC306A0005AC43 /* sweep.c in Sources */,
 				E41876581AAC306A0005AC43 /* priorityq.c in Sources */,

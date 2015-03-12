@@ -117,8 +117,8 @@ difont::Point difont::Contour::ComputeOutsetPoint(difont::Point A, difont::Point
                 bc.X() * ba.Y() + bc.Y() * -ba.X());
 
     /* Compute the vector bisecting 'abc' */
-    FTGL_DOUBLE norm = sqrt(tmp.X() * tmp.X() + tmp.Y() * tmp.Y());
-    FTGL_DOUBLE dist = 64.0 * sqrt((norm - tmp.X()) / (norm + tmp.X()));
+    double norm = sqrt(tmp.X() * tmp.X() + tmp.Y() * tmp.Y());
+    double dist = 64.0 * sqrt((norm - tmp.X()) / (norm + tmp.X()));
     tmp.X(tmp.Y() < 0.0 ? dist : -dist);
     tmp.Y(64.0);
 

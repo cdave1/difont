@@ -161,14 +161,14 @@ float Font::LineHeight() const
 
 
 difont::Point Font::Render(const char * string, const int len,
-                       difont::Point position, difont::Point spacing, int renderMode)
+                           difont::Point position, difont::Point spacing, int renderMode)
 {
     return impl->Render(string, len, position, spacing, renderMode);
 }
 
 
 difont::Point Font::Render(const wchar_t * string, const int len,
-                       difont::Point position, difont::Point spacing, int renderMode)
+                           difont::Point position, difont::Point spacing, int renderMode)
 {
     return impl->Render(string, len, position, spacing, renderMode);
 }

@@ -48,25 +48,7 @@
 #endif
 */
 
-#ifdef WIN32
-
-    // Under windows avoid including <windows.h> is overrated.
-    // Sure, it can be avoided and "name space pollution" can be
-    // avoided, but why? It really doesn't make that much difference
-    // these days.
-    #define  WIN32_LEAN_AND_MEAN
-    #include <windows.h>
-
-    #ifndef __gl_h_
-        #include <GL/gl.h>
-        #include <GL/glu.h>
-    #endif
-
-#else
-
 #include "difont/OpenGLInterface.h"
-
-#endif
 
 namespace difont {
     typedef enum

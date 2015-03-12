@@ -103,13 +103,13 @@ float SimpleLayout::GetLineLength() const
 }
 
 
-void SimpleLayout::SetAlignment(const FTGL::TextAlignment Alignment)
+void SimpleLayout::SetAlignment(const difont::TextAlignment Alignment)
 {
     dynamic_cast<SimpleLayoutImpl*>(impl)->alignment = Alignment;
 }
 
 
-FTGL::TextAlignment SimpleLayout::GetAlignment() const
+difont::TextAlignment SimpleLayout::GetAlignment() const
 {
     return dynamic_cast<SimpleLayoutImpl*>(impl)->alignment;
 }
@@ -136,7 +136,7 @@ SimpleLayoutImpl::SimpleLayoutImpl()
 {
     currentFont = NULL;
     lineLength = 100.0f;
-    alignment = FTGL::ALIGN_LEFT;
+    alignment = difont::ALIGN_LEFT;
     lineSpacing = 1.0f;
 	stringCacheCount = 0;
     layoutStringBuffer = 0;
@@ -303,12 +303,12 @@ inline void SimpleLayoutImpl::WrapTextI(const T *buf, const int len,
     float remainingWidth = lineLength - currentWidth;
     // Render any remaining text on the last line
     // Disable justification for the last row
-    if(alignment == FTGL::ALIGN_JUSTIFY)
+    if(alignment == difont::ALIGN_JUSTIFY)
     {
-        alignment = FTGL::ALIGN_LEFT;
+        alignment = difont::ALIGN_LEFT;
         OutputWrapped(lineStart.getBufferFromHere(), -1, position, renderMode,
                       remainingWidth, bounds);
-        alignment = FTGL::ALIGN_JUSTIFY;
+        alignment = difont::ALIGN_JUSTIFY;
     }
     else
     {
@@ -344,16 +344,16 @@ inline void SimpleLayoutImpl::OutputWrappedI(const T *buf, const int len,
     // Align the text according as specified by Alignment
     switch (alignment)
     {
-        case FTGL::ALIGN_LEFT:
+        case difont::ALIGN_LEFT:
             pen.X(0);
             break;
-        case FTGL::ALIGN_CENTER:
+        case difont::ALIGN_CENTER:
             pen.X(remaining / 2);
             break;
-        case FTGL::ALIGN_RIGHT:
+        case difont::ALIGN_RIGHT:
             pen.X(remaining);
             break;
-        case FTGL::ALIGN_JUSTIFY:
+        case difont::ALIGN_JUSTIFY:
             pen.X(0);
             distributeWidth = remaining;
             break;

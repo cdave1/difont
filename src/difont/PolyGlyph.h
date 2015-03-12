@@ -27,8 +27,8 @@
 
 #include <difont/difont.h>
 
-#ifndef _DIFONT_PolygonGlyph__
-#define _DIFONT_PolygonGlyph__
+#ifndef _DIFONT_POLYGON_GLYPH_H_
+#define _DIFONT_POLYGON_GLYPH_H_
 
 
 /**

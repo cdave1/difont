@@ -49,15 +49,15 @@ void CALLBACK ftglErrorTess(GLenum errCode, difont::Mesh* mesh)
 
 void CALLBACK ftglVertexTess(void* data, difont::Mesh* mesh)
 {
-    FTGL_DOUBLE* vertex = static_cast<FTGL_DOUBLE*>(data);
+    double* vertex = static_cast<double*>(data);
     mesh->AddPoint(vertex[0], vertex[1], vertex[2]);
 }
 
 
-void CALLBACK ftglCombineTess(FTGL_DOUBLE coords[3], void* vertex_data[4], GLfloat weight[4], void** outData, difont::Mesh* mesh)
+void CALLBACK ftglCombineTess(double coords[3], void* vertex_data[4], GLfloat weight[4], void** outData, difont::Mesh* mesh)
 {
-    const FTGL_DOUBLE* vertex = static_cast<const FTGL_DOUBLE*>(coords);
-    *outData = const_cast<FTGL_DOUBLE*>(mesh->Combine(vertex[0], vertex[1], vertex[2]));
+    const double* vertex = static_cast<const double*>(coords);
+    *outData = const_cast<double*>(mesh->Combine(vertex[0], vertex[1], vertex[2]));
 }
 
 void CALLBACK ftglBeginTess(GLenum type, difont::Mesh* mesh)
@@ -91,16 +91,16 @@ difont::Mesh::~Mesh()
 }
 
 
-void difont::Mesh::AddPoint(const FTGL_DOUBLE x, const FTGL_DOUBLE y, const FTGL_DOUBLE z)
+void difont::Mesh::AddPoint(const double x, const double y, const double z)
 {
     currentTesselation->AddPoint(x, y, z);
 }
 
 
-const FTGL_DOUBLE* difont::Mesh::Combine(const FTGL_DOUBLE x, const FTGL_DOUBLE y, const FTGL_DOUBLE z)
+const double* difont::Mesh::Combine(const double x, const double y, const double z)
 {
     tempPointList.push_back(difont::Point(x, y,z));
-    return static_cast<const FTGL_DOUBLE*>(tempPointList.back());
+    return static_cast<const double*>(tempPointList.back());
 }
 
 
@@ -258,7 +258,7 @@ const difont::Contour* const difont::Vectoriser::Contour(size_t index) const
     return (index < ContourCount()) ? contourList[index] : NULL;
 }
 
-void difont::Vectoriser::MakeMesh(FTGL_DOUBLE zNormal, int outsetType, float outsetSize)
+void difont::Vectoriser::MakeMesh(double zNormal, int outsetType, float outsetSize)
 {
     if(mesh)
     {
@@ -304,7 +304,7 @@ void difont::Vectoriser::MakeMesh(FTGL_DOUBLE zNormal, int outsetType, float out
            gluTessBeginContour(tobj);
                 for(size_t p = 0; p < contour->PointCount(); ++p)
                 {
-                    const FTGL_DOUBLE* d;
+                    const double* d;
                     switch(outsetType)
                     {
                         case 1: d = contour->FrontPoint(p); break;
