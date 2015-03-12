@@ -1,5 +1,4 @@
 /*
- 
  Copyright (c) 2010 David Petrie
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,7 +21,7 @@
  
  */
 
-#include "ftglesGlue.h"
+#include "OpenGLInterface.h"
 #include <string.h>
 
 #define FTGLES_GLUE_MAX_VERTICES 32768
