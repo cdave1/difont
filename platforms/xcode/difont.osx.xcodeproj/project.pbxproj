@@ -7,35 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E41876481AAC306A0005AC43 /* glu.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876231AAC30690005AC43 /* glu.h */; };
-		E41876491AAC306A0005AC43 /* gluos.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876241AAC30690005AC43 /* gluos.h */; };
-		E418764A1AAC306A0005AC43 /* dict-list.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876271AAC30690005AC43 /* dict-list.h */; };
-		E418764B1AAC306A0005AC43 /* dict.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876281AAC30690005AC43 /* dict.c */; };
-		E418764C1AAC306A0005AC43 /* dict.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876291AAC30690005AC43 /* dict.h */; };
-		E418764D1AAC306A0005AC43 /* geom.c in Sources */ = {isa = PBXBuildFile; fileRef = E418762A1AAC30690005AC43 /* geom.c */; };
-		E418764E1AAC306A0005AC43 /* geom.h in Headers */ = {isa = PBXBuildFile; fileRef = E418762B1AAC30690005AC43 /* geom.h */; };
-		E418764F1AAC306A0005AC43 /* memalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = E418762C1AAC30690005AC43 /* memalloc.c */; };
-		E41876501AAC306A0005AC43 /* memalloc.h in Headers */ = {isa = PBXBuildFile; fileRef = E418762D1AAC30690005AC43 /* memalloc.h */; };
-		E41876511AAC306A0005AC43 /* mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = E418762E1AAC30690005AC43 /* mesh.c */; };
-		E41876521AAC306A0005AC43 /* mesh.h in Headers */ = {isa = PBXBuildFile; fileRef = E418762F1AAC30690005AC43 /* mesh.h */; };
-		E41876531AAC306A0005AC43 /* normal.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876301AAC30690005AC43 /* normal.c */; };
-		E41876541AAC306A0005AC43 /* normal.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876311AAC30690005AC43 /* normal.h */; };
-		E41876571AAC306A0005AC43 /* priorityq-sort.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876341AAC30690005AC43 /* priorityq-sort.h */; };
-		E41876581AAC306A0005AC43 /* priorityq.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876351AAC30690005AC43 /* priorityq.c */; };
-		E41876591AAC306A0005AC43 /* priorityq.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876361AAC30690005AC43 /* priorityq.h */; };
-		E418765A1AAC306A0005AC43 /* render.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876381AAC30690005AC43 /* render.c */; };
-		E418765B1AAC306A0005AC43 /* render.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876391AAC30690005AC43 /* render.h */; };
-		E418765C1AAC306A0005AC43 /* sweep.c in Sources */ = {isa = PBXBuildFile; fileRef = E418763A1AAC30690005AC43 /* sweep.c */; };
-		E418765D1AAC306A0005AC43 /* sweep.h in Headers */ = {isa = PBXBuildFile; fileRef = E418763B1AAC30690005AC43 /* sweep.h */; };
-		E418765E1AAC306A0005AC43 /* tess.c in Sources */ = {isa = PBXBuildFile; fileRef = E418763C1AAC30690005AC43 /* tess.c */; };
-		E418765F1AAC306A0005AC43 /* tess.h in Headers */ = {isa = PBXBuildFile; fileRef = E418763D1AAC30690005AC43 /* tess.h */; };
-		E41876601AAC306A0005AC43 /* tessmono.c in Sources */ = {isa = PBXBuildFile; fileRef = E418763E1AAC30690005AC43 /* tessmono.c */; };
-		E41876611AAC306A0005AC43 /* tessmono.h in Headers */ = {isa = PBXBuildFile; fileRef = E418763F1AAC30690005AC43 /* tessmono.h */; };
-		E41876621AAC306A0005AC43 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876411AAC306A0005AC43 /* error.c */; };
-		E41876631AAC306A0005AC43 /* glue.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876421AAC306A0005AC43 /* glue.c */; };
-		E41876641AAC306A0005AC43 /* gluint.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876431AAC306A0005AC43 /* gluint.h */; };
-		E41876651AAC306A0005AC43 /* project.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876441AAC306A0005AC43 /* project.c */; };
-		E41876661AAC306A0005AC43 /* registry.c in Sources */ = {isa = PBXBuildFile; fileRef = E41876451AAC306A0005AC43 /* registry.c */; };
 		E418777A1AACEB5C0005AC43 /* ftconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E418766F1AACEB5B0005AC43 /* ftconfig.h */; };
 		E418777B1AACEB5C0005AC43 /* ftheader.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876701AACEB5B0005AC43 /* ftheader.h */; };
 		E418777C1AACEB5C0005AC43 /* ftmodule.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876711AACEB5B0005AC43 /* ftmodule.h */; };
@@ -160,14 +131,10 @@
 		E497DE4F1AAEA8B600F9C748 /* BufferFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDFA1AAEA8B600F9C748 /* BufferFont.h */; };
 		E497DE501AAEA8B600F9C748 /* BufferGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDFB1AAEA8B600F9C748 /* BufferGlyph.h */; };
 		E497DE551AAEA8B600F9C748 /* difont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE001AAEA8B600F9C748 /* difont.h */; };
-		E497DE561AAEA8B600F9C748 /* ExtrdFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE011AAEA8B600F9C748 /* ExtrdFont.h */; };
-		E497DE571AAEA8B600F9C748 /* ExtrdGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE021AAEA8B600F9C748 /* ExtrdGlyph.h */; };
 		E497DE5A1AAEA8B600F9C748 /* BitmapFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE061AAEA8B600F9C748 /* BitmapFont.cpp */; };
 		E497DE5B1AAEA8B600F9C748 /* BitmapFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE071AAEA8B600F9C748 /* BitmapFontImpl.h */; };
 		E497DE5C1AAEA8B600F9C748 /* BufferFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE081AAEA8B600F9C748 /* BufferFont.cpp */; };
 		E497DE5D1AAEA8B600F9C748 /* BufferFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE091AAEA8B600F9C748 /* BufferFontImpl.h */; };
-		E497DE5E1AAEA8B600F9C748 /* ExtrudeFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE0A1AAEA8B600F9C748 /* ExtrudeFont.cpp */; };
-		E497DE5F1AAEA8B600F9C748 /* ExtrudeFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE0B1AAEA8B600F9C748 /* ExtrudeFontImpl.h */; };
 		E497DE601AAEA8B600F9C748 /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE0C1AAEA8B600F9C748 /* Font.cpp */; };
 		E497DE611AAEA8B600F9C748 /* FontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE0D1AAEA8B600F9C748 /* FontImpl.h */; };
 		E497DE621AAEA8B600F9C748 /* OutlineFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE0E1AAEA8B600F9C748 /* OutlineFont.cpp */; };
@@ -183,8 +150,6 @@
 		E497DE721AAEA8B600F9C748 /* BitmapGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE1F1AAEA8B600F9C748 /* BitmapGlyphImpl.h */; };
 		E497DE731AAEA8B600F9C748 /* BufferGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE201AAEA8B600F9C748 /* BufferGlyph.cpp */; };
 		E497DE741AAEA8B600F9C748 /* BufferGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE211AAEA8B600F9C748 /* BufferGlyphImpl.h */; };
-		E497DE751AAEA8B600F9C748 /* ExtrudeGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE221AAEA8B600F9C748 /* ExtrudeGlyph.cpp */; };
-		E497DE761AAEA8B600F9C748 /* ExtrudeGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE231AAEA8B600F9C748 /* ExtrudeGlyphImpl.h */; };
 		E497DE771AAEA8B600F9C748 /* Glyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE241AAEA8B600F9C748 /* Glyph.cpp */; };
 		E497DE781AAEA8B600F9C748 /* GlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE251AAEA8B600F9C748 /* GlyphImpl.h */; };
 		E497DE791AAEA8B600F9C748 /* OutlineGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE261AAEA8B600F9C748 /* OutlineGlyph.cpp */; };
@@ -238,35 +203,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E41876231AAC30690005AC43 /* glu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glu.h; sourceTree = "<group>"; };
-		E41876241AAC30690005AC43 /* gluos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gluos.h; sourceTree = "<group>"; };
-		E41876271AAC30690005AC43 /* dict-list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "dict-list.h"; sourceTree = "<group>"; };
-		E41876281AAC30690005AC43 /* dict.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dict.c; sourceTree = "<group>"; };
-		E41876291AAC30690005AC43 /* dict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dict.h; sourceTree = "<group>"; };
-		E418762A1AAC30690005AC43 /* geom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = geom.c; sourceTree = "<group>"; };
-		E418762B1AAC30690005AC43 /* geom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geom.h; sourceTree = "<group>"; };
-		E418762C1AAC30690005AC43 /* memalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memalloc.c; sourceTree = "<group>"; };
-		E418762D1AAC30690005AC43 /* memalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memalloc.h; sourceTree = "<group>"; };
-		E418762E1AAC30690005AC43 /* mesh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mesh.c; sourceTree = "<group>"; };
-		E418762F1AAC30690005AC43 /* mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mesh.h; sourceTree = "<group>"; };
-		E41876301AAC30690005AC43 /* normal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = normal.c; sourceTree = "<group>"; };
-		E41876311AAC30690005AC43 /* normal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = normal.h; sourceTree = "<group>"; };
-		E41876341AAC30690005AC43 /* priorityq-sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "priorityq-sort.h"; sourceTree = "<group>"; };
-		E41876351AAC30690005AC43 /* priorityq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = priorityq.c; sourceTree = "<group>"; };
-		E41876361AAC30690005AC43 /* priorityq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = priorityq.h; sourceTree = "<group>"; };
-		E41876381AAC30690005AC43 /* render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = render.c; sourceTree = "<group>"; };
-		E41876391AAC30690005AC43 /* render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render.h; sourceTree = "<group>"; };
-		E418763A1AAC30690005AC43 /* sweep.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sweep.c; sourceTree = "<group>"; };
-		E418763B1AAC30690005AC43 /* sweep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sweep.h; sourceTree = "<group>"; };
-		E418763C1AAC30690005AC43 /* tess.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tess.c; sourceTree = "<group>"; };
-		E418763D1AAC30690005AC43 /* tess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tess.h; sourceTree = "<group>"; };
-		E418763E1AAC30690005AC43 /* tessmono.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tessmono.c; sourceTree = "<group>"; };
-		E418763F1AAC30690005AC43 /* tessmono.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tessmono.h; sourceTree = "<group>"; };
-		E41876411AAC306A0005AC43 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
-		E41876421AAC306A0005AC43 /* glue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glue.c; sourceTree = "<group>"; };
-		E41876431AAC306A0005AC43 /* gluint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gluint.h; sourceTree = "<group>"; };
-		E41876441AAC306A0005AC43 /* project.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = project.c; sourceTree = "<group>"; };
-		E41876451AAC306A0005AC43 /* registry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = registry.c; sourceTree = "<group>"; };
 		E418766F1AACEB5B0005AC43 /* ftconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftconfig.h; sourceTree = "<group>"; };
 		E41876701AACEB5B0005AC43 /* ftheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftheader.h; sourceTree = "<group>"; };
 		E41876711AACEB5B0005AC43 /* ftmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftmodule.h; sourceTree = "<group>"; };
@@ -508,14 +444,10 @@
 		E497DDFA1AAEA8B600F9C748 /* BufferFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferFont.h; sourceTree = "<group>"; };
 		E497DDFB1AAEA8B600F9C748 /* BufferGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferGlyph.h; sourceTree = "<group>"; };
 		E497DE001AAEA8B600F9C748 /* difont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = difont.h; sourceTree = "<group>"; };
-		E497DE011AAEA8B600F9C748 /* ExtrdFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrdFont.h; sourceTree = "<group>"; };
-		E497DE021AAEA8B600F9C748 /* ExtrdGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrdGlyph.h; sourceTree = "<group>"; };
 		E497DE061AAEA8B600F9C748 /* BitmapFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BitmapFont.cpp; sourceTree = "<group>"; };
 		E497DE071AAEA8B600F9C748 /* BitmapFontImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapFontImpl.h; sourceTree = "<group>"; };
 		E497DE081AAEA8B600F9C748 /* BufferFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferFont.cpp; sourceTree = "<group>"; };
 		E497DE091AAEA8B600F9C748 /* BufferFontImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferFontImpl.h; sourceTree = "<group>"; };
-		E497DE0A1AAEA8B600F9C748 /* ExtrudeFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtrudeFont.cpp; sourceTree = "<group>"; };
-		E497DE0B1AAEA8B600F9C748 /* ExtrudeFontImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrudeFontImpl.h; sourceTree = "<group>"; };
 		E497DE0C1AAEA8B600F9C748 /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
 		E497DE0D1AAEA8B600F9C748 /* FontImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontImpl.h; sourceTree = "<group>"; };
 		E497DE0E1AAEA8B600F9C748 /* OutlineFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OutlineFont.cpp; sourceTree = "<group>"; };
@@ -531,8 +463,6 @@
 		E497DE1F1AAEA8B600F9C748 /* BitmapGlyphImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapGlyphImpl.h; sourceTree = "<group>"; };
 		E497DE201AAEA8B600F9C748 /* BufferGlyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferGlyph.cpp; sourceTree = "<group>"; };
 		E497DE211AAEA8B600F9C748 /* BufferGlyphImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferGlyphImpl.h; sourceTree = "<group>"; };
-		E497DE221AAEA8B600F9C748 /* ExtrudeGlyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtrudeGlyph.cpp; sourceTree = "<group>"; };
-		E497DE231AAEA8B600F9C748 /* ExtrudeGlyphImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrudeGlyphImpl.h; sourceTree = "<group>"; };
 		E497DE241AAEA8B600F9C748 /* Glyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Glyph.cpp; sourceTree = "<group>"; };
 		E497DE251AAEA8B600F9C748 /* GlyphImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlyphImpl.h; sourceTree = "<group>"; };
 		E497DE261AAEA8B600F9C748 /* OutlineGlyph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OutlineGlyph.cpp; sourceTree = "<group>"; };
@@ -616,66 +546,6 @@
 				E4AE7F06195238FF00988E15 /* OpenGL.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E418761D1AAC30690005AC43 /* iGLU-1.0.0 */ = {
-			isa = PBXGroup;
-			children = (
-				E41876221AAC30690005AC43 /* include */,
-				E41876251AAC30690005AC43 /* libtess */,
-				E41876401AAC306A0005AC43 /* libutil */,
-			);
-			path = "iGLU-1.0.0";
-			sourceTree = "<group>";
-		};
-		E41876221AAC30690005AC43 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				E41876231AAC30690005AC43 /* glu.h */,
-				E41876241AAC30690005AC43 /* gluos.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		E41876251AAC30690005AC43 /* libtess */ = {
-			isa = PBXGroup;
-			children = (
-				E41876271AAC30690005AC43 /* dict-list.h */,
-				E41876281AAC30690005AC43 /* dict.c */,
-				E41876291AAC30690005AC43 /* dict.h */,
-				E418762A1AAC30690005AC43 /* geom.c */,
-				E418762B1AAC30690005AC43 /* geom.h */,
-				E418762C1AAC30690005AC43 /* memalloc.c */,
-				E418762D1AAC30690005AC43 /* memalloc.h */,
-				E418762E1AAC30690005AC43 /* mesh.c */,
-				E418762F1AAC30690005AC43 /* mesh.h */,
-				E41876301AAC30690005AC43 /* normal.c */,
-				E41876311AAC30690005AC43 /* normal.h */,
-				E41876341AAC30690005AC43 /* priorityq-sort.h */,
-				E41876351AAC30690005AC43 /* priorityq.c */,
-				E41876361AAC30690005AC43 /* priorityq.h */,
-				E41876381AAC30690005AC43 /* render.c */,
-				E41876391AAC30690005AC43 /* render.h */,
-				E418763A1AAC30690005AC43 /* sweep.c */,
-				E418763B1AAC30690005AC43 /* sweep.h */,
-				E418763C1AAC30690005AC43 /* tess.c */,
-				E418763D1AAC30690005AC43 /* tess.h */,
-				E418763E1AAC30690005AC43 /* tessmono.c */,
-				E418763F1AAC30690005AC43 /* tessmono.h */,
-			);
-			path = libtess;
-			sourceTree = "<group>";
-		};
-		E41876401AAC306A0005AC43 /* libutil */ = {
-			isa = PBXGroup;
-			children = (
-				E41876411AAC306A0005AC43 /* error.c */,
-				E41876421AAC306A0005AC43 /* glue.c */,
-				E41876431AAC306A0005AC43 /* gluint.h */,
-				E41876441AAC306A0005AC43 /* project.c */,
-				E41876451AAC306A0005AC43 /* registry.c */,
-			);
-			path = libutil;
 			sourceTree = "<group>";
 		};
 		E418766A1AACEB5B0005AC43 /* freetype2 */ = {
@@ -1042,7 +912,6 @@
 			isa = PBXGroup;
 			children = (
 				E418766A1AACEB5B0005AC43 /* freetype2 */,
-				E418761D1AAC30690005AC43 /* iGLU-1.0.0 */,
 			);
 			name = lib;
 			path = ../../lib;
@@ -1076,8 +945,6 @@
 				E497DDFB1AAEA8B600F9C748 /* BufferGlyph.h */,
 				E4A8F33F1AB130620025DA68 /* common */,
 				E497DE001AAEA8B600F9C748 /* difont.h */,
-				E497DE011AAEA8B600F9C748 /* ExtrdFont.h */,
-				E497DE021AAEA8B600F9C748 /* ExtrdGlyph.h */,
 				E497DE051AAEA8B600F9C748 /* font */,
 				E497DE161AAEA8B600F9C748 /* Font.h */,
 				E4A8F3461AB130620025DA68 /* freetype */,
@@ -1107,8 +974,6 @@
 				E497DE071AAEA8B600F9C748 /* BitmapFontImpl.h */,
 				E497DE081AAEA8B600F9C748 /* BufferFont.cpp */,
 				E497DE091AAEA8B600F9C748 /* BufferFontImpl.h */,
-				E497DE0A1AAEA8B600F9C748 /* ExtrudeFont.cpp */,
-				E497DE0B1AAEA8B600F9C748 /* ExtrudeFontImpl.h */,
 				E497DE0C1AAEA8B600F9C748 /* Font.cpp */,
 				E497DE0D1AAEA8B600F9C748 /* FontImpl.h */,
 				E497DE0E1AAEA8B600F9C748 /* OutlineFont.cpp */,
@@ -1130,8 +995,6 @@
 				E497DE1F1AAEA8B600F9C748 /* BitmapGlyphImpl.h */,
 				E497DE201AAEA8B600F9C748 /* BufferGlyph.cpp */,
 				E497DE211AAEA8B600F9C748 /* BufferGlyphImpl.h */,
-				E497DE221AAEA8B600F9C748 /* ExtrudeGlyph.cpp */,
-				E497DE231AAEA8B600F9C748 /* ExtrudeGlyphImpl.h */,
 				E497DE241AAEA8B600F9C748 /* Glyph.cpp */,
 				E497DE251AAEA8B600F9C748 /* GlyphImpl.h */,
 				E497DE261AAEA8B600F9C748 /* OutlineGlyph.cpp */,
@@ -1219,7 +1082,6 @@
 				E41877891AACEB5C0005AC43 /* ftgasp.h in Headers */,
 				E418788A1AACEF170005AC43 /* ftbase.h in Headers */,
 				E41877871AACEB5C0005AC43 /* fterrdef.h in Headers */,
-				E41876501AAC306A0005AC43 /* memalloc.h in Headers */,
 				E497DE8C1AAEA8B600F9C748 /* OutlineFont.h in Headers */,
 				E41877BB1AACEB5C0005AC43 /* svpfr.h in Headers */,
 				E41878861AACEF170005AC43 /* basepic.h in Headers */,
@@ -1240,24 +1102,18 @@
 				E497DE931AAEA8B600F9C748 /* PolygonFont.h in Headers */,
 				E497DE501AAEA8B600F9C748 /* BufferGlyph.h in Headers */,
 				E41877A51AACEB5C0005AC43 /* ftdebug.h in Headers */,
-				E497DE5F1AAEA8B600F9C748 /* ExtrudeFontImpl.h in Headers */,
 				E41877C01AACEB5C0005AC43 /* svttcmap.h in Headers */,
 				E41877AB1AACEB5C0005AC43 /* ftrfork.h in Headers */,
-				E418764C1AAC306A0005AC43 /* dict.h in Headers */,
 				E41877911AACEB5C0005AC43 /* ftlzw.h in Headers */,
 				E41877941AACEB5C0005AC43 /* ftmodapi.h in Headers */,
 				E41877801AACEB5C0005AC43 /* ftadvanc.h in Headers */,
 				E497DE6A1AAEA8B600F9C748 /* Font.h in Headers */,
 				E41877851AACEB5C0005AC43 /* ftchapters.h in Headers */,
 				E41877BD1AACEB5C0005AC43 /* svpscmap.h in Headers */,
-				E41876521AAC306A0005AC43 /* mesh.h in Headers */,
 				E497DE8F1AAEA8B600F9C748 /* PixmapGlyph.h in Headers */,
 				E4A8F3701AB130620025DA68 /* Contour.h in Headers */,
 				E41877A71AACEB5C0005AC43 /* ftgloadr.h in Headers */,
 				E497DE611AAEA8B600F9C748 /* FontImpl.h in Headers */,
-				E497DE571AAEA8B600F9C748 /* ExtrdGlyph.h in Headers */,
-				E418764A1AAC306A0005AC43 /* dict-list.h in Headers */,
-				E418765F1AAC306A0005AC43 /* tess.h in Headers */,
 				E41877C71AACEB5C0005AC43 /* tttypes.h in Headers */,
 				E4A8F3631AB130620025DA68 /* Charmap.h in Headers */,
 				E41877B81AACEB5C0005AC43 /* svkern.h in Headers */,
@@ -1270,7 +1126,6 @@
 				E41877A01AACEB5C0005AC43 /* fttypes.h in Headers */,
 				E418777D1AACEB5C0005AC43 /* ftoption.h in Headers */,
 				E418779B1AACEB5C0005AC43 /* ftsnames.h in Headers */,
-				E41876491AAC306A0005AC43 /* gluos.h in Headers */,
 				E497DE801AAEA8B600F9C748 /* TextureGlyphImpl.h in Headers */,
 				E41877BA1AACEB5C0005AC43 /* svotval.h in Headers */,
 				E41877991AACEB5C0005AC43 /* ftrender.h in Headers */,
@@ -1294,22 +1149,17 @@
 				E41877951AACEB5C0005AC43 /* ftmoderr.h in Headers */,
 				E4A8F36D1AB130620025DA68 /* OpenGLInterface.h in Headers */,
 				E41877931AACEB5C0005AC43 /* ftmm.h in Headers */,
-				E418764E1AAC306A0005AC43 /* geom.h in Headers */,
 				E41877C81AACEB5C0005AC43 /* t1tables.h in Headers */,
-				E41876481AAC306A0005AC43 /* glu.h in Headers */,
-				E41876611AAC306A0005AC43 /* tessmono.h in Headers */,
 				E41877C51AACEB5C0005AC43 /* sfnt.h in Headers */,
 				E41877981AACEB5C0005AC43 /* ftpfr.h in Headers */,
 				E41877CC1AACEB5C0005AC43 /* ttunpat.h in Headers */,
 				E41877B41AACEB5C0005AC43 /* svbdf.h in Headers */,
 				E497DE921AAEA8B600F9C748 /* PolyGlyph.h in Headers */,
 				E41877A31AACEB5C0005AC43 /* autohint.h in Headers */,
-				E41876641AAC306A0005AC43 /* gluint.h in Headers */,
 				E41877CD1AACEB5C0005AC43 /* ft2build.h in Headers */,
 				E41877A21AACEB5C0005AC43 /* ftxf86.h in Headers */,
 				E497DE971AAEA8B600F9C748 /* TextureFont.h in Headers */,
 				E41877921AACEB5C0005AC43 /* ftmac.h in Headers */,
-				E41876591AAC306A0005AC43 /* priorityq.h in Headers */,
 				E497DE671AAEA8B600F9C748 /* PolygonFontImpl.h in Headers */,
 				E497DE941AAEA8B600F9C748 /* SimpleLayout.h in Headers */,
 				E41877A41AACEB5C0005AC43 /* ftcalc.h in Headers */,
@@ -1333,12 +1183,9 @@
 				E497DE721AAEA8B600F9C748 /* BitmapGlyphImpl.h in Headers */,
 				E497DE881AAEA8B600F9C748 /* SimpleLayoutImpl.h in Headers */,
 				E418778C1AACEB5C0005AC43 /* ftgzip.h in Headers */,
-				E41876571AAC306A0005AC43 /* priorityq-sort.h in Headers */,
-				E418765B1AAC306A0005AC43 /* render.h in Headers */,
 				E41877C11AACEB5C0005AC43 /* svtteng.h in Headers */,
 				E418777E1AACEB5C0005AC43 /* ftstdlib.h in Headers */,
 				E41877961AACEB5C0005AC43 /* ftotval.h in Headers */,
-				E497DE561AAEA8B600F9C748 /* ExtrdFont.h in Headers */,
 				E4A8F35C1AB130620025DA68 /* BBox.h in Headers */,
 				E4A8F3611AB130620025DA68 /* Size.h in Headers */,
 				E41877811AACEB5C0005AC43 /* ftbbox.h in Headers */,
@@ -1346,18 +1193,15 @@
 				E497DE691AAEA8B600F9C748 /* TextureFontImpl.h in Headers */,
 				E497DE4B1AAEA8B600F9C748 /* BitmapFont.h in Headers */,
 				E4A8F36A1AB130620025DA68 /* Unicode.h in Headers */,
-				E418765D1AAC306A0005AC43 /* sweep.h in Headers */,
 				E497DE741AAEA8B600F9C748 /* BufferGlyphImpl.h in Headers */,
 				E41877A61AACEB5C0005AC43 /* ftdriver.h in Headers */,
 				E41877BF1AACEB5C0005AC43 /* svsfnt.h in Headers */,
 				E418779F1AACEB5C0005AC43 /* fttrigon.h in Headers */,
 				E41877C61AACEB5C0005AC43 /* t1types.h in Headers */,
 				E497DE8E1AAEA8B600F9C748 /* PixmapFont.h in Headers */,
-				E497DE761AAEA8B600F9C748 /* ExtrudeGlyphImpl.h in Headers */,
 				E4A8F35F1AB130620025DA68 /* Point.h in Headers */,
 				E41877C41AACEB5C0005AC43 /* svxf86nm.h in Headers */,
 				E497DE8D1AAEA8B600F9C748 /* OutlineGlyph.h in Headers */,
-				E41876541AAC306A0005AC43 /* normal.h in Headers */,
 				E41877B11AACEB5C0005AC43 /* pcftypes.h in Headers */,
 				E418779A1AACEB5C0005AC43 /* ftsizes.h in Headers */,
 				E497DE4E1AAEA8B600F9C748 /* Buffer.h in Headers */,
@@ -1442,43 +1286,27 @@
 				E41878901AACEF170005AC43 /* ftgloadr.c in Sources */,
 				E497DE731AAEA8B600F9C748 /* BufferGlyph.cpp in Sources */,
 				E41878981AACEF170005AC43 /* ftstream.c in Sources */,
-				E41876631AAC306A0005AC43 /* glue.c in Sources */,
 				E497DE5C1AAEA8B600F9C748 /* BufferFont.cpp in Sources */,
 				E41878851AACEF170005AC43 /* basepic.c in Sources */,
-				E41876621AAC306A0005AC43 /* error.c in Sources */,
 				E4A8F3661AB130620025DA68 /* GlyphContainer.cpp in Sources */,
-				E418765E1AAC306A0005AC43 /* tess.c in Sources */,
 				E41878881AACEF170005AC43 /* ftapi.c in Sources */,
 				E497DE7B1AAEA8B600F9C748 /* PixmapGlyph.cpp in Sources */,
-				E41876651AAC306A0005AC43 /* project.c in Sources */,
-				E41876511AAC306A0005AC43 /* mesh.c in Sources */,
-				E41876661AAC306A0005AC43 /* registry.c in Sources */,
 				E497DE7F1AAEA8B600F9C748 /* TextureGlyph.cpp in Sources */,
 				E418788B1AACEF170005AC43 /* ftbbox.c in Sources */,
 				E4A8F3621AB130620025DA68 /* Charmap.cpp in Sources */,
-				E41876531AAC306A0005AC43 /* normal.c in Sources */,
 				E418789B1AACEF170005AC43 /* ftsystem.c in Sources */,
-				E418765A1AAC306A0005AC43 /* render.c in Sources */,
-				E418764B1AAC306A0005AC43 /* dict.c in Sources */,
-				E41876601AAC306A0005AC43 /* tessmono.c in Sources */,
 				E41878951AACEF170005AC43 /* ftpic.c in Sources */,
 				E418788E1AACEF170005AC43 /* ftdbgmem.c in Sources */,
 				E418788D1AACEF170005AC43 /* ftcalc.c in Sources */,
 				E497DE621AAEA8B600F9C748 /* OutlineFont.cpp in Sources */,
 				E4A8F35E1AB130620025DA68 /* Point.cpp in Sources */,
 				E497DE4D1AAEA8B600F9C748 /* Buffer.cpp in Sources */,
-				E497DE751AAEA8B600F9C748 /* ExtrudeGlyph.cpp in Sources */,
 				E497DE791AAEA8B600F9C748 /* OutlineGlyph.cpp in Sources */,
 				E41878921AACEF170005AC43 /* ftinit.c in Sources */,
 				E4A8F3681AB130620025DA68 /* Library.cpp in Sources */,
-				E418764D1AAC306A0005AC43 /* geom.c in Sources */,
 				E497DE5A1AAEA8B600F9C748 /* BitmapFont.cpp in Sources */,
-				E418764F1AAC306A0005AC43 /* memalloc.c in Sources */,
 				E497DE711AAEA8B600F9C748 /* BitmapGlyph.cpp in Sources */,
 				E497DE771AAEA8B600F9C748 /* Glyph.cpp in Sources */,
-				E497DE5E1AAEA8B600F9C748 /* ExtrudeFont.cpp in Sources */,
-				E418765C1AAC306A0005AC43 /* sweep.c in Sources */,
-				E41876581AAC306A0005AC43 /* priorityq.c in Sources */,
 				E41878941AACEF170005AC43 /* ftoutln.c in Sources */,
 				E418788C1AACEF170005AC43 /* ftbitmap.c in Sources */,
 				E418789C1AACEF170005AC43 /* fttrigon.c in Sources */,

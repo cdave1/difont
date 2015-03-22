@@ -114,13 +114,13 @@ const difont::Point& BitmapGlyphImpl::RenderImpl(const difont::Point& pen, int r
 
         dx = pen.Xf() + pos.Xf();
         dy = pen.Yf() - pos.Yf();
-
+/*
         glBitmap(0, 0, 0.0f, 0.0f, dx, dy, (const GLubyte*)0);
         glPixelStorei(GL_PACK_ALIGNMENT, destPitch * 8);
         glBitmap(destWidth, destHeight, 0.0f, 0.0, 0.0, 0.0,
                  (const GLubyte*)data);
         glBitmap(0, 0, 0.0f, 0.0f, -dx, -dy, (const GLubyte*)0);
-		
+		*/
 		glTexSubImage2D(GL_TEXTURE_2D,
 						0,
 						0.0f, 0.0f,

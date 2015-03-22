@@ -35,7 +35,7 @@ namespace difont {
 
 #include "BitmapGlyph.h"
 #include "BufferGlyph.h"
-#include "ExtrdGlyph.h"
+//#include "ExtrdGlyph.h"
 #include "OutlineGlyph.h"
 #include "PixmapGlyph.h"
 #include "PolyGlyph.h"
@@ -44,7 +44,7 @@ namespace difont {
 #include "Font.h"
 #include "BitmapFont.h"
 #include "BufferFont.h"
-#include "ExtrdFont.h"
+//#include "ExtrdFont.h"
 #include "OutlineFont.h"
 #include "PixmapFont.h"
 #include "PolygonFont.h"

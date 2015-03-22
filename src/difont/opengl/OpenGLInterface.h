@@ -56,7 +56,8 @@
 #else
 #define ftglprintf(...) printf(__VA_ARGS__)
 #include <OpenGL/OpenGL.h>
-#include <OpenGL/gl.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 #endif
 
 #ifdef __cplusplus

@@ -27,6 +27,7 @@
 
 #include "Internals.h"
 #include "Vectoriser.h"
+#include <OpenGL/glu.h>
 
 #ifndef CALLBACK
 #define CALLBACK

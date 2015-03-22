@@ -30,7 +30,6 @@
 #include <list>
 #include <vector>
 #include  <difont/difont.h>
-#include "glu.h"
 
 #include "Contour.h"
 
