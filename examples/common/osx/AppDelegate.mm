@@ -57,7 +57,7 @@ static HelloWorld *helloWorld;
         NSOpenGLPFADoubleBuffer,
         NSOpenGLPFAMultisample,
         NSOpenGLPFASampleBuffers, (NSOpenGLPixelFormatAttribute)1,
-        NSOpenGLPFASamples, (NSOpenGLPixelFormatAttribute)4,
+        NSOpenGLPFASamples, (NSOpenGLPixelFormatAttribute)8,
         0
     };
 

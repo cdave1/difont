@@ -63,6 +63,8 @@ void HelloWorld::Render() {
     vec4Set(colors[2], 0.0f, 0.1f, 0.8f, 1.0f);
     vec4Set(colors[3], 0.0f, 0.8f, 0.1f, 1.0f);
 
+    m_font->FaceSize(2 * (sinf(f) * 0.5 + 0.5) * HELLO_WORLD_FONT_SIZE);
+
     f += 0.05f;
     //    glRotatef(cosf(f) * 20.0f, 0.0f, 0.0f, 1.0f);
     for (unsigned i = 0; i < MAX_COLORS; ++i) {
@@ -71,7 +73,7 @@ void HelloWorld::Render() {
 
         if (m_font) {
             difont::FontMeshSet::Begin();
-            m_font->Render("hello world! &*#@");
+            m_font->Render("hello world!");
 
             unsigned int fontMeshCount = difont::FontMeshSet::MeshCount();
             difont::FontMesh *meshes = difont::FontMeshSet::GetMeshes();
