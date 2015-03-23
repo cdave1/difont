@@ -19,7 +19,9 @@
 #ifndef _HELLO_WORLD_H_
 #define _HELLO_WORLD_H_
 
-#include "difont/difont.h"
+#include <stdint.h>
+#include <difont/difont.h>
+#include <difont/opengl/OpenGLInterface.h>
 
 class HelloWorld {
 private:
@@ -36,6 +38,8 @@ public:
     
     void SetupFonts(const char *fontpath);
     
+	void Update(GLuint shaderProgram);
+
     void Render();
     
 };

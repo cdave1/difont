@@ -20,6 +20,8 @@
 
 #include "CommonMath.h"
 #include "OpenGLShim.h"
+#include <iostream>
+#include <sstream>
 
 //#define HELLO_WORLD_FONT_SIZE uint32_t(310.0f)
 #define HELLO_WORLD_FONT_SIZE uint32_t(m_height * 0.251f)
@@ -47,15 +49,94 @@ void HelloWorld::SetupFonts(const char *fontpath) {
     }
 }
 
+static GLuint vertexArrayObject = 0;
+static GLuint vertexBufferObject = 0;
+static GLuint indexBufferObject = 0;
+static unsigned int totalVertexes = 0;
+static unsigned int totalIndexes = 0;
+#define DBOUT( s )            \
+{                             \
+   std::ostringstream os_;    \
+   os_ << s;                   \
+   OutputDebugStringA( os_.str().c_str() );  \
+}
+void HelloWorld::Update(GLuint shaderProgram) {
+	if (m_font) {
+		difont::FontMeshSet::Begin();
+		m_font->Render("hello world!");
+
+		totalIndexes = 0;
+		totalVertexes = 0;
+
+		unsigned int fontMeshCount = difont::FontMeshSet::MeshCount();
+		difont::FontMesh *meshes = difont::FontMeshSet::GetMeshes();
+
+		for (int i = 0; i < fontMeshCount; ++i) {
+			difont::FontMesh fontMesh = meshes[i];
+			totalVertexes += fontMesh.GetVertexCount();
+		}
+
+		size_t vertexBlockSz = sizeof(difont::FontVertex) * totalVertexes;
+		difont::FontVertex *vertexBufferData = (difont::FontVertex *)malloc(vertexBlockSz);
+		uint32_t *indexBufferData = (uint32_t *)malloc(sizeof(uint32_t) * totalVertexes);
+
+		for (int i = 0; i < fontMeshCount; ++i) {
+			difont::FontMesh fontMesh = meshes[i];
+			for (int j = 0; j < fontMesh.GetVertexCount(); ++j) {
+				difont::FontVertex vertex = fontMesh.vertices[j];
+				uint32_t index = totalIndexes + j;
+				vertexBufferData[index] = vertex;
+				indexBufferData[index] = index;
+			}
+			totalIndexes += fontMesh.GetVertexCount();
+		}
+		DBOUT("totalIndexes: " << totalIndexes << "\n");
+
+		if (indexBufferObject == 0)
+			glGenBuffers(1, &indexBufferObject);
+		
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * totalVertexes, indexBufferData, GL_STATIC_DRAW);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		free(indexBufferData);
+
+		if (vertexBufferObject == 0)
+			glGenBuffers(1, &vertexBufferObject);
+		
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(difont::FontVertex) * totalVertexes, vertexBufferData, GL_STATIC_DRAW);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		free(vertexBufferData);
+
+		if (vertexArrayObject == 0)
+			glGenVertexArrays(1, &vertexArrayObject);
+
+		glBindVertexArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+		glBindVertexArray(vertexArrayObject);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject);
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
+		glVertexAttribPointer(glGetAttribLocation(shaderProgram, "Position"), 3, GL_FLOAT, GL_FALSE, sizeof(difont::FontVertex), BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(glGetAttribLocation(shaderProgram, "Position"));
+
+		glBindVertexArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+		difont::FontMeshSet::End();
+	}
+}
+
 
 static float f = 0.0f;
 void HelloWorld::Render() {
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(0.0f, m_width * m_scale, 0.0f, m_height * m_scale, -1000.0f, 1000.0f);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
 
+	glBindVertexArray(vertexArrayObject);
+	glDrawRangeElements(GL_TRIANGLES, 0, totalVertexes - 1, totalIndexes, GL_UNSIGNED_INT, NULL);
+
+	/*
     const unsigned MAX_COLORS = 4;
     color4_t colors[MAX_COLORS];
     vec4Set(colors[0], 0.8f, 0.1f, 0.0f, 1.0f);
@@ -63,7 +144,8 @@ void HelloWorld::Render() {
     vec4Set(colors[2], 0.0f, 0.1f, 0.8f, 1.0f);
     vec4Set(colors[3], 0.0f, 0.8f, 0.1f, 1.0f);
 
-    m_font->FaceSize(2 * (sinf(f) * 0.5 + 0.5) * HELLO_WORLD_FONT_SIZE);
+	float facesize = 2 * (sinf(f) * 0.5 + 0.5) * HELLO_WORLD_FONT_SIZE;
+	m_font->FaceSize(facesize);
 
     f += 0.05f;
     //    glRotatef(cosf(f) * 20.0f, 0.0f, 0.0f, 1.0f);
@@ -77,6 +159,8 @@ void HelloWorld::Render() {
 
             unsigned int fontMeshCount = difont::FontMeshSet::MeshCount();
             difont::FontMesh *meshes = difont::FontMeshSet::GetMeshes();
+
+			printf("Meshes: %d\n", fontMeshCount);
 
             glPushMatrix();
             glTranslatef(0.0f, i * HELLO_WORLD_FONT_SIZE, 0.0f);
@@ -114,8 +198,8 @@ void HelloWorld::Render() {
                 difont::FontMesh fontMesh = meshes[i];
                 unsigned int vertexCount = fontMesh.GetVertexCount();
 
-                glActiveTexture(GL_TEXTURE0);
-                glBindTexture(GL_TEXTURE_2D, fontMesh.textureId);
+               // glActiveTexture(GL_TEXTURE0);
+              //  glBindTexture(GL_TEXTURE_2D, fontMesh.textureId);
                 glBegin(fontMesh.primitive);
                 for (int j = 0; j < vertexCount; ++j) {
                     difont::FontVertex fontVertex = fontMesh.vertices[j];
@@ -128,24 +212,8 @@ void HelloWorld::Render() {
             glPopMatrix();
 
             difont::FontMeshSet::End();
-/*
-            glBegin(GL_QUADS);
-            glVertex2f(0.0f, 0.0f);
-            glTexCoord2f(0.0f, 0.0f);
-
-            glVertex2f(0.0f, 500.0f);
-            glTexCoord2f(0.0f, 1.0f);
-            
-            glVertex2f(1000.0f, 500.0f);
-            glTexCoord2f(1.0f, 1.0f);
-            
-            glVertex2f(1000.0f, 0.0f);
-            glTexCoord2f(1.0f, 0.0f);
-            
-            glEnd();
-  */
             glDisable(GL_TEXTURE_2D);
             glDisable(GL_BLEND);
         }
-    }
+    }*/
 }
