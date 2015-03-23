@@ -27,6 +27,10 @@ namespace difont {
 }
 #endif
 
+#ifdef WIN32
+#define _USE_MATH_DEFINES
+#endif
+
 #include "common/Point.h"
 #include "common/BBox.h"
 #include "Buffer.h"

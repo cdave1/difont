@@ -26,11 +26,8 @@
 #define _DIFONT_OPEN_GL_INTERFACE_H_
 
 #include <stdio.h>
+#include <stdint.h>
 #include <assert.h>
-
-#ifndef GL_QUADS
-#define GL_QUADS 888
-#endif
 
 #ifdef __APPLE__
 #include "TargetConditionals.h"
@@ -38,11 +35,9 @@
 
 #ifdef WIN32
 #include <windows.h>
-#ifndef __gl_h_
-#include <GL/gl.h>
+#include "gl.h"
 #include <GL/glu.h>
 #define ftglprintf(...) printf(__VA_ARGS__)
-#endif
 #elif TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1
 #define ftglprintf(...) printf(__VA_ARGS__)
 #include <OpenGLES/ES2/gl.h>
@@ -58,6 +53,10 @@
 #include <OpenGL/OpenGL.h>
 #include <OpenGL/gl3.h>
 #include <OpenGL/gl3ext.h>
+#endif
+
+#ifndef GL_QUADS
+#define GL_QUADS 888
 #endif
 
 #ifdef __cplusplus

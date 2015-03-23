@@ -29,7 +29,7 @@
 
 #include <list>
 #include <vector>
-#include  <difont/difont.h>
+#include <difont/difont.h>
 
 #include "Contour.h"
 

@@ -32,6 +32,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 
 /*
 // Fixes for deprecated identifiers in 2.1.5
@@ -48,7 +49,7 @@
 #endif
 */
 
-#include "difont/OpenGLInterface.h"
+#include "difont/opengl/OpenGLInterface.h"
 
 namespace difont {
     typedef enum
