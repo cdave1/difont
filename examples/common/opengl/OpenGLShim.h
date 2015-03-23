@@ -16,27 +16,32 @@
  * 3. This notice may not be removed or altered from any source distribution.
  */
 
-#ifndef GLES2_RENDER_CONTROLLER_H
-#define GLES2_RENDER_CONTROLLER_H
+#ifndef DIFONT_OPEN_GL_SHIM_H
+#define DIFONT_OPEN_GL_SHIM_H
 
-#if TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1
-#define TARGET_GL_OPENGLES 1
-#elif TARGET_OS_MAC == 1
-#define TARGET_GL_OPENGL 1
-#else
-#define TARGET_GL_OPENGL 1
-#endif
-
-#if TARGET_GL_OPENGLES == 1
+#ifdef WIN32
+#include <windows.h>
+#include <gl/GLU.h>
+#include <GL/glu.h>
+#define ftglprintf(...) printf(__VA_ARGS__)
+#elif TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1
+#define ftglprintf(...) printf(__VA_ARGS__)
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
-#define GL_QUADS 888
-typedef double GLdouble;
-#elif TARGET_GL_OPENGL == 1
+#elif ANDROID == 1
+#include <GLES/glplatform.h>
+#include <GLES/gl.h>
+#include <GLES/glext.h>
+#include <jni.h>
+#define ftglprintf(...) ((void)__android_log_print(ANDROID_LOG_INFO, "TestApp", __VA_ARGS__))
+#else
+#define ftglprintf(...) printf(__VA_ARGS__)
 #include <OpenGL/OpenGL.h>
-#include <OpenGL/gl.h>
-#include <OpenGL/glext.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
 #endif
+
+
 
 namespace difont {
     namespace examples {
