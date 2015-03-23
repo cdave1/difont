@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\difont\BitmapFont.h" />
+    <ClInclude Include="..\..\..\src\difont\BitmapGlyph.h" />
+    <ClInclude Include="..\..\..\src\difont\Buffer.h" />
+    <ClInclude Include="..\..\..\src\difont\BufferFont.h" />
+    <ClInclude Include="..\..\..\src\difont\BufferGlyph.h" />
+    <ClInclude Include="..\..\..\src\difont\common\BBox.h" />
+    <ClInclude Include="..\..\..\src\difont\common\Internals.h" />
+    <ClInclude Include="..\..\..\src\difont\common\Point.h" />
+    <ClInclude Include="..\..\..\src\difont\common\Size.h" />
+    <ClInclude Include="..\..\..\src\difont\difont.h" />
+    <ClInclude Include="..\..\..\src\difont\difont.old.h" />
+    <ClInclude Include="..\..\..\src\difont\Font.h" />
+    <ClInclude Include="..\..\..\src\difont\font\BitmapFontImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\font\BufferFontImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\font\FontImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\font\OutlineFontImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\font\PixmapFontImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\font\PolygonFontImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\font\TextureFontImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\freetype\Charmap.h" />
+    <ClInclude Include="..\..\..\src\difont\freetype\Face.h" />
+    <ClInclude Include="..\..\..\src\difont\freetype\GlyphContainer.h" />
+    <ClInclude Include="..\..\..\src\difont\freetype\Library.h" />
+    <ClInclude Include="..\..\..\src\difont\freetype\Unicode.h" />
+    <ClInclude Include="..\..\..\src\difont\Glyph.h" />
+    <ClInclude Include="..\..\..\src\difont\glyph\BitmapGlyphImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\glyph\BufferGlyphImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\glyph\GlyphImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\glyph\OutlineGlyphImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\glyph\PixmapGlyphImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\glyph\PolygonGlyphImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\glyph\TextureGlyphImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\Layout.h" />
+    <ClInclude Include="..\..\..\src\difont\layout\LayoutImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\layout\SimpleLayoutImpl.h" />
+    <ClInclude Include="..\..\..\src\difont\opengl\gl.h" />
+    <ClInclude Include="..\..\..\src\difont\opengl\OpenGLInterface.h" />
+    <ClInclude Include="..\..\..\src\difont\OutlineFont.h" />
+    <ClInclude Include="..\..\..\src\difont\OutlineGlyph.h" />
+    <ClInclude Include="..\..\..\src\difont\PixmapFont.h" />
+    <ClInclude Include="..\..\..\src\difont\PixmapGlyph.h" />
+    <ClInclude Include="..\..\..\src\difont\PolyGlyph.h" />
+    <ClInclude Include="..\..\..\src\difont\PolygonFont.h" />
+    <ClInclude Include="..\..\..\src\difont\SimpleLayout.h" />
+    <ClInclude Include="..\..\..\src\difont\TextureFont.h" />
+    <ClInclude Include="..\..\..\src\difont\TextureGlyph.h" />
+    <ClInclude Include="..\..\..\src\difont\vectoriser\Contour.h" />
+    <ClInclude Include="..\..\..\src\difont\vectoriser\FontMesh.h" />
+    <ClInclude Include="..\..\..\src\difont\vectoriser\Vectoriser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\lib\freetype2\src\autofit\autofit.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\basepic.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftadvanc.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftapi.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftbbox.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftbitmap.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftcalc.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftdbgmem.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftdebug.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftgloadr.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftglyph.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftinit.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftobjs.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftoutln.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftpic.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftrfork.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftsnames.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftstream.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftstroke.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftsynth.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftsystem.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\fttrigon.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\base\ftutil.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\cff\cff.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\pshinter\pshinter.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\psnames\psnames.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\raster\raster.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\sfnt\sfnt.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\smooth\smooth.c" />
+    <ClCompile Include="..\..\..\lib\freetype2\src\truetype\truetype.c" />
+    <ClCompile Include="..\..\..\src\difont\Buffer.cpp" />
+    <ClCompile Include="..\..\..\src\difont\common\Point.cpp" />
+    <ClCompile Include="..\..\..\src\difont\common\Size.cpp" />
+    <ClCompile Include="..\..\..\src\difont\font\BitmapFont.cpp" />
+    <ClCompile Include="..\..\..\src\difont\font\BufferFont.cpp" />
+    <ClCompile Include="..\..\..\src\difont\font\Font.cpp" />
+    <ClCompile Include="..\..\..\src\difont\font\OutlineFont.cpp" />
+    <ClCompile Include="..\..\..\src\difont\font\PixmapFont.cpp" />
+    <ClCompile Include="..\..\..\src\difont\font\PolygonFont.cpp" />
+    <ClCompile Include="..\..\..\src\difont\font\TextureFont.cpp" />
+    <ClCompile Include="..\..\..\src\difont\freetype\Charmap.cpp" />
+    <ClCompile Include="..\..\..\src\difont\freetype\Face.cpp" />
+    <ClCompile Include="..\..\..\src\difont\freetype\GlyphContainer.cpp" />
+    <ClCompile Include="..\..\..\src\difont\freetype\Library.cpp" />
+    <ClCompile Include="..\..\..\src\difont\glyph\BitmapGlyph.cpp" />
+    <ClCompile Include="..\..\..\src\difont\glyph\BufferGlyph.cpp" />
+    <ClCompile Include="..\..\..\src\difont\glyph\Glyph.cpp" />
+    <ClCompile Include="..\..\..\src\difont\glyph\OutlineGlyph.cpp" />
+    <ClCompile Include="..\..\..\src\difont\glyph\PixmapGlyph.cpp" />
+    <ClCompile Include="..\..\..\src\difont\glyph\PolygonGlyph.cpp" />
+    <ClCompile Include="..\..\..\src\difont\glyph\TextureGlyph.cpp" />
+    <ClCompile Include="..\..\..\src\difont\layout\Layout.cpp" />
+    <ClCompile Include="..\..\..\src\difont\layout\SimpleLayout.cpp" />
+    <ClCompile Include="..\..\..\src\difont\opengl\gl.cpp" />
+    <ClCompile Include="..\..\..\src\difont\opengl\OpenGLInterface.windows.cpp" />
+    <ClCompile Include="..\..\..\src\difont\vectoriser\Contour.cpp" />
+    <ClCompile Include="..\..\..\src\difont\vectoriser\FontMesh.cpp" />
+    <ClCompile Include="..\..\..\src\difont\vectoriser\Vectoriser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="glu32x64.Lib" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0481A2BE-6461-412F-96E5-49BC814EED95}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>difont</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;FT2_BUILD_LIBRARY=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\..\lib\freetype2\src;..\..\..\lib\freetype2\include;..\..\..\src;..\..\..\src\difont;..\..\..\src\difont\common;..\..\..\src\difont\layout;..\..\..\src\difont\freetype;..\..\..\src\difont\opengl;..\..\..\src\difont\vectoriser;..\..\..\src\difont\glyph;..\..\..\src\difont\font;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenGL32.Lib;glu32x64.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
