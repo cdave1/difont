@@ -40,7 +40,7 @@ public:
     
 	void Update(GLuint shaderProgram);
 
-    void Render();
+    void Render(GLuint shaderProgram);
     
 };
 

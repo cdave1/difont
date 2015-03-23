@@ -730,66 +730,12 @@ void App::init(int argc, char *argv[])
 
 void App::render()
 {
-	//glViewport(0, 0, 1800, 1200);
 	glClearColor(0.3f, 0.5f, 0.9f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glDisable(GL_TEXTURE_2D);
-	glDisable(GL_CULL_FACE);
-
-	GLfloat width = 1800.0f;// GLfloat(viewportWidth());
-	GLfloat height = 1200.0f; // GLfloat(viewportHeight());
-	glMatrixMode(GL_PROJECTION);
-	glOrtho(0.0f, width, 0.0f, height, -1000.0f, 1000.0f);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-
-	glUseProgram(shaderProgram);
-
-	float projection[16];
-	float view[16];
-	float world[16];
-	difont::examples::Math::MatrixIdentity(view);
-	difont::examples::Math::MatrixIdentity(world);
-	difont::examples::Math::Ortho(projection, 0.0f, width*2, 0.0f, height*2, -1000.0f, 1000.0f);
-	const GLfloat nearVal = -1.0f;
-	const GLfloat farVal = 1.0f;
-	float left = 0.0f;
-	float right = width;
-	float bottom = 0.0f;
-	float top = height;
-
-	GLfloat tx = -(right + left) / (right - left);
-	GLfloat ty = -(top + bottom) / (top - bottom);
-	GLfloat tz = -(farVal + nearVal) / (farVal - nearVal);
-
-	projection[0] = (2.0f / (right - left));
-	projection[1] = 0.0f;
-	projection[2] = 0.0f;
-	projection[3] = 0.0f;
-
-	projection[4] = 0.0f;
-	projection[5] = (2.0f / (top - bottom));
-	projection[6] = 0.0f;
-	projection[7] = 0.0f;
-
-	projection[8] = 0.0f;
-	projection[9] = 0.0f;
-	projection[10] = (-2.0f / (farVal - nearVal));
-	projection[11] = 0.0f;
-
-	projection[12] = tx;
-	projection[13] = ty;
-	projection[14] = tz;
-	projection[15] = 1.0f;
-	glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ProjectionMatrix"), 1, GL_FALSE, projection);
-	glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ViewMatrix"), 1, GL_FALSE, view);
-	glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ModelMatrix"), 1, GL_FALSE, world);
 
 	if (helloWorld) {
-		helloWorld->Render();
+        helloWorld->Render(shaderProgram);
 	}
-
-	glFlush();
 }
 
 void App::shutdown()

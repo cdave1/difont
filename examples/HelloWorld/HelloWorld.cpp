@@ -52,113 +52,119 @@ void HelloWorld::SetupFonts(const char *fontpath) {
 static GLuint vertexArrayObject = 0;
 static GLuint vertexBufferObject = 0;
 static GLuint indexBufferObject = 0;
-static unsigned int totalVertexes = 0;
-static unsigned int totalIndexes = 0;
+static unsigned int vertexCount = 0;
+static unsigned int triangleCount = 0;
 #define DBOUT( s )            \
 {                             \
     std::ostringstream os_;    \
     os_ << s;                   \
     OutputDebugStringA( os_.str().c_str() );  \
 }
+
+typedef struct Triangle {
+    uint32_t indexes[3];
+
+    Triangle(uint32_t i1, uint32_t i2, uint32_t i3) {
+        indexes[0] = i1;
+        indexes[1] = i2;
+        indexes[2] = i3;
+    }
+};
+
 void HelloWorld::Update(GLuint shaderProgram) {
     if (m_font) {
         difont::FontMeshSet::Begin();
         m_font->Render("hello world!");
 
-        totalIndexes = 0;
-        totalVertexes = 0;
+        vertexCount = 0;
+        triangleCount = 0;
 
         unsigned int fontMeshCount = difont::FontMeshSet::MeshCount();
         difont::FontMesh *meshes = difont::FontMeshSet::GetMeshes();
 
         for (int i = 0; i < fontMeshCount; ++i) {
             difont::FontMesh fontMesh = meshes[i];
-            totalVertexes += fontMesh.GetVertexCount();
+            vertexCount += fontMesh.GetVertexCount();
+
+            if (fontMesh.primitive == GL_TRIANGLES) {
+                triangleCount += fontMesh.GetVertexCount() / 3;
+            }
+            else if (fontMesh.primitive == GL_TRIANGLE_STRIP) {
+                triangleCount += fontMesh.GetVertexCount() - 2;
+            }
+            else if (fontMesh.primitive == GL_TRIANGLE_FAN) {
+                triangleCount += fontMesh.GetVertexCount() - 2;
+            }
+            else if (fontMesh.primitive == GL_QUADS) {
+                triangleCount += 2 * (fontMesh.GetVertexCount() / 4);
+            }
         }
 
-        size_t vertexBlockSz = sizeof(difont::FontVertex) * totalVertexes;
+        size_t vertexBlockSz = sizeof(difont::FontVertex) * vertexCount;
         difont::FontVertex *vertexBufferData = (difont::FontVertex *)malloc(vertexBlockSz);
-        uint32_t *indexBufferData = (uint32_t *)malloc(sizeof(uint32_t) * totalVertexes);
+        Triangle *indexBufferData = (Triangle *)malloc(sizeof(Triangle) * triangleCount);
+        
+        int vertexes = 0;
+        int triangles = 0;
 
-        int indexes = 0;
         for (int i = 0; i < fontMeshCount; ++i) {
             difont::FontMesh fontMesh = meshes[i];
+            uint32_t vertexCount = fontMesh.GetVertexCount();
 
-            for (int j = 0; j < fontMesh.GetVertexCount(); ++j) {
+            for (int j = 0; j < vertexCount; ++j) {
                 difont::FontVertex vertex = fontMesh.vertices[j];
-                uint32_t index = totalIndexes + j;
+                uint32_t index = vertexes + j;
                 vertexBufferData[index] = vertex;
             }
 
             if (fontMesh.primitive == GL_TRIANGLES) {
-                for (int j = 0; j < totalIndexes - 2; j += 3) {
-                    int i1 = totalIndexes + j;
-                    int i2 = totalIndexes + (j + 1);
-                    int i3 = totalIndexes + (j + 2);
+                for (int j = 0; j < vertexCount - 2; j += 3) {
+                    int i1 = vertexes + j;
+                    int i2 = vertexes + (j + 1);
+                    int i3 = vertexes + (j + 2);
 
-                    indexBufferData[i1] = i1;
-                    indexBufferData[i2] = i2;
-                    indexBufferData[i3] = i3;
+                    indexBufferData[triangles++] = Triangle(i1, i2, i3);
                 }
             }
             else if (fontMesh.primitive == GL_TRIANGLE_STRIP) {
-                for (int j = 0; j < (totalIndexes - 2); j++) {
-                    int i1 = totalIndexes + j;
-                    int i2 = totalIndexes + (j + 1);
-                    int i3 = totalIndexes + (j + 2);
+                for (int j = 0; j < (vertexCount - 2); j++) {
+                    int i1 = vertexes + j;
+                    int i2 = vertexes + (j + 1);
+                    int i3 = vertexes + (j + 2);
 
-                    indexBufferData[i1] = i1;
-                    indexBufferData[i2] = i2;
-                    indexBufferData[i3] = i3;
+                    indexBufferData[triangles++] = Triangle(i1, i2, i3);
                 }
             }
             else if (fontMesh.primitive == GL_TRIANGLE_FAN) {
-                for (int j = 0; j < (totalIndexes - 2); j++) {
-                    int i1 = totalIndexes;
-                    int i2 = totalIndexes + (j + 1);
-                    int i3 = totalIndexes + (j + 2);
+                for (int j = 0; j < (vertexCount - 2); j++) {
+                    int i1 = vertexes;
+                    int i2 = vertexes + (j + 1);
+                    int i3 = vertexes + (j + 2);
 
-                    indexBufferData[i1] = i1;
-                    indexBufferData[i2] = i2;
-                    indexBufferData[i3] = i3;
+                    indexBufferData[triangles++] = Triangle(i1, i2, i3);
                 }
             }
             else if (fontMesh.primitive == GL_QUADS) {
                 for (int j = 0; j < vertexCount - 3; j += 4) {
-                    int i1 = totalIndexes + j;
-                    int i2 = totalIndexes + (j + 1);
-                    int i3 = totalIndexes + (j + 2);
-                    int i4 = totalIndexes + (j + 3);
+                    int i1 = vertexes + j;
+                    int i2 = vertexes + (j + 1);
+                    int i3 = vertexes + (j + 2);
+                    int i4 = vertexes + (j + 3);
 
-                    Size4 quad(i1, i2, i3, i4);
-                    mesh->AddQuad(quad);
-
-                    indexBufferData[i1] = i1;
-                    indexBufferData[i2] = i2;
-                    indexBufferData[i3] = i3;
-
+                    indexBufferData[triangles++] = Triangle(i1, i2, i3);
+                    indexBufferData[triangles++] = Triangle(i1, i3, i4);
                 }
             }
-
-            if (true) {
-                printf("Whatever");
-            }
-
-            for (int j = 0; j < fontMesh.GetVertexCount(); ++j) {
-                difont::FontVertex vertex = fontMesh.vertices[j];
-                uint32_t index = totalIndexes + j;
-                vertexBufferData[index] = vertex;
-                indexBufferData[index] = index;
-            }
-            totalIndexes += fontMesh.GetVertexCount();
+            vertexes += vertexCount;
         }
-        DBOUT("totalIndexes: " << totalIndexes << "\n");
+        assert(vertexes == vertexCount);
+        assert(triangles == triangleCount);
 
         if (indexBufferObject == 0)
             glGenBuffers(1, &indexBufferObject);
         
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * totalVertexes, indexBufferData, GL_STATIC_DRAW);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Triangle) * triangleCount, indexBufferData, GL_STATIC_DRAW);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
         free(indexBufferData);
 
@@ -166,7 +172,7 @@ void HelloWorld::Update(GLuint shaderProgram) {
             glGenBuffers(1, &vertexBufferObject);
         
         glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(difont::FontVertex) * totalVertexes, vertexBufferData, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(difont::FontVertex) * vertexCount, vertexBufferData, GL_STATIC_DRAW);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         free(vertexBufferData);
 
@@ -193,12 +199,26 @@ void HelloWorld::Update(GLuint shaderProgram) {
 
 
 static float f = 0.0f;
-void HelloWorld::Render() {
+void HelloWorld::Render(GLuint shaderProgram) {
+    GLfloat width = 1800.0f;// GLfloat(viewportWidth());
+    GLfloat height = 1200.0f; // GLfloat(viewportHeight());
+
+    glUseProgram(shaderProgram);
+
+    float projection[16];
+    float view[16];
+    float world[16];
+    difont::examples::Math::MatrixIdentity(view);
+    difont::examples::Math::MatrixRotationZ(world, f);
+    difont::examples::Math::Ortho(projection, -width, width, -height, height, -1.0f, 1.0f);
+
+    glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ProjectionMatrix"), 1, GL_FALSE, projection);
+    glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ViewMatrix"), 1, GL_FALSE, view);
+    glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ModelMatrix"), 1, GL_FALSE, world);
 
     glBindVertexArray(vertexArrayObject);
-    glDrawRangeElements(GL_TRIANGLE_STRIP, 0, totalVertexes - 1, totalIndexes, GL_UNSIGNED_INT, NULL);
+    glDrawRangeElements(GL_TRIANGLES, 0, vertexCount - 1, triangleCount * 3, GL_UNSIGNED_INT, NULL);
 
-    /*
     const unsigned MAX_COLORS = 4;
     color4_t colors[MAX_COLORS];
     vec4Set(colors[0], 0.8f, 0.1f, 0.0f, 1.0f);
@@ -214,68 +234,5 @@ void HelloWorld::Render() {
     for (unsigned i = 0; i < MAX_COLORS; ++i) {
         color4_t color;
         vec4Set(color, colors[i][0], colors[i][1], colors[i][2], colors[i][3]);
-
-        if (m_font) {
-            difont::FontMeshSet::Begin();
-            m_font->Render("hello world!");
-
-            unsigned int fontMeshCount = difont::FontMeshSet::MeshCount();
-            difont::FontMesh *meshes = difont::FontMeshSet::GetMeshes();
-
-            printf("Meshes: %d\n", fontMeshCount);
-
-            glPushMatrix();
-            glTranslatef(0.0f, i * HELLO_WORLD_FONT_SIZE, 0.0f);
-            for (int i = 0; i < fontMeshCount; ++i) {
-                difont::FontMesh fontMesh = meshes[i];
-                unsigned int vertexCount = fontMesh.GetVertexCount();
-
-                glBegin(fontMesh.primitive);
-                for (int j = 0; j < vertexCount; ++j) {
-                    difont::FontVertex fontVertex = fontMesh.vertices[j];
-
-                    glColor4f(color[0], color[1], color[2], color[3]);
-                    glVertex3f(fontVertex.position[0], fontVertex.position[1], fontVertex.position[2]);
-                    glTexCoord2f(fontVertex.texCoord[0], fontVertex.texCoord[1]);
-                }
-                glEnd();
-            }
-            glPopMatrix();
-            difont::FontMeshSet::End();
-        }
-
-        if (0) { //m_textureFont) {
-            difont::FontMeshSet::Begin();
-            m_textureFont->Render("Hello World!");
-
-            unsigned int fontMeshCount = difont::FontMeshSet::MeshCount();
-            difont::FontMesh *meshes = difont::FontMeshSet::GetMeshes();
-            glEnable(GL_BLEND);
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-            glEnable(GL_TEXTURE_2D);
-
-            glTranslatef(0.0f, i * HELLO_WORLD_FONT_SIZE, 0.0f);
-            glPushMatrix();
-            for (int i = 0; i < fontMeshCount; ++i) {
-                difont::FontMesh fontMesh = meshes[i];
-                unsigned int vertexCount = fontMesh.GetVertexCount();
-
-               // glActiveTexture(GL_TEXTURE0);
-              //  glBindTexture(GL_TEXTURE_2D, fontMesh.textureId);
-                glBegin(fontMesh.primitive);
-                for (int j = 0; j < vertexCount; ++j) {
-                    difont::FontVertex fontVertex = fontMesh.vertices[j];
-                    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-                    glVertex3f(fontVertex.position[0], fontVertex.position[1], fontVertex.position[2]);
-                    glTexCoord2f(fontVertex.texCoord[0], fontVertex.texCoord[1]);
-                }
-                glEnd();
-            }
-            glPopMatrix();
-
-            difont::FontMeshSet::End();
-            glDisable(GL_TEXTURE_2D);
-            glDisable(GL_BLEND);
-        }
-    }*/
+    }
 }

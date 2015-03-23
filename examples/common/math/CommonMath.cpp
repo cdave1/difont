@@ -132,14 +132,27 @@ void Math::MatrixMultiply(float *mOut,
 
 
 void Math::Ortho(float *mOut, float left, float right, float bottom, float top, float near, float far) {
-    Math::MatrixIdentity(mOut);
+    float tx = -(right + left) / (right - left);
+    float ty = -(top + bottom) / (top - bottom);
+    float tz = -(far + near) / (far - near);
 
-    float w = (right - left);
-    float h = (top - bottom);
-    float d = (far - near);
+    mOut[0] = (2.0f / (right - left));
+    mOut[1] = 0.0f;
+    mOut[2] = 0.0f;
+    mOut[3] = 0.0f;
 
-    mOut[ 0] = 2.0f / w;    mOut[ 4] = 0;           mOut[ 8] = 0;       mOut[12] = -1;
-    mOut[ 1] = 0;           mOut[ 5] = 2.0f / h;    mOut[ 9] = 0;       mOut[13] = 1;
-    mOut[ 2] = 0;           mOut[ 6] = 0;           mOut[10] = -2.0f/d; mOut[14] = 0;
-    mOut[ 3] = 0;           mOut[ 7] = 0;           mOut[11] = 0;       mOut[15] = 1;
+    mOut[4] = 0.0f;
+    mOut[5] = (2.0f / (top - bottom));
+    mOut[6] = 0.0f;
+    mOut[7] = 0.0f;
+
+    mOut[8] = 0.0f;
+    mOut[9] = 0.0f;
+    mOut[10] = (-2.0f / (far - near));
+    mOut[11] = 0.0f;
+
+    mOut[12] = tx;
+    mOut[13] = ty;
+    mOut[14] = tz;
+    mOut[15] = 1.0f;
 }
