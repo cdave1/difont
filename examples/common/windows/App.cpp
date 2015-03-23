@@ -731,9 +731,10 @@ void App::init(int argc, char *argv[])
 void App::render()
 {
 	//glViewport(0, 0, 1800, 1200);
-	glClearColor(1.0f, 0.5f, 0.9f, 1.0f);
+	glClearColor(0.3f, 0.5f, 0.9f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_CULL_FACE);
 
 	GLfloat width = 1800.0f;// GLfloat(viewportWidth());
 	GLfloat height = 1200.0f; // GLfloat(viewportHeight());
