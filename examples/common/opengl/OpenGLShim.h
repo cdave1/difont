@@ -41,12 +41,12 @@
 #include <OpenGL/gl3ext.h>
 #endif
 
-
+#include <string>
 
 namespace difont {
     namespace examples {
         class OpenGL {
-
+        public:
             static void Begin(GLenum prim);
 
             static void Vertex3f(float x, float y, float z);
@@ -58,7 +58,18 @@ namespace difont {
             static void End();
             
             static void Error(const char *source);
-            
+
+            static GLuint loadFragmentShader(const char *path);
+
+            static GLuint loadVertexShader(const char *path);
+
+            static GLuint loadShaderProgram(const char *vertexShaderPath, const char *fragmentShaderPath);
+
+            static GLuint loadShader(const char *filename, GLenum shaderType);
+
+            static std::string programInfoLog(GLuint program);
+
+            static std::string shaderInfoLog(GLuint shader);
         };
     }
 }

@@ -185,7 +185,11 @@ inline char *StringCopy(char const *s, int len)
 {
     if(len < 0)
     {
+#ifdef WIN32
         return _strdup(s);
+#else
+        return strdup(s);
+#endif
     }
     else
     {

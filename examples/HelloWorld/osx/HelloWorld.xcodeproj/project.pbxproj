@@ -21,6 +21,8 @@
 		E451DDC0191767680001651D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E451DDBF191767680001651D /* CoreFoundation.framework */; };
 		E497DDF11AAE4F8200F9C748 /* libdifont.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41879E91AAE4ED80005AC43 /* libdifont.a */; };
 		E4B4061B19A22BA5004D48E5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B4061919A22BA5004D48E5 /* MainMenu.xib */; };
+		E4B7CB431AC0DC4A002E9013 /* quad.frag in Resources */ = {isa = PBXBuildFile; fileRef = E4B7CB411AC0DC4A002E9013 /* quad.frag */; };
+		E4B7CB441AC0DC4A002E9013 /* quad.vert in Resources */ = {isa = PBXBuildFile; fileRef = E4B7CB421AC0DC4A002E9013 /* quad.vert */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		E41879E41AAE4ED80005AC43 /* difont.osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = difont.osx.xcodeproj; path = ../../../platforms/xcode/difont.osx.xcodeproj; sourceTree = "<group>"; };
 		E451DDBF191767680001651D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		E4B4061A19A22BA5004D48E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		E4B7CB411AC0DC4A002E9013 /* quad.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = quad.frag; sourceTree = "<group>"; };
+		E4B7CB421AC0DC4A002E9013 /* quad.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = quad.vert; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				636290C916BCEF7000094B03 /* BasePrefix.pch */,
 				E41875821AABDC370005AC43 /* HelloWorld.cpp */,
 				E41875831AABDC370005AC43 /* HelloWorld.h */,
+				E4B7CB401AC0DC4A002E9013 /* Shaders */,
 				E418757B1AABD40A0005AC43 /* Fonts */,
 				E418755D1AABBB0A0005AC43 /* common */,
 				6318E9271339AA3C008BCE29 /* Frameworks */,
@@ -190,6 +195,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E4B7CB401AC0DC4A002E9013 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				E4B7CB411AC0DC4A002E9013 /* quad.frag */,
+				E4B7CB421AC0DC4A002E9013 /* quad.vert */,
+			);
+			name = Shaders;
+			path = ../../common/Shaders;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,7 +275,9 @@
 				E418757D1AABD40A0005AC43 /* Diavlo_BLACK_II_37.otf in Resources */,
 				E4B4061B19A22BA5004D48E5 /* MainMenu.xib in Resources */,
 				E41879DF1AAD6BA60005AC43 /* DIN Alternate Bold.ttf in Resources */,
+				E4B7CB431AC0DC4A002E9013 /* quad.frag in Resources */,
 				559939571832EE52000819D6 /* InfoPlist.strings in Resources */,
+				E4B7CB441AC0DC4A002E9013 /* quad.vert in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,7 +69,7 @@ typedef struct Triangle {
         indexes[1] = i2;
         indexes[2] = i3;
     }
-};
+} Triangle;
 
 void HelloWorld::Update(GLuint shaderProgram) {
     if (m_font) {

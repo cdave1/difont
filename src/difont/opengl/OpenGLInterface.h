@@ -59,6 +59,10 @@
 #define GL_QUADS 888
 #endif
 
+inline const GLubyte *BUFFER_OFFSET(size_t bytes) {
+    return reinterpret_cast<const GLubyte *>(0) + bytes;
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif

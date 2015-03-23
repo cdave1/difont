@@ -39,10 +39,11 @@
 
 
 static HelloWorld *helloWorld;
+static GLuint shaderProgram;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
-    NSRect viewRect = NSMakeRect(0.0, 0.0, mainDisplayRect.size.width, mainDisplayRect.size.height);
+    NSRect viewRect = NSMakeRect(0.0, 0.0, 0.5 * mainDisplayRect.size.width, 0.5 * mainDisplayRect.size.height);
     self.window = [[FullScreenWindow alloc] initWithContentRect:viewRect
                                                       styleMask:NSBorderlessWindowMask
                                                         backing:NSBackingStoreBuffered
@@ -56,6 +57,7 @@ static HelloWorld *helloWorld;
         NSOpenGLPFAAccelerated,
         NSOpenGLPFADoubleBuffer,
         NSOpenGLPFAMultisample,
+        NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersion3_2Core,
         NSOpenGLPFASampleBuffers, (NSOpenGLPixelFormatAttribute)1,
         NSOpenGLPFASamples, (NSOpenGLPixelFormatAttribute)8,
         0
@@ -72,16 +74,24 @@ static HelloWorld *helloWorld;
     NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DIN Alternate Bold.ttf"];
     helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
     helloWorld->SetupFonts([path UTF8String]);
+
+    NSString *fragmentShaderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"quad.frag"];
+    NSString *vertexShaderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"quad.vert"];
+
+    shaderProgram = difont::examples::OpenGL::loadShaderProgram([vertexShaderPath UTF8String], [fragmentShaderPath UTF8String]);
 }
 
 
 - (void) update {
+    if (helloWorld) {
+        helloWorld->Update(shaderProgram);
+    }
 }
 
 
 - (void) render {
     if (helloWorld) {
-        helloWorld->Render();
+        helloWorld->Render(shaderProgram);
     }
 }
 

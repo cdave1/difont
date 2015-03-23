@@ -31,6 +31,10 @@
 #include <vector>
 #include <difont/difont.h>
 
+#ifndef __glu_h__
+#include "OpenGL/glu.h"
+#endif
+
 #include "Contour.h"
 
 #ifndef CALLBACK
