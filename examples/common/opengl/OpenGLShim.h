@@ -21,7 +21,7 @@
 
 #ifdef WIN32
 #include <windows.h>
-#include <gl/GLU.h>
+#include <difont/opengl/gl.h>
 #include <GL/glu.h>
 #define ftglprintf(...) printf(__VA_ARGS__)
 #elif TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1

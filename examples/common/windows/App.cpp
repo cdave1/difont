@@ -726,6 +726,10 @@ void App::init(int argc, char *argv[])
 		if (shaderInfoLog().length() > 0)
 			throw std::runtime_error(shaderInfoLog());
 	}
+
+    if (helloWorld) {
+        helloWorld->SetupVertexArrays(shaderProgram);
+    }
 }
 
 void App::render()

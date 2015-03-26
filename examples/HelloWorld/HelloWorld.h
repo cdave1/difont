@@ -37,6 +37,8 @@ public:
     ~HelloWorld() {}
     
     void SetupFonts(const char *fontpath);
+
+    void SetupVertexArrays(GLuint shaderProgram);
     
 	void Update(GLuint shaderProgram);
 

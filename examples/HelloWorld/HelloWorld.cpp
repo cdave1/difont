@@ -26,6 +26,29 @@
 //#define HELLO_WORLD_FONT_SIZE uint32_t(310.0f)
 #define HELLO_WORLD_FONT_SIZE uint32_t(m_height * 0.251f)
 
+static GLuint vertexArrayObject = 0;
+static GLuint vertexBufferObject = 0;
+static GLuint indexBufferObject = 0;
+static unsigned int vertexCount = 0;
+static unsigned int triangleCount = 0;
+
+#define DBOUT( s )            \
+{                             \
+    std::ostringstream os_;    \
+    os_ << s;                   \
+    OutputDebugStringA( os_.str().c_str() );  \
+}
+
+typedef struct Triangle {
+    uint32_t indexes[3];
+
+    Triangle(uint32_t i1, uint32_t i2, uint32_t i3) {
+        indexes[0] = i1;
+        indexes[1] = i2;
+        indexes[2] = i3;
+    }
+} Triangle;
+
 void HelloWorld::SetupFonts(const char *fontpath) {
     glEnable(GL_TEXTURE_2D);
     m_font = new difont::PolygonFont(fontpath);
@@ -49,29 +72,8 @@ void HelloWorld::SetupFonts(const char *fontpath) {
     }
 }
 
-static GLuint vertexArrayObject = 0;
-static GLuint vertexBufferObject = 0;
-static GLuint indexBufferObject = 0;
-static unsigned int vertexCount = 0;
-static unsigned int triangleCount = 0;
-#define DBOUT( s )            \
-{                             \
-    std::ostringstream os_;    \
-    os_ << s;                   \
-    OutputDebugStringA( os_.str().c_str() );  \
-}
 
-typedef struct Triangle {
-    uint32_t indexes[3];
-
-    Triangle(uint32_t i1, uint32_t i2, uint32_t i3) {
-        indexes[0] = i1;
-        indexes[1] = i2;
-        indexes[2] = i3;
-    }
-} Triangle;
-
-void HelloWorld::Update(GLuint shaderProgram) {
+void HelloWorld::SetupVertexArrays(GLuint shaderProgram) {
     if (m_font) {
         difont::FontMeshSet::Begin();
         m_font->Render("hello world!");
@@ -103,7 +105,7 @@ void HelloWorld::Update(GLuint shaderProgram) {
         size_t vertexBlockSz = sizeof(difont::FontVertex) * vertexCount;
         difont::FontVertex *vertexBufferData = (difont::FontVertex *)malloc(vertexBlockSz);
         Triangle *indexBufferData = (Triangle *)malloc(sizeof(Triangle) * triangleCount);
-        
+
         int vertexes = 0;
         int triangles = 0;
 
@@ -162,7 +164,7 @@ void HelloWorld::Update(GLuint shaderProgram) {
 
         if (indexBufferObject == 0)
             glGenBuffers(1, &indexBufferObject);
-        
+
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Triangle) * triangleCount, indexBufferData, GL_STATIC_DRAW);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -170,7 +172,7 @@ void HelloWorld::Update(GLuint shaderProgram) {
 
         if (vertexBufferObject == 0)
             glGenBuffers(1, &vertexBufferObject);
-        
+
         glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
         glBufferData(GL_ARRAY_BUFFER, sizeof(difont::FontVertex) * vertexCount, vertexBufferData, GL_STATIC_DRAW);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -186,7 +188,7 @@ void HelloWorld::Update(GLuint shaderProgram) {
         glBindVertexArray(vertexArrayObject);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferObject);
         glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
-        glVertexAttribPointer(glGetAttribLocation(shaderProgram, "Position"), 3, GL_FLOAT, GL_FALSE, sizeof(difont::FontVertex), BUFFER_OFFSET(0));
+        glVertexAttribPointer(glGetAttribLocation(shaderProgram, "Position"), 3, GL_FLOAT, GL_FALSE, sizeof(difont::FontVertex), DIFONT_BUFFER_OFFSET(0));
         glEnableVertexAttribArray(glGetAttribLocation(shaderProgram, "Position"));
 
         glBindVertexArray(0);
@@ -198,7 +200,11 @@ void HelloWorld::Update(GLuint shaderProgram) {
 }
 
 
-static float f = 0.0f;
+void HelloWorld::Update(GLuint shaderProgram) {
+    
+}
+
+
 void HelloWorld::Render(GLuint shaderProgram) {
     GLfloat width = 1800.0f;// GLfloat(viewportWidth());
     GLfloat height = 1200.0f; // GLfloat(viewportHeight());
@@ -209,7 +215,7 @@ void HelloWorld::Render(GLuint shaderProgram) {
     float view[16];
     float world[16];
     difont::examples::Math::MatrixIdentity(view);
-    difont::examples::Math::MatrixRotationZ(world, f);
+    difont::examples::Math::MatrixIdentity(world);
     difont::examples::Math::Ortho(projection, -width, width, -height, height, -1.0f, 1.0f);
 
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ProjectionMatrix"), 1, GL_FALSE, projection);
@@ -226,11 +232,6 @@ void HelloWorld::Render(GLuint shaderProgram) {
     vec4Set(colors[2], 0.0f, 0.1f, 0.8f, 1.0f);
     vec4Set(colors[3], 0.0f, 0.8f, 0.1f, 1.0f);
 
-    float facesize = 2 * (sinf(f) * 0.5 + 0.5) * HELLO_WORLD_FONT_SIZE;
-    m_font->FaceSize(facesize);
-
-    f += 0.05f;
-    //    glRotatef(cosf(f) * 20.0f, 0.0f, 0.0f, 1.0f);
     for (unsigned i = 0; i < MAX_COLORS; ++i) {
         color4_t color;
         vec4Set(color, colors[i][0], colors[i][1], colors[i][2], colors[i][3]);
