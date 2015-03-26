@@ -63,34 +63,31 @@ inline const GLubyte *DIFONT_BUFFER_OFFSET(size_t bytes) {
     return reinterpret_cast<const GLubyte *>(0) + bytes;
 }
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-	
-	extern void ftglBegin(unsigned int prim);
-	
-	extern void ftglVertex3f(float x, float y, float z);
-	
-	extern void ftglVertex2f(float x, float y);
-	
-	extern void ftglColor4f(float r, float g, float b, float a );
-		
-	extern void ftglTexCoord2f(float s, float t );
-	
-    extern void ftglBindTexture(unsigned int textureId);
-    
-	extern void ftglEnd();
-	
-	extern void ftglError(const char *source);
-
-    extern uint32_t ftglVertexSize();
-
-    extern uint32_t ftglVertexCount();
-
-    extern void ftglCopyMesh(void *dataPointer, void *dataLen, uint32_t *vertexCount);
-	
-#ifdef __cplusplus
+namespace difont {
+    class gl {
+    public:
+        static void Begin(unsigned int prim);
+  
+        static void Vertex3f(float x, float y, float z);
+  
+        static void Vertex2f(float x, float y);
+  
+        static void Color4f(float r, float g, float b, float a);
+  
+        static void TexCoord2f(float s, float t);
+  
+        static void BindTexture(unsigned int textureId);
+  
+        static void End();
+  
+        static void Error(const char *source);
+  
+        static uint32_t VertexSize();
+  
+        static uint32_t VertexCount();
+  
+        //static void CopyMesh(void *dataPointer, void *dataLen, uint32_t *vertexCount);
+    };
 }
-#endif
 
 #endif

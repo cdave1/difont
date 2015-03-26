@@ -6,6 +6,11 @@
 namespace difont {
     class FontVertex {
     public:
+        FontVertex() {
+            position[0] = position[1] = position[2] = 0.0f;
+            texCoord[0] = texCoord[1] = 0.0f;
+        }
+
         void SetVertex3f(float x, float y, float z);
 
         void SetVertex2f(float x, float y);

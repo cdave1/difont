@@ -193,16 +193,14 @@ GLuint difont::TextureFontImpl::CreateTexture() {
     GLuint textID;
     glGenTextures(1, (GLuint*)&textID);
 
-    ftglBindTexture(textID);
+    difont::gl::BindTexture(textID);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, textureWidth, textureHeight,
                  0, GL_ALPHA, GL_UNSIGNED_BYTE, textureMemory);
-	
-	printf("texture dimensions: %d %d\n", textureWidth, textureHeight);
-	
+
     delete [] textureMemory;
 
     return textID;

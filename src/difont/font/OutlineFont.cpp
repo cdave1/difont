@@ -90,6 +90,8 @@ inline difont::Point OutlineFontImpl::RenderI(const T* string, const int len,
                                           int renderMode)
 {
 	difont::Point tmp;
+    difont::FontMeshSet::Begin();
+    difont::FontMeshSet::AddMesh(GL_LINES);
 	if (preRendered)
 	{
 		tmp = FontImpl::Render(string, len,
@@ -102,7 +104,7 @@ inline difont::Point OutlineFontImpl::RenderI(const T* string, const int len,
 										 position, spacing, renderMode);
 		PostRender();
 	}
-
+    difont::FontMeshSet::End();
     return tmp;
 }
 
@@ -110,24 +112,12 @@ inline difont::Point OutlineFontImpl::RenderI(const T* string, const int len,
 void OutlineFontImpl::PreRender()
 {
 	preRendered = true;
-	GLfloat colors[4];
-    glDisable(GL_TEXTURE_2D);
-    
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); // GL_ONE
-	ftglBindTexture(0);
-
-    colors[0] = 1.0f; colors[1] = 1.0f; colors[2] = 1.0f; colors[3] = 1.0f;
-    
-	ftglColor4f(colors[0], colors[1], colors[2], colors[3]);
-	ftglBegin(GL_LINES);
 }
 
 
 void OutlineFontImpl::PostRender()
 {
 	preRendered = false;
-	ftglEnd();
 }
 
 

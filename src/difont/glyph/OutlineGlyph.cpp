@@ -120,12 +120,17 @@ void OutlineGlyphImpl::RenderContours(const difont::Point& pen)
 			difont::Point point2 = difont::Point(contour->Point(ii).X() + contour->Outset(ii).X() * outset,
 									 contour->Point(ii).Y() + contour->Outset(ii).Y() * outset,
 									 0);
-			ftglVertex2f((point1.Xf() / 64.0f) + pen.Xf(), 
-						 (point1.Yf() / 64.0f) + pen.Yf());
-			ftglVertex2f((point2.Xf() / 64.0f) + pen.Xf(), 
-						 (point2.Yf() / 64.0f) + pen.Yf());
+
+            difont::FontVertex vertex1;
+            vertex1.SetVertex2f((point1.Xf() / 64.0f) + pen.Xf(),
+						        (point1.Yf() / 64.0f) + pen.Yf());
+            difont::FontMeshSet::AddVertex(vertex1);
+
+            difont::FontVertex vertex2;
+            vertex2.SetVertex2f((point2.Xf() / 64.0f) + pen.Xf(),
+						        (point2.Yf() / 64.0f) + pen.Yf());
+            difont::FontMeshSet::AddVertex(vertex2);
 		}
-        
     }
 }
 

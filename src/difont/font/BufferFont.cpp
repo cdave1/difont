@@ -80,7 +80,7 @@ buffer(new Buffer())
     for(int i = 0; i < BUFFER_CACHE_SIZE; i++)
     {
         stringCache[i] = NULL;
-        ftglBindTexture(idCache[i]);
+        difont::gl::BindTexture(idCache[i]);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE); //GL_CLAMP);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE); //GL_CLAMP);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -104,7 +104,7 @@ buffer(new Buffer())
     for(int i = 0; i < BUFFER_CACHE_SIZE; i++)
     {
         stringCache[i] = NULL;
-        ftglBindTexture(idCache[i]);
+        difont::gl::BindTexture(idCache[i]);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);  //GL_CLAMP);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE); //GL_CLAMP);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -284,7 +284,7 @@ inline difont::Point BufferFontImpl::RenderI(const T* string, const int len,
     texWidth = NextPowerOf2(width);
     texHeight = NextPowerOf2(height);
 
-    ftglBindTexture(idCache[cacheIndex]);
+    difont::gl::BindTexture(idCache[cacheIndex]);
 
     // If the string was not found, we need to render the text in a new
     // texture buffer, then upload it to the OpenGL layer.
@@ -296,7 +296,7 @@ inline difont::Point BufferFontImpl::RenderI(const T* string, const int len,
         advanceCache[cacheIndex] =
         FontImpl::Render(string, len, difont::Point(), spacing, renderMode);
 
-        ftglBindTexture(idCache[cacheIndex]);
+        difont::gl::BindTexture(idCache[cacheIndex]);
 
         //glPixelStorei(GL_UNPACK_LSB_FIRST, GL_FALSE);
         //glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
@@ -312,21 +312,21 @@ inline difont::Point BufferFontImpl::RenderI(const T* string, const int len,
     difont::Point low = position + bbox.Lower();
     difont::Point up = position + bbox.Upper();
 
-    ftglBegin(GL_QUADS);
+    difont::gl::Begin(GL_QUADS);
     //glNormal3f(0.0f, 0.0f, 1.0f);
-    ftglTexCoord2f(padding / texWidth,
+    difont::gl::TexCoord2f(padding / texWidth,
                    (texHeight - height + padding) / texHeight);
-    ftglVertex2f(low.Xf(), up.Yf());
-    ftglTexCoord2f(padding / texWidth,
+    difont::gl::Vertex2f(low.Xf(), up.Yf());
+    difont::gl::TexCoord2f(padding / texWidth,
                    (texHeight - padding) / texHeight);
-    ftglVertex2f(low.Xf(), low.Yf());
-    ftglTexCoord2f((width - padding) / texWidth,
+    difont::gl::Vertex2f(low.Xf(), low.Yf());
+    difont::gl::TexCoord2f((width - padding) / texWidth,
                    (texHeight - padding) / texHeight);
-    ftglVertex2f(up.Xf(), low.Yf());
-    ftglTexCoord2f((width - padding) / texWidth,
+    difont::gl::Vertex2f(up.Xf(), low.Yf());
+    difont::gl::TexCoord2f((width - padding) / texWidth,
                    (texHeight - height + padding) / texHeight);
-    ftglVertex2f(up.Xf(), up.Yf());
-    ftglEnd();
+    difont::gl::Vertex2f(up.Xf(), up.Yf());
+    difont::gl::End();
 
     //glPopClientAttrib();
     // glPopAttrib();

@@ -24,122 +24,114 @@
 #include "OpenGLInterface.h"
 #include <string.h>
 
-#define FTGLES_GLUE_MAX_VERTICES 32768
-#define FTGLES_GLUE_MAX_MESHES 64
+#define DIFONT_GLUE_MAX_VERTICES 32768
+#define DIFONT_GLUE_MAX_MESHES 64
 
 typedef struct
 {
     GLfloat position[4];
     GLfloat color[4];
     GLfloat texCoord[2];
-} ftglesVertex_t;
+} difontVertex_t;
 
 
 typedef struct {
-    ftglesVertex_t vertices[FTGLES_GLUE_MAX_VERTICES];
-    short quadIndices[FTGLES_GLUE_MAX_VERTICES * 3 / 2];
-    ftglesVertex_t currVertex;
+    difontVertex_t vertices[DIFONT_GLUE_MAX_VERTICES];
+    short quadIndices[DIFONT_GLUE_MAX_VERTICES * 3 / 2];
+    difontVertex_t currVertex;
     unsigned int currIndex;
-} ftglesGlueArrays_t;
+} difontGlueArrays_t;
 
-ftglesGlueArrays_t ftglesGlueArrays;
+difontGlueArrays_t difontGlueArrays;
 
-GLenum ftglesCurrentPrimitive = GL_TRIANGLES;
-bool ftglesQuadIndicesInitted = false;
+GLenum difontCurrentPrimitive = GL_TRIANGLES;
+bool DIFONTQuadIndicesInitted = false;
 
 
-void ftglBindPositionAttribute(GLint attributeHandle) {
-    glVertexAttribPointer(attributeHandle, 4, GL_FLOAT, 0, sizeof(ftglesVertex_t), ftglesGlueArrays.vertices[0].position);
+void difontBindPositionAttribute(GLint attributeHandle) {
+    glVertexAttribPointer(attributeHandle, 4, GL_FLOAT, 0, sizeof(difontVertex_t), difontGlueArrays.vertices[0].position);
     glEnableVertexAttribArray(attributeHandle);
 }
 
 
-void ftglBindColorAttribute(GLint attributeHandle) {
-    glVertexAttribPointer(attributeHandle, 4, GL_FLOAT, 0, sizeof(ftglesVertex_t), ftglesGlueArrays.vertices[0].color);
+void difontBindColorAttribute(GLint attributeHandle) {
+    glVertexAttribPointer(attributeHandle, 4, GL_FLOAT, 0, sizeof(difontVertex_t), difontGlueArrays.vertices[0].color);
     glEnableVertexAttribArray(attributeHandle);
 }
 
 
-void ftglBindTextureAttribute(GLint attributeHandle) {
-    glVertexAttribPointer(attributeHandle, 2, GL_FLOAT, 0, sizeof(ftglesVertex_t), ftglesGlueArrays.vertices[0].texCoord);
+void difontBindTextureAttribute(GLint attributeHandle) {
+    glVertexAttribPointer(attributeHandle, 2, GL_FLOAT, 0, sizeof(difontVertex_t), difontGlueArrays.vertices[0].texCoord);
     glEnableVertexAttribArray(attributeHandle);
 }
 
 
-GLvoid ftglBegin(GLenum prim) {
-    if (!ftglesQuadIndicesInitted) {
-        for (int i = 0; i < FTGLES_GLUE_MAX_VERTICES * 3 / 2; i += 6) {
+GLvoid difont::gl::Begin(GLenum prim) {
+    if (!DIFONTQuadIndicesInitted) {
+        for (int i = 0; i < DIFONT_GLUE_MAX_VERTICES * 3 / 2; i += 6) {
             int q = i / 6 * 4;
-            ftglesGlueArrays.quadIndices[i + 0] = q + 0;
-            ftglesGlueArrays.quadIndices[i + 1] = q + 1;
-            ftglesGlueArrays.quadIndices[i + 2] = q + 2;
+            difontGlueArrays.quadIndices[i + 0] = q + 0;
+            difontGlueArrays.quadIndices[i + 1] = q + 1;
+            difontGlueArrays.quadIndices[i + 2] = q + 2;
 
-            ftglesGlueArrays.quadIndices[i + 3] = q + 0;
-            ftglesGlueArrays.quadIndices[i + 4] = q + 2;
-            ftglesGlueArrays.quadIndices[i + 5] = q + 3;
+            difontGlueArrays.quadIndices[i + 3] = q + 0;
+            difontGlueArrays.quadIndices[i + 4] = q + 2;
+            difontGlueArrays.quadIndices[i + 5] = q + 3;
         }
-        ftglesQuadIndicesInitted = true;
+        DIFONTQuadIndicesInitted = true;
     }
 
-    ftglesGlueArrays.currIndex = 0;
-    ftglesCurrentPrimitive = prim;
+    difontGlueArrays.currIndex = 0;
+    difontCurrentPrimitive = prim;
 }
 
 
-GLvoid ftglVertex3f(float x, float y, float z) {
-    if (ftglesGlueArrays.currIndex >= FTGLES_GLUE_MAX_VERTICES) {
+GLvoid difont::gl::Vertex3f(float x, float y, float z) {
+    if (difontGlueArrays.currIndex >= DIFONT_GLUE_MAX_VERTICES) {
         return;
     }
 
-    ftglesGlueArrays.currVertex.position[0] = x;
-    ftglesGlueArrays.currVertex.position[1] = y;
-    ftglesGlueArrays.currVertex.position[2] = z;
-    ftglesGlueArrays.currVertex.position[3] = 1.0f;
-    ftglesGlueArrays.vertices[ftglesGlueArrays.currIndex] = ftglesGlueArrays.currVertex;
-    ftglesGlueArrays.currIndex++;
+    difontGlueArrays.currVertex.position[0] = x;
+    difontGlueArrays.currVertex.position[1] = y;
+    difontGlueArrays.currVertex.position[2] = z;
+    difontGlueArrays.currVertex.position[3] = 1.0f;
+    difontGlueArrays.vertices[difontGlueArrays.currIndex] = difontGlueArrays.currVertex;
+    difontGlueArrays.currIndex++;
 }
 
 
-GLvoid ftglVertex2f(float x, float y) {
-    if (ftglesGlueArrays.currIndex >= FTGLES_GLUE_MAX_VERTICES) {
+GLvoid difont::gl::Vertex2f(float x, float y) {
+    if (difontGlueArrays.currIndex >= DIFONT_GLUE_MAX_VERTICES) {
         return;
     }
 
-    ftglesGlueArrays.currVertex.position[0] = x;
-    ftglesGlueArrays.currVertex.position[1] = y;
-    ftglesGlueArrays.currVertex.position[2] = 0.0f;
-    ftglesGlueArrays.currVertex.position[3] = 1.0f;
-    ftglesGlueArrays.vertices[ftglesGlueArrays.currIndex] = ftglesGlueArrays.currVertex;
-    ftglesGlueArrays.currIndex++;
+    difontGlueArrays.currVertex.position[0] = x;
+    difontGlueArrays.currVertex.position[1] = y;
+    difontGlueArrays.currVertex.position[2] = 0.0f;
+    difontGlueArrays.currVertex.position[3] = 1.0f;
+    difontGlueArrays.vertices[difontGlueArrays.currIndex] = difontGlueArrays.currVertex;
+    difontGlueArrays.currIndex++;
 }
 
 
-GLvoid ftglColor4ub(GLubyte r, GLubyte g, GLubyte b, GLubyte a) {
-    ftglesGlueArrays.currVertex.color[0] = GLfloat(r) / 255.0f;
-    ftglesGlueArrays.currVertex.color[1] = GLfloat(g) / 255.0f;
-    ftglesGlueArrays.currVertex.color[2] = GLfloat(b) / 255.0f;
-    ftglesGlueArrays.currVertex.color[3] = GLfloat(a) / 255.0f;
+GLvoid difont::gl::Color4f(GLfloat r, GLfloat g, GLfloat b, GLfloat a) {
+    difontGlueArrays.currVertex.color[0] = r;
+    difontGlueArrays.currVertex.color[1] = g;
+    difontGlueArrays.currVertex.color[2] = b;
+    difontGlueArrays.currVertex.color[3] = a;
 }
 
 
-GLvoid ftglColor4f(GLfloat r, GLfloat g, GLfloat b, GLfloat a) {
-    ftglesGlueArrays.currVertex.color[0] = r;
-    ftglesGlueArrays.currVertex.color[1] = g;
-    ftglesGlueArrays.currVertex.color[2] = b;
-    ftglesGlueArrays.currVertex.color[3] = a;
-}
-
-
-GLvoid ftglTexCoord2f(GLfloat s, GLfloat t) {
-    ftglesGlueArrays.currVertex.texCoord[0] = s;
-    ftglesGlueArrays.currVertex.texCoord[1] = t;
+GLvoid difont::gl::TexCoord2f(GLfloat s, GLfloat t) {
+    difontGlueArrays.currVertex.texCoord[0] = s;
+    difontGlueArrays.currVertex.texCoord[1] = t;
 }
 
 
 GLvoid bindArrayBuffers() {}
 
 
-GLvoid ftglBindTexture(unsigned int textureId) {
+GLvoid difont::gl::BindTexture(unsigned int textureId) {
     GLint activeTextureID;
     glGetIntegerv(GL_TEXTURE_BINDING_2D, &activeTextureID);
     if ((unsigned int)activeTextureID != textureId) {
@@ -153,46 +145,46 @@ GLvoid ftglBindTexture(unsigned int textureId) {
 }
 
 
-GLvoid ftglEnd() {
+GLvoid difont::gl::End() {
     /*
-    if (ftglesGlueArrays.currIndex == 0) {
-        ftglesCurrentPrimitive = 0;
+    if (difontGlueArrays.currIndex == 0) {
+        DIFONTCurrentPrimitive = 0;
         return;
     }
 
-    if (ftglesCurrentPrimitive == GL_QUADS) {
-        glDrawElements(GL_TRIANGLES, ftglesGlueArrays.currIndex / 4 * 6, GL_UNSIGNED_SHORT, ftglesGlueArrays.quadIndices);
+    if (DIFONTCurrentPrimitive == GL_QUADS) {
+        glDrawElements(GL_TRIANGLES, difontGlueArrays.currIndex / 4 * 6, GL_UNSIGNED_SHORT, difontGlueArrays.quadIndices);
     } else {
-        glDrawArrays(ftglesCurrentPrimitive, 0, ftglesGlueArrays.currIndex);
+        glDrawArrays(DIFONTCurrentPrimitive, 0, difontGlueArrays.currIndex);
     }*/
 }
 
 
-uint32_t ftglVertexSize() {
-    return sizeof(ftglesVertex_t);
+uint32_t difont::gl::VertexSize() {
+    return sizeof(difontVertex_t);
 }
 
 
-uint32_t ftglVertexCount() {
-    return ftglesGlueArrays.currIndex;
+uint32_t difont::gl::VertexCount() {
+    return difontGlueArrays.currIndex;
 }
 
-
-void ftglCopyMesh(void *dataPointer, uint32_t *dataLen, uint32_t *vertexCount) {
-    if (ftglesCurrentPrimitive == 0 || ftglesGlueArrays.currIndex == 0) {
+/*
+void difont::gl::CopyMesh(void *dataPointer, uint32_t *dataLen, uint32_t *vertexCount) {
+    if (difontCurrentPrimitive == 0 || difontGlueArrays.currIndex == 0) {
         dataPointer = NULL;
         dataLen = 0;
         vertexCount = 0;
         return;
     }
 
-    memcpy(dataPointer, ftglesGlueArrays.vertices, sizeof(ftglesVertex_t) * ftglesGlueArrays.currIndex);
-    *vertexCount = ftglesGlueArrays.currIndex;
-    *dataLen = sizeof(ftglesVertex_t) * ftglesGlueArrays.currIndex;
-}
+    memcpy(dataPointer, difontGlueArrays.vertices, sizeof(difontVertex_t) * difontGlueArrays.currIndex);
+    *vertexCount = difontGlueArrays.currIndex;
+    *dataLen = sizeof(difontVertex_t) * difontGlueArrays.currIndex;
+}*/
 
 
-GLvoid ftglError(const char *source) {
+GLvoid difont::gl::Error(const char *source) {
 	GLenum error = glGetError();
 	 
 	switch (error) {

@@ -82,7 +82,7 @@ TextureGlyphImpl::TextureGlyphImpl(FT_GlyphSlot glyph, int id, int xOffset,
     {
           //      glPixelStorei(GL_PACK_ALIGNMENT, 1);
         glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-        ftglBindTexture(glTextureID);
+        difont::gl::BindTexture(glTextureID);
         glTexSubImage2D(GL_TEXTURE_2D, 0, xOffset, yOffset, destWidth, destHeight, GL_ALPHA, GL_UNSIGNED_BYTE, bitmap.buffer);
     }
     //      0
