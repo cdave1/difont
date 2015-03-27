@@ -31,20 +31,16 @@
 #ifndef __glu_h__
 #define __glu_h__
 
-#if TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1
-#define ftglprintf(...) printf(__VA_ARGS__)
-#include <OpenGLES/ES2/gl.h>
-#include <OpenGLES/ES2/glext.h>
-#elif ANDROID == 1
+#if ANDROID == 1
+#define ftglprintf(...) ((void)__android_log_print(ANDROID_LOG_INFO, "TestApp", __VA_ARGS__))
 #include <GLES/glplatform.h>
 #include <GLES/gl.h>
 #include <GLES/glext.h>
 #include <jni.h>
-#define ftglprintf(...) ((void)__android_log_print(ANDROID_LOG_INFO, "TestApp", __VA_ARGS__))
 #else
 #define ftglprintf(...) printf(__VA_ARGS__)
-#include <OpenGL/OpenGL.h>
-#include <OpenGL/gl.h>
+#include <OpenGLES/ES2/gl.h>
+#include <OpenGLES/ES2/glext.h>
 #endif
 
 #ifndef GLAPIENTRY

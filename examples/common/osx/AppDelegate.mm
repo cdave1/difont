@@ -79,6 +79,7 @@ static GLuint shaderProgram;
     NSString *vertexShaderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"quad.vert"];
 
     shaderProgram = difont::examples::OpenGL::loadShaderProgram([vertexShaderPath UTF8String], [fragmentShaderPath UTF8String]);
+    helloWorld->SetupVertexArrays(shaderProgram);
 }
 
 
