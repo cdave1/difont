@@ -29,7 +29,7 @@
 
 #include <math.h>
 
-static const unsigned int BEZIER_STEPS = 5;
+static const unsigned int BEZIER_STEPS = 8;
 
 
 void difont::Contour::AddPoint(difont::Point point)

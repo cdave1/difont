@@ -57,7 +57,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
         delete m_font;
         m_font = NULL;
     } else {
-        m_font->FaceSize(HELLO_WORLD_FONT_SIZE);
+        m_font->FaceSize(HELLO_WORLD_FONT_SIZE, 300);
         m_font->CharMap(FT_ENCODING_ADOBE_LATIN_1);
     }
 
@@ -67,7 +67,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
         delete m_textureFont;
         m_textureFont = NULL;
     } else {
-        m_textureFont->FaceSize(HELLO_WORLD_FONT_SIZE);
+        m_textureFont->FaceSize(HELLO_WORLD_FONT_SIZE, 300);
         m_textureFont->CharMap(FT_ENCODING_ADOBE_LATIN_1);
     }
 }
@@ -200,8 +200,9 @@ void HelloWorld::SetupVertexArrays(GLuint shaderProgram) {
 }
 
 
+static float f = 0.0f;
 void HelloWorld::Update(GLuint shaderProgram) {
-    
+    f += 0.01f;
 }
 
 
@@ -216,7 +217,7 @@ void HelloWorld::Render(GLuint shaderProgram) {
     float world[16];
     difont::examples::Math::MatrixIdentity(view);
     difont::examples::Math::MatrixIdentity(world);
-    difont::examples::Math::Ortho(projection, -width, width, -height, height, -1.0f, 1.0f);
+    difont::examples::Math::Ortho(projection, 0, sinf(f * 0.5 + 1.0) * width, 0, sinf(f * 0.5 + 1.0) * height, -1.0f, 1.0f);
 
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ProjectionMatrix"), 1, GL_FALSE, projection);
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ViewMatrix"), 1, GL_FALSE, view);

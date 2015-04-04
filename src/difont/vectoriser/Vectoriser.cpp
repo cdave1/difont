@@ -292,8 +292,6 @@ void difont::Vectoriser::MakeMesh(double zNormal, int outsetType, float outsetSi
 
         for(size_t c = 0; c < ContourCount(); ++c)
         {
-            /* Build the */
-	
             switch(outsetType)
             {
                 case 1 : contourList[c]->buildFrontOutset(outsetSize); break;
