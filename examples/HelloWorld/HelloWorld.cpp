@@ -57,7 +57,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
         delete m_font;
         m_font = NULL;
     } else {
-        m_font->FaceSize(HELLO_WORLD_FONT_SIZE);
+        m_font->FaceSize(HELLO_WORLD_FONT_SIZE, 300);
         m_font->CharMap(FT_ENCODING_ADOBE_LATIN_1);
     }
 
@@ -67,7 +67,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
         delete m_textureFont;
         m_textureFont = NULL;
     } else {
-        m_textureFont->FaceSize(HELLO_WORLD_FONT_SIZE);
+        m_textureFont->FaceSize(HELLO_WORLD_FONT_SIZE, 300);
         m_textureFont->CharMap(FT_ENCODING_ADOBE_LATIN_1);
     }
 }
