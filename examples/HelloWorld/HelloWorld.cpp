@@ -200,40 +200,28 @@ void HelloWorld::SetupVertexArrays(GLuint shaderProgram) {
 }
 
 
-void HelloWorld::Update(GLuint shaderProgram) {
-    
-}
+void HelloWorld::Update(GLuint shaderProgram) {}
 
 
 void HelloWorld::Render(GLuint shaderProgram) {
-    GLfloat width = 1800.0f;// GLfloat(viewportWidth());
-    GLfloat height = 1200.0f; // GLfloat(viewportHeight());
-
-    glUseProgram(shaderProgram);
+    GLfloat width = m_width;
+    GLfloat height = m_height;
 
     float projection[16];
     float view[16];
     float world[16];
+
     difont::examples::Math::MatrixIdentity(view);
     difont::examples::Math::MatrixIdentity(world);
-    difont::examples::Math::Ortho(projection, -width, width, -height, height, -1.0f, 1.0f);
+    difont::examples::Math::Ortho(projection,
+                                  -50.0f, width -50.0f,
+                                  -50.0f, height - 50.0f,
+                                  -1.0f, 1.0f);
 
+    glUseProgram(shaderProgram);
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ProjectionMatrix"), 1, GL_FALSE, projection);
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ViewMatrix"), 1, GL_FALSE, view);
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "ModelMatrix"), 1, GL_FALSE, world);
-
     glBindVertexArray(vertexArrayObject);
     glDrawRangeElements(GL_TRIANGLES, 0, vertexCount - 1, triangleCount * 3, GL_UNSIGNED_INT, NULL);
-
-    const unsigned MAX_COLORS = 4;
-    color4_t colors[MAX_COLORS];
-    vec4Set(colors[0], 0.8f, 0.1f, 0.0f, 1.0f);
-    vec4Set(colors[1], 1.0f, 1.0f, 1.0f, 1.0f);
-    vec4Set(colors[2], 0.0f, 0.1f, 0.8f, 1.0f);
-    vec4Set(colors[3], 0.0f, 0.8f, 0.1f, 1.0f);
-
-    for (unsigned i = 0; i < MAX_COLORS; ++i) {
-        color4_t color;
-        vec4Set(color, colors[i][0], colors[i][1], colors[i][2], colors[i][3]);
-    }
 }

@@ -71,7 +71,7 @@ static GLuint shaderProgram;
     [self.window makeKeyAndOrderFront:self];
     [self.window makeFirstResponder:self.glView];
 
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DIN Alternate Bold.ttf"];
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Diavlo_BLACK_II_37.otf"];
     helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
     helloWorld->SetupFonts([path UTF8String]);
 
