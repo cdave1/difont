@@ -1,13 +1,14 @@
 # difont
 
-A font rendering library for OpenGL, OpenGLES, and DirectX.  The library is a fork of ftgles, and should be considered as completely incompatible with that library.
+A font rendering library for OpenGL 3, OpenGLES 3, and DirectX.  The library is a fork of ftgles, and should be considered as completely incompatible with that library.
 
 ## Goals for this project
 
 Support font rendering on the following platforms:
  * Windows (OpenGL 3 and DirectX)
  * OSX (OpenGL 3)
- * (TODO) iOS (OpenGLES 2)
+ * Android (OpenGLES 3) (No example program!)
+ * (TODO) iOS (OpenGLES 3)
  * (TODO) Android (OpenGLES 2)
 
 Client programs can retrieve the font data in a number of different formats, depending on the goals of the project (efficiency, ease-of-use, etc):
