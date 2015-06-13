@@ -34,6 +34,8 @@
 #ifndef __glu_h__
 #if TARGET_OS_IPHONE == 1 || TARGET_IPHONE_SIMULATOR == 1
 #include "glu.h"
+#elif defined(ANDROID)
+#include "glu.h"
 #else
 #include "OpenGL/glu.h"
 #endif
