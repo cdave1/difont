@@ -42,10 +42,10 @@
 #define ftglprintf(...) printf(__VA_ARGS__)
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
-#elif ANDROID == 1
-#include <GLES/glplatform.h>
-#include <GLES/gl.h>
-#include <GLES/glext.h>
+#elif defined(ANDROID)
+#include <GLES3/gl3platform.h>
+#include <GLES3/gl3.h>
+#include <GLES3/gl3ext.h>
 #include <jni.h>
 #define ftglprintf(...) ((void)__android_log_print(ANDROID_LOG_INFO, "TestApp", __VA_ARGS__))
 #else
