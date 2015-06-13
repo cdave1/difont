@@ -124,6 +124,206 @@
 		E41879DA1AACEFE80005AC43 /* sfnt.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879A01AACEFA30005AC43 /* sfnt.c */; };
 		E41879DB1AACEFF60005AC43 /* smooth.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879C01AACEFA30005AC43 /* smooth.c */; };
 		E41879DC1AACEFFC0005AC43 /* truetype.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879C51AACEFA30005AC43 /* truetype.c */; };
+		E44769FE1B23D1DB00AE040B /* PixmapFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE111AAEA8B600F9C748 /* PixmapFontImpl.h */; };
+		E44769FF1B23D1DB00AE040B /* glu.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB551AC50188002E9013 /* glu.h */; };
+		E4476A001B23D1DB00AE040B /* ftgasp.h in Headers */ = {isa = PBXBuildFile; fileRef = E418767E1AACEB5B0005AC43 /* ftgasp.h */; };
+		E4476A011B23D1DB00AE040B /* ftbase.h in Headers */ = {isa = PBXBuildFile; fileRef = E41878711AACEF170005AC43 /* ftbase.h */; };
+		E4476A021B23D1DB00AE040B /* fterrdef.h in Headers */ = {isa = PBXBuildFile; fileRef = E418767C1AACEB5B0005AC43 /* fterrdef.h */; };
+		E4476A031B23D1DB00AE040B /* OutlineFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE3A1AAEA8B600F9C748 /* OutlineFont.h */; };
+		E4476A041B23D1DB00AE040B /* svpfr.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B21AACEB5C0005AC43 /* svpfr.h */; };
+		E4476A051B23D1DB00AE040B /* basepic.h in Headers */ = {isa = PBXBuildFile; fileRef = E418786D1AACEF170005AC43 /* basepic.h */; };
+		E4476A061B23D1DB00AE040B /* ftcache.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876791AACEB5B0005AC43 /* ftcache.h */; };
+		E4476A071B23D1DB00AE040B /* ftheader.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876701AACEB5B0005AC43 /* ftheader.h */; };
+		E4476A081B23D1DB00AE040B /* difont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE001AAEA8B600F9C748 /* difont.h */; };
+		E4476A091B23D1DB00AE040B /* ftoutln.h in Headers */ = {isa = PBXBuildFile; fileRef = E418768C1AACEB5C0005AC43 /* ftoutln.h */; };
+		E4476A0A1B23D1DB00AE040B /* gluint.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB751AC50188002E9013 /* gluint.h */; };
+		E4476A0B1B23D1DB00AE040B /* BufferFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE091AAEA8B600F9C748 /* BufferFontImpl.h */; };
+		E4476A0C1B23D1DB00AE040B /* ftcid.h in Headers */ = {isa = PBXBuildFile; fileRef = E418767B1AACEB5B0005AC43 /* ftcid.h */; };
+		E4476A0D1B23D1DB00AE040B /* svwinfnt.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876BA1AACEB5C0005AC43 /* svwinfnt.h */; };
+		E4476A0E1B23D1DB00AE040B /* fterrors.h in Headers */ = {isa = PBXBuildFile; fileRef = E418767D1AACEB5B0005AC43 /* fterrors.h */; };
+		E4476A0F1B23D1DB00AE040B /* ftstroke.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876911AACEB5C0005AC43 /* ftstroke.h */; };
+		E4476A101B23D1DB00AE040B /* ftimage.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876821AACEB5B0005AC43 /* ftimage.h */; };
+		E4476A111B23D1DB00AE040B /* LayoutImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE341AAEA8B600F9C748 /* LayoutImpl.h */; };
+		E4476A121B23D1DB00AE040B /* ftbitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876781AACEB5B0005AC43 /* ftbitmap.h */; };
+		E4476A131B23D1DB00AE040B /* OutlineGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE271AAEA8B600F9C748 /* OutlineGlyphImpl.h */; };
+		E4476A141B23D1DB00AE040B /* svcid.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876AC1AACEB5C0005AC43 /* svcid.h */; };
+		E4476A151B23D1DB00AE040B /* PolygonFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE411AAEA8B600F9C748 /* PolygonFont.h */; };
+		E4476A161B23D1DB00AE040B /* BufferGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDFB1AAEA8B600F9C748 /* BufferGlyph.h */; };
+		E4476A171B23D1DB00AE040B /* ftdebug.h in Headers */ = {isa = PBXBuildFile; fileRef = E418769B1AACEB5C0005AC43 /* ftdebug.h */; };
+		E4476A181B23D1DB00AE040B /* svttcmap.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B71AACEB5C0005AC43 /* svttcmap.h */; };
+		E4476A191B23D1DB00AE040B /* ftrfork.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A11AACEB5C0005AC43 /* ftrfork.h */; };
+		E4476A1A1B23D1DB00AE040B /* ftlzw.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876861AACEB5B0005AC43 /* ftlzw.h */; };
+		E4476A1B1B23D1DB00AE040B /* ftmodapi.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876891AACEB5B0005AC43 /* ftmodapi.h */; };
+		E4476A1C1B23D1DB00AE040B /* ftadvanc.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876751AACEB5B0005AC43 /* ftadvanc.h */; };
+		E4476A1D1B23D1DB00AE040B /* Font.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE161AAEA8B600F9C748 /* Font.h */; };
+		E4476A1E1B23D1DB00AE040B /* ftchapters.h in Headers */ = {isa = PBXBuildFile; fileRef = E418767A1AACEB5B0005AC43 /* ftchapters.h */; };
+		E4476A1F1B23D1DB00AE040B /* svpscmap.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B41AACEB5C0005AC43 /* svpscmap.h */; };
+		E4476A201B23D1DB00AE040B /* PixmapGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE3D1AAEA8B600F9C748 /* PixmapGlyph.h */; };
+		E4476A211B23D1DB00AE040B /* Contour.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3571AB130620025DA68 /* Contour.h */; };
+		E4476A221B23D1DB00AE040B /* ftgloadr.h in Headers */ = {isa = PBXBuildFile; fileRef = E418769D1AACEB5C0005AC43 /* ftgloadr.h */; };
+		E4476A231B23D1DB00AE040B /* FontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE0D1AAEA8B600F9C748 /* FontImpl.h */; };
+		E4476A241B23D1DB00AE040B /* tttypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876BE1AACEB5C0005AC43 /* tttypes.h */; };
+		E4476A251B23D1DB00AE040B /* Charmap.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3481AB130620025DA68 /* Charmap.h */; };
+		E4476A261B23D1DB00AE040B /* svkern.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876AF1AACEB5C0005AC43 /* svkern.h */; };
+		E4476A271B23D1DB00AE040B /* svgxval.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876AE1AACEB5C0005AC43 /* svgxval.h */; };
+		E4476A281B23D1DB00AE040B /* ftgxval.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876801AACEB5B0005AC43 /* ftgxval.h */; };
+		E4476A291B23D1DB00AE040B /* sweep.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB6D1AC50188002E9013 /* sweep.h */; };
+		E4476A2A1B23D1DB00AE040B /* Vectoriser.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F35B1AB130620025DA68 /* Vectoriser.h */; };
+		E4476A2B1B23D1DB00AE040B /* Glyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE2E1AAEA8B600F9C748 /* Glyph.h */; };
+		E4476A2C1B23D1DB00AE040B /* ftmemory.h in Headers */ = {isa = PBXBuildFile; fileRef = E418769E1AACEB5C0005AC43 /* ftmemory.h */; };
+		E4476A2D1B23D1DB00AE040B /* PolygonGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE2B1AAEA8B600F9C748 /* PolygonGlyphImpl.h */; };
+		E4476A2E1B23D1DB00AE040B /* dict-list.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB591AC50188002E9013 /* dict-list.h */; };
+		E4476A2F1B23D1DB00AE040B /* fttypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876951AACEB5C0005AC43 /* fttypes.h */; };
+		E4476A301B23D1DB00AE040B /* ftoption.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876721AACEB5B0005AC43 /* ftoption.h */; };
+		E4476A311B23D1DB00AE040B /* ftsnames.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876901AACEB5C0005AC43 /* ftsnames.h */; };
+		E4476A321B23D1DB00AE040B /* TextureGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE2D1AAEA8B600F9C748 /* TextureGlyphImpl.h */; };
+		E4476A331B23D1DB00AE040B /* svotval.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B11AACEB5C0005AC43 /* svotval.h */; };
+		E4476A341B23D1DB00AE040B /* ftrender.h in Headers */ = {isa = PBXBuildFile; fileRef = E418768E1AACEB5C0005AC43 /* ftrender.h */; };
+		E4476A351B23D1DB00AE040B /* GlyphContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F34C1AB130620025DA68 /* GlyphContainer.h */; };
+		E4476A361B23D1DB00AE040B /* ftlist.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876851AACEB5B0005AC43 /* ftlist.h */; };
+		E4476A371B23D1DB00AE040B /* memalloc.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB5F1AC50188002E9013 /* memalloc.h */; };
+		E4476A381B23D1DB00AE040B /* ftglyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E418767F1AACEB5B0005AC43 /* ftglyph.h */; };
+		E4476A391B23D1DB00AE040B /* GlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE251AAEA8B600F9C748 /* GlyphImpl.h */; };
+		E4476A3A1B23D1DB00AE040B /* psaux.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A81AACEB5C0005AC43 /* psaux.h */; };
+		E4476A3B1B23D1DB00AE040B /* tttags.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876C21AACEB5C0005AC43 /* tttags.h */; };
+		E4476A3C1B23D1DB00AE040B /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A61AACEB5C0005AC43 /* internal.h */; };
+		E4476A3D1B23D1DB00AE040B /* ftwinfnt.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876961AACEB5C0005AC43 /* ftwinfnt.h */; };
+		E4476A3E1B23D1DB00AE040B /* svmm.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B01AACEB5C0005AC43 /* svmm.h */; };
+		E4476A3F1B23D1DB00AE040B /* TextureGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE461AAEA8B600F9C748 /* TextureGlyph.h */; };
+		E4476A401B23D1DB00AE040B /* freetype.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876741AACEB5B0005AC43 /* freetype.h */; };
+		E4476A411B23D1DB00AE040B /* PixmapGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE291AAEA8B600F9C748 /* PixmapGlyphImpl.h */; };
+		E4476A421B23D1DB00AE040B /* svpsinfo.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B51AACEB5C0005AC43 /* svpsinfo.h */; };
+		E4476A431B23D1DB00AE040B /* ftobjs.h in Headers */ = {isa = PBXBuildFile; fileRef = E418769F1AACEB5C0005AC43 /* ftobjs.h */; };
+		E4476A441B23D1DB00AE040B /* ftpic.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A01AACEB5C0005AC43 /* ftpic.h */; };
+		E4476A451B23D1DB00AE040B /* ftlcdfil.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876841AACEB5B0005AC43 /* ftlcdfil.h */; };
+		E4476A461B23D1DB00AE040B /* ftvalid.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A51AACEB5C0005AC43 /* ftvalid.h */; };
+		E4476A471B23D1DB00AE040B /* ftmoderr.h in Headers */ = {isa = PBXBuildFile; fileRef = E418768A1AACEB5B0005AC43 /* ftmoderr.h */; };
+		E4476A481B23D1DB00AE040B /* render.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB6B1AC50188002E9013 /* render.h */; };
+		E4476A491B23D1DB00AE040B /* OpenGLInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3531AB130620025DA68 /* OpenGLInterface.h */; };
+		E4476A4A1B23D1DB00AE040B /* ftmm.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876881AACEB5B0005AC43 /* ftmm.h */; };
+		E4476A4B1B23D1DB00AE040B /* t1tables.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876BF1AACEB5C0005AC43 /* t1tables.h */; };
+		E4476A4C1B23D1DB00AE040B /* sfnt.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876BC1AACEB5C0005AC43 /* sfnt.h */; };
+		E4476A4D1B23D1DB00AE040B /* ftpfr.h in Headers */ = {isa = PBXBuildFile; fileRef = E418768D1AACEB5C0005AC43 /* ftpfr.h */; };
+		E4476A4E1B23D1DB00AE040B /* tess.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB6F1AC50188002E9013 /* tess.h */; };
+		E4476A4F1B23D1DB00AE040B /* ttunpat.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876C31AACEB5C0005AC43 /* ttunpat.h */; };
+		E4476A501B23D1DB00AE040B /* svbdf.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876AB1AACEB5C0005AC43 /* svbdf.h */; };
+		E4476A511B23D1DB00AE040B /* priorityq-sort.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB661AC50188002E9013 /* priorityq-sort.h */; };
+		E4476A521B23D1DB00AE040B /* PolyGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE401AAEA8B600F9C748 /* PolyGlyph.h */; };
+		E4476A531B23D1DB00AE040B /* autohint.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876991AACEB5C0005AC43 /* autohint.h */; };
+		E4476A541B23D1DB00AE040B /* ft2build.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876C41AACEB5C0005AC43 /* ft2build.h */; };
+		E4476A551B23D1DB00AE040B /* ftxf86.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876971AACEB5C0005AC43 /* ftxf86.h */; };
+		E4476A561B23D1DB00AE040B /* tessmono.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB711AC50188002E9013 /* tessmono.h */; };
+		E4476A571B23D1DB00AE040B /* TextureFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE451AAEA8B600F9C748 /* TextureFont.h */; };
+		E4476A581B23D1DB00AE040B /* ftmac.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876871AACEB5B0005AC43 /* ftmac.h */; };
+		E4476A591B23D1DB00AE040B /* normal.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB631AC50188002E9013 /* normal.h */; };
+		E4476A5A1B23D1DB00AE040B /* PolygonFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE131AAEA8B600F9C748 /* PolygonFontImpl.h */; };
+		E4476A5B1B23D1DB00AE040B /* SimpleLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE421AAEA8B600F9C748 /* SimpleLayout.h */; };
+		E4476A5C1B23D1DB00AE040B /* ftcalc.h in Headers */ = {isa = PBXBuildFile; fileRef = E418769A1AACEB5C0005AC43 /* ftcalc.h */; };
+		E4476A5D1B23D1DB00AE040B /* ftbdf.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876771AACEB5B0005AC43 /* ftbdf.h */; };
+		E4476A5E1B23D1DB00AE040B /* BitmapFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE071AAEA8B600F9C748 /* BitmapFontImpl.h */; };
+		E4476A5F1B23D1DB00AE040B /* FontMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3591AB130620025DA68 /* FontMesh.h */; };
+		E4476A601B23D1DB00AE040B /* ftsynth.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876921AACEB5C0005AC43 /* ftsynth.h */; };
+		E4476A611B23D1DB00AE040B /* BufferFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDFA1AAEA8B600F9C748 /* BufferFont.h */; };
+		E4476A621B23D1DB00AE040B /* Library.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F34E1AB130620025DA68 /* Library.h */; };
+		E4476A631B23D1DB00AE040B /* OutlineFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE0F1AAEA8B600F9C748 /* OutlineFontImpl.h */; };
+		E4476A641B23D1DB00AE040B /* fttrace.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A41AACEB5C0005AC43 /* fttrace.h */; };
+		E4476A651B23D1DB00AE040B /* ftmodule.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876711AACEB5B0005AC43 /* ftmodule.h */; };
+		E4476A661B23D1DB00AE040B /* priorityq.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB681AC50188002E9013 /* priorityq.h */; };
+		E4476A671B23D1DB00AE040B /* ftserv.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A21AACEB5C0005AC43 /* ftserv.h */; };
+		E4476A681B23D1DB00AE040B /* BitmapGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDF71AAEA8B600F9C748 /* BitmapGlyph.h */; };
+		E4476A691B23D1DB00AE040B /* Internals.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3411AB130620025DA68 /* Internals.h */; };
+		E4476A6A1B23D1DB00AE040B /* pshints.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A91AACEB5C0005AC43 /* pshints.h */; };
+		E4476A6B1B23D1DB00AE040B /* Face.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F34A1AB130620025DA68 /* Face.h */; };
+		E4476A6C1B23D1DB00AE040B /* svgldict.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876AD1AACEB5C0005AC43 /* svgldict.h */; };
+		E4476A6D1B23D1DB00AE040B /* ftconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E418766F1AACEB5B0005AC43 /* ftconfig.h */; };
+		E4476A6E1B23D1DB00AE040B /* svpostnm.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B31AACEB5C0005AC43 /* svpostnm.h */; };
+		E4476A6F1B23D1DB00AE040B /* BitmapGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE1F1AAEA8B600F9C748 /* BitmapGlyphImpl.h */; };
+		E4476A701B23D1DB00AE040B /* SimpleLayoutImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE361AAEA8B600F9C748 /* SimpleLayoutImpl.h */; };
+		E4476A711B23D1DB00AE040B /* ftgzip.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876811AACEB5B0005AC43 /* ftgzip.h */; };
+		E4476A721B23D1DB00AE040B /* svtteng.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B81AACEB5C0005AC43 /* svtteng.h */; };
+		E4476A731B23D1DB00AE040B /* ftstdlib.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876731AACEB5B0005AC43 /* ftstdlib.h */; };
+		E4476A741B23D1DB00AE040B /* ftotval.h in Headers */ = {isa = PBXBuildFile; fileRef = E418768B1AACEB5C0005AC43 /* ftotval.h */; };
+		E4476A751B23D1DB00AE040B /* BBox.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3401AB130620025DA68 /* BBox.h */; };
+		E4476A761B23D1DB00AE040B /* Size.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3451AB130620025DA68 /* Size.h */; };
+		E4476A771B23D1DB00AE040B /* ftbbox.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876761AACEB5B0005AC43 /* ftbbox.h */; };
+		E4476A781B23D1DB00AE040B /* ftsystem.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876931AACEB5C0005AC43 /* ftsystem.h */; };
+		E4476A791B23D1DB00AE040B /* TextureFontImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE151AAEA8B600F9C748 /* TextureFontImpl.h */; };
+		E4476A7A1B23D1DB00AE040B /* BitmapFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDF61AAEA8B600F9C748 /* BitmapFont.h */; };
+		E4476A7B1B23D1DB00AE040B /* Unicode.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F34F1AB130620025DA68 /* Unicode.h */; };
+		E4476A7C1B23D1DB00AE040B /* BufferGlyphImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE211AAEA8B600F9C748 /* BufferGlyphImpl.h */; };
+		E4476A7D1B23D1DB00AE040B /* ftdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = E418769C1AACEB5C0005AC43 /* ftdriver.h */; };
+		E4476A7E1B23D1DB00AE040B /* svsfnt.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B61AACEB5C0005AC43 /* svsfnt.h */; };
+		E4476A7F1B23D1DB00AE040B /* fttrigon.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876941AACEB5C0005AC43 /* fttrigon.h */; };
+		E4476A801B23D1DB00AE040B /* t1types.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876BD1AACEB5C0005AC43 /* t1types.h */; };
+		E4476A811B23D1DB00AE040B /* PixmapFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE3C1AAEA8B600F9C748 /* PixmapFont.h */; };
+		E4476A821B23D1DB00AE040B /* Point.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A8F3431AB130620025DA68 /* Point.h */; };
+		E4476A831B23D1DB00AE040B /* mesh.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB611AC50188002E9013 /* mesh.h */; };
+		E4476A841B23D1DB00AE040B /* svxf86nm.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876BB1AACEB5C0005AC43 /* svxf86nm.h */; };
+		E4476A851B23D1DB00AE040B /* OutlineGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE3B1AAEA8B600F9C748 /* OutlineGlyph.h */; };
+		E4476A861B23D1DB00AE040B /* pcftypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A71AACEB5C0005AC43 /* pcftypes.h */; };
+		E4476A871B23D1DB00AE040B /* gluos.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB561AC50188002E9013 /* gluos.h */; };
+		E4476A881B23D1DB00AE040B /* ftsizes.h in Headers */ = {isa = PBXBuildFile; fileRef = E418768F1AACEB5C0005AC43 /* ftsizes.h */; };
+		E4476A891B23D1DB00AE040B /* Buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDF91AAEA8B600F9C748 /* Buffer.h */; };
+		E4476A8A1B23D1DB00AE040B /* svttglyf.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876B91AACEB5C0005AC43 /* svttglyf.h */; };
+		E4476A8B1B23D1DB00AE040B /* ftstream.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876A31AACEB5C0005AC43 /* ftstream.h */; };
+		E4476A8C1B23D1DB00AE040B /* geom.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB5D1AC50188002E9013 /* geom.h */; };
+		E4476A8D1B23D1DB00AE040B /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DE371AAEA8B600F9C748 /* Layout.h */; };
+		E4476A8E1B23D1DB00AE040B /* ftincrem.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876831AACEB5B0005AC43 /* ftincrem.h */; };
+		E4476A8F1B23D1DB00AE040B /* ttnameid.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876C01AACEB5C0005AC43 /* ttnameid.h */; };
+		E4476A901B23D1DB00AE040B /* tttables.h in Headers */ = {isa = PBXBuildFile; fileRef = E41876C11AACEB5C0005AC43 /* tttables.h */; };
+		E4476A911B23D1DB00AE040B /* dict.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B7CB5B1AC50188002E9013 /* dict.h */; };
+		E4476A931B23D1DB00AE040B /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879571AACEFA30005AC43 /* autofit.c */; };
+		E4476A941B23D1DB00AE040B /* SimpleLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE351AAEA8B600F9C748 /* SimpleLayout.cpp */; };
+		E4476A951B23D1DB00AE040B /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3561AB130620025DA68 /* Contour.cpp */; };
+		E4476A971B23D1DB00AE040B /* cff.c in Sources */ = {isa = PBXBuildFile; fileRef = E418795C1AACEFA30005AC43 /* cff.c */; };
+		E4476A981B23D1DB00AE040B /* pshinter.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879781AACEFA30005AC43 /* pshinter.c */; };
+		E4476A9C1B23D1DB00AE040B /* psnames.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879871AACEFA30005AC43 /* psnames.c */; };
+		E4476A9D1B23D1DB00AE040B /* raster.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879941AACEFA30005AC43 /* raster.c */; };
+		E4476A9E1B23D1DB00AE040B /* FontMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3581AB130620025DA68 /* FontMesh.cpp */; };
+		E4476A9F1B23D1DB00AE040B /* sfnt.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879A01AACEFA30005AC43 /* sfnt.c */; };
+		E4476AA01B23D1DB00AE040B /* smooth.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879C01AACEFA30005AC43 /* smooth.c */; };
+		E4476AA11B23D1DB00AE040B /* truetype.c in Sources */ = {isa = PBXBuildFile; fileRef = E41879C51AACEFA30005AC43 /* truetype.c */; };
+		E4476AA21B23D1DB00AE040B /* PixmapFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE101AAEA8B600F9C748 /* PixmapFont.cpp */; };
+		E4476AA31B23D1DB00AE040B /* PolygonGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE2A1AAEA8B600F9C748 /* PolygonGlyph.cpp */; };
+		E4476AA51B23D1DB00AE040B /* OpenGLInterface.osx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3541AB130620025DA68 /* OpenGLInterface.osx.cpp */; };
+		E4476AA61B23D1DB00AE040B /* Face.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3491AB130620025DA68 /* Face.cpp */; };
+		E4476AA71B23D1DB00AE040B /* ftsynth.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878811AACEF170005AC43 /* ftsynth.c */; };
+		E4476AA91B23D1DB00AE040B /* BufferGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE201AAEA8B600F9C748 /* BufferGlyph.cpp */; };
+		E4476AAE1B23D1DB00AE040B /* BufferFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE081AAEA8B600F9C748 /* BufferFont.cpp */; };
+		E4476AAF1B23D1DB00AE040B /* basepic.c in Sources */ = {isa = PBXBuildFile; fileRef = E418786C1AACEF170005AC43 /* basepic.c */; };
+		E4476AB01B23D1DB00AE040B /* GlyphContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F34B1AB130620025DA68 /* GlyphContainer.cpp */; };
+		E4476AB11B23D1DB00AE040B /* ftapi.c in Sources */ = {isa = PBXBuildFile; fileRef = E418786F1AACEF170005AC43 /* ftapi.c */; };
+		E4476AB21B23D1DB00AE040B /* PixmapGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE281AAEA8B600F9C748 /* PixmapGlyph.cpp */; };
+		E4476AB31B23D1DB00AE040B /* TextureGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE2C1AAEA8B600F9C748 /* TextureGlyph.cpp */; };
+		E4476AB41B23D1DB00AE040B /* ftbbox.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878721AACEF170005AC43 /* ftbbox.c */; };
+		E4476AB51B23D1DB00AE040B /* Charmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3471AB130620025DA68 /* Charmap.cpp */; };
+		E4476AB71B23D1DB00AE040B /* ftsystem.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878821AACEF170005AC43 /* ftsystem.c */; };
+		E4476AB81B23D1DB00AE040B /* ftpic.c in Sources */ = {isa = PBXBuildFile; fileRef = E418787C1AACEF170005AC43 /* ftpic.c */; };
+		E4476AB91B23D1DB00AE040B /* ftdbgmem.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878751AACEF170005AC43 /* ftdbgmem.c */; };
+		E4476ABB1B23D1DB00AE040B /* OutlineFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE0E1AAEA8B600F9C748 /* OutlineFont.cpp */; };
+		E4476ABC1B23D1DB00AE040B /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3421AB130620025DA68 /* Point.cpp */; };
+		E4476ABD1B23D1DB00AE040B /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DDF81AAEA8B600F9C748 /* Buffer.cpp */; };
+		E4476ABF1B23D1DB00AE040B /* OutlineGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE261AAEA8B600F9C748 /* OutlineGlyph.cpp */; };
+		E4476AC01B23D1DB00AE040B /* ftinit.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878791AACEF170005AC43 /* ftinit.c */; };
+		E4476AC21B23D1DB00AE040B /* Library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F34D1AB130620025DA68 /* Library.cpp */; };
+		E4476AC31B23D1DB00AE040B /* BitmapFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE061AAEA8B600F9C748 /* BitmapFont.cpp */; };
+		E4476AC41B23D1DB00AE040B /* BitmapGlyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE1E1AAEA8B600F9C748 /* BitmapGlyph.cpp */; };
+		E4476AC51B23D1DB00AE040B /* Glyph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE241AAEA8B600F9C748 /* Glyph.cpp */; };
+		E4476AC71B23D1DB00AE040B /* ftbitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878731AACEF170005AC43 /* ftbitmap.c */; };
+		E4476AC91B23D1DB00AE040B /* ftdebug.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878761AACEF170005AC43 /* ftdebug.c */; };
+		E4476ACA1B23D1DB00AE040B /* Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F3441AB130620025DA68 /* Size.cpp */; };
+		E4476ACB1B23D1DB00AE040B /* TextureFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE141AAEA8B600F9C748 /* TextureFont.cpp */; };
+		E4476ACC1B23D1DB00AE040B /* Vectoriser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F35A1AB130620025DA68 /* Vectoriser.cpp */; };
+		E4476ACE1B23D1DB00AE040B /* PolygonFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE121AAEA8B600F9C748 /* PolygonFont.cpp */; };
+		E4476AD41B23D1DB00AE040B /* ftstroke.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878801AACEF170005AC43 /* ftstroke.c */; };
+		E4476AD51B23D1DB00AE040B /* ftglyph.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878781AACEF170005AC43 /* ftglyph.c */; };
+		E4476AD71B23D1DB00AE040B /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE331AAEA8B600F9C748 /* Layout.cpp */; };
+		E4476AD81B23D1DB00AE040B /* ftbase.c in Sources */ = {isa = PBXBuildFile; fileRef = E41878701AACEF170005AC43 /* ftbase.c */; };
+		E4476AD91B23D1DB00AE040B /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DE0C1AAEA8B600F9C748 /* Font.cpp */; };
+		E4476ADB1B23D1DB00AE040B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B7CBA01AC502F0002E9013 /* UIKit.framework */; };
+		E4476ADC1B23D1DB00AE040B /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B7CB9E1AC50260002E9013 /* CoreFoundation.framework */; };
+		E4476ADD1B23D1DB00AE040B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B7CB9C1AC5024E002E9013 /* OpenGLES.framework */; };
+		E4476ADE1B23D1DB00AE040B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B7CB9A1AC50244002E9013 /* Foundation.framework */; };
 		E497DE4B1AAEA8B600F9C748 /* BitmapFont.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDF61AAEA8B600F9C748 /* BitmapFont.h */; };
 		E497DE4C1AAEA8B600F9C748 /* BitmapGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = E497DDF71AAEA8B600F9C748 /* BitmapGlyph.h */; };
 		E497DE4D1AAEA8B600F9C748 /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E497DDF81AAEA8B600F9C748 /* Buffer.cpp */; };
@@ -467,6 +667,7 @@
 		E41879D31AACEFA30005AC43 /* ttpload.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ttpload.c; sourceTree = "<group>"; };
 		E41879D41AACEFA30005AC43 /* ttpload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ttpload.h; sourceTree = "<group>"; };
 		E41BB13919B0736D00F9D8DF /* libdifont.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdifont.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4476AE21B23D1DB00AE040B /* libdifont_ios_noglu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdifont_ios_noglu.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E497DDF61AAEA8B600F9C748 /* BitmapFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapFont.h; sourceTree = "<group>"; };
 		E497DDF71AAEA8B600F9C748 /* BitmapGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapGlyph.h; sourceTree = "<group>"; };
 		E497DDF81AAEA8B600F9C748 /* Buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Buffer.cpp; sourceTree = "<group>"; };
@@ -577,6 +778,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E4476ADA1B23D1DB00AE040B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4476ADB1B23D1DB00AE040B /* UIKit.framework in Frameworks */,
+				E4476ADC1B23D1DB00AE040B /* CoreFoundation.framework in Frameworks */,
+				E4476ADD1B23D1DB00AE040B /* OpenGLES.framework in Frameworks */,
+				E4476ADE1B23D1DB00AE040B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4D61CC318DF660C00B121ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -997,6 +1209,7 @@
 			isa = PBXGroup;
 			children = (
 				E41BB13919B0736D00F9D8DF /* libdifont.a */,
+				E4476AE21B23D1DB00AE040B /* libdifont_ios_noglu.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1200,6 +1413,161 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		E44769FD1B23D1DB00AE040B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44769FE1B23D1DB00AE040B /* PixmapFontImpl.h in Headers */,
+				E44769FF1B23D1DB00AE040B /* glu.h in Headers */,
+				E4476A001B23D1DB00AE040B /* ftgasp.h in Headers */,
+				E4476A011B23D1DB00AE040B /* ftbase.h in Headers */,
+				E4476A021B23D1DB00AE040B /* fterrdef.h in Headers */,
+				E4476A031B23D1DB00AE040B /* OutlineFont.h in Headers */,
+				E4476A041B23D1DB00AE040B /* svpfr.h in Headers */,
+				E4476A051B23D1DB00AE040B /* basepic.h in Headers */,
+				E4476A061B23D1DB00AE040B /* ftcache.h in Headers */,
+				E4476A071B23D1DB00AE040B /* ftheader.h in Headers */,
+				E4476A081B23D1DB00AE040B /* difont.h in Headers */,
+				E4476A091B23D1DB00AE040B /* ftoutln.h in Headers */,
+				E4476A0A1B23D1DB00AE040B /* gluint.h in Headers */,
+				E4476A0B1B23D1DB00AE040B /* BufferFontImpl.h in Headers */,
+				E4476A0C1B23D1DB00AE040B /* ftcid.h in Headers */,
+				E4476A0D1B23D1DB00AE040B /* svwinfnt.h in Headers */,
+				E4476A0E1B23D1DB00AE040B /* fterrors.h in Headers */,
+				E4476A0F1B23D1DB00AE040B /* ftstroke.h in Headers */,
+				E4476A101B23D1DB00AE040B /* ftimage.h in Headers */,
+				E4476A111B23D1DB00AE040B /* LayoutImpl.h in Headers */,
+				E4476A121B23D1DB00AE040B /* ftbitmap.h in Headers */,
+				E4476A131B23D1DB00AE040B /* OutlineGlyphImpl.h in Headers */,
+				E4476A141B23D1DB00AE040B /* svcid.h in Headers */,
+				E4476A151B23D1DB00AE040B /* PolygonFont.h in Headers */,
+				E4476A161B23D1DB00AE040B /* BufferGlyph.h in Headers */,
+				E4476A171B23D1DB00AE040B /* ftdebug.h in Headers */,
+				E4476A181B23D1DB00AE040B /* svttcmap.h in Headers */,
+				E4476A191B23D1DB00AE040B /* ftrfork.h in Headers */,
+				E4476A1A1B23D1DB00AE040B /* ftlzw.h in Headers */,
+				E4476A1B1B23D1DB00AE040B /* ftmodapi.h in Headers */,
+				E4476A1C1B23D1DB00AE040B /* ftadvanc.h in Headers */,
+				E4476A1D1B23D1DB00AE040B /* Font.h in Headers */,
+				E4476A1E1B23D1DB00AE040B /* ftchapters.h in Headers */,
+				E4476A1F1B23D1DB00AE040B /* svpscmap.h in Headers */,
+				E4476A201B23D1DB00AE040B /* PixmapGlyph.h in Headers */,
+				E4476A211B23D1DB00AE040B /* Contour.h in Headers */,
+				E4476A221B23D1DB00AE040B /* ftgloadr.h in Headers */,
+				E4476A231B23D1DB00AE040B /* FontImpl.h in Headers */,
+				E4476A241B23D1DB00AE040B /* tttypes.h in Headers */,
+				E4476A251B23D1DB00AE040B /* Charmap.h in Headers */,
+				E4476A261B23D1DB00AE040B /* svkern.h in Headers */,
+				E4476A271B23D1DB00AE040B /* svgxval.h in Headers */,
+				E4476A281B23D1DB00AE040B /* ftgxval.h in Headers */,
+				E4476A291B23D1DB00AE040B /* sweep.h in Headers */,
+				E4476A2A1B23D1DB00AE040B /* Vectoriser.h in Headers */,
+				E4476A2B1B23D1DB00AE040B /* Glyph.h in Headers */,
+				E4476A2C1B23D1DB00AE040B /* ftmemory.h in Headers */,
+				E4476A2D1B23D1DB00AE040B /* PolygonGlyphImpl.h in Headers */,
+				E4476A2E1B23D1DB00AE040B /* dict-list.h in Headers */,
+				E4476A2F1B23D1DB00AE040B /* fttypes.h in Headers */,
+				E4476A301B23D1DB00AE040B /* ftoption.h in Headers */,
+				E4476A311B23D1DB00AE040B /* ftsnames.h in Headers */,
+				E4476A321B23D1DB00AE040B /* TextureGlyphImpl.h in Headers */,
+				E4476A331B23D1DB00AE040B /* svotval.h in Headers */,
+				E4476A341B23D1DB00AE040B /* ftrender.h in Headers */,
+				E4476A351B23D1DB00AE040B /* GlyphContainer.h in Headers */,
+				E4476A361B23D1DB00AE040B /* ftlist.h in Headers */,
+				E4476A371B23D1DB00AE040B /* memalloc.h in Headers */,
+				E4476A381B23D1DB00AE040B /* ftglyph.h in Headers */,
+				E4476A391B23D1DB00AE040B /* GlyphImpl.h in Headers */,
+				E4476A3A1B23D1DB00AE040B /* psaux.h in Headers */,
+				E4476A3B1B23D1DB00AE040B /* tttags.h in Headers */,
+				E4476A3C1B23D1DB00AE040B /* internal.h in Headers */,
+				E4476A3D1B23D1DB00AE040B /* ftwinfnt.h in Headers */,
+				E4476A3E1B23D1DB00AE040B /* svmm.h in Headers */,
+				E4476A3F1B23D1DB00AE040B /* TextureGlyph.h in Headers */,
+				E4476A401B23D1DB00AE040B /* freetype.h in Headers */,
+				E4476A411B23D1DB00AE040B /* PixmapGlyphImpl.h in Headers */,
+				E4476A421B23D1DB00AE040B /* svpsinfo.h in Headers */,
+				E4476A431B23D1DB00AE040B /* ftobjs.h in Headers */,
+				E4476A441B23D1DB00AE040B /* ftpic.h in Headers */,
+				E4476A451B23D1DB00AE040B /* ftlcdfil.h in Headers */,
+				E4476A461B23D1DB00AE040B /* ftvalid.h in Headers */,
+				E4476A471B23D1DB00AE040B /* ftmoderr.h in Headers */,
+				E4476A481B23D1DB00AE040B /* render.h in Headers */,
+				E4476A491B23D1DB00AE040B /* OpenGLInterface.h in Headers */,
+				E4476A4A1B23D1DB00AE040B /* ftmm.h in Headers */,
+				E4476A4B1B23D1DB00AE040B /* t1tables.h in Headers */,
+				E4476A4C1B23D1DB00AE040B /* sfnt.h in Headers */,
+				E4476A4D1B23D1DB00AE040B /* ftpfr.h in Headers */,
+				E4476A4E1B23D1DB00AE040B /* tess.h in Headers */,
+				E4476A4F1B23D1DB00AE040B /* ttunpat.h in Headers */,
+				E4476A501B23D1DB00AE040B /* svbdf.h in Headers */,
+				E4476A511B23D1DB00AE040B /* priorityq-sort.h in Headers */,
+				E4476A521B23D1DB00AE040B /* PolyGlyph.h in Headers */,
+				E4476A531B23D1DB00AE040B /* autohint.h in Headers */,
+				E4476A541B23D1DB00AE040B /* ft2build.h in Headers */,
+				E4476A551B23D1DB00AE040B /* ftxf86.h in Headers */,
+				E4476A561B23D1DB00AE040B /* tessmono.h in Headers */,
+				E4476A571B23D1DB00AE040B /* TextureFont.h in Headers */,
+				E4476A581B23D1DB00AE040B /* ftmac.h in Headers */,
+				E4476A591B23D1DB00AE040B /* normal.h in Headers */,
+				E4476A5A1B23D1DB00AE040B /* PolygonFontImpl.h in Headers */,
+				E4476A5B1B23D1DB00AE040B /* SimpleLayout.h in Headers */,
+				E4476A5C1B23D1DB00AE040B /* ftcalc.h in Headers */,
+				E4476A5D1B23D1DB00AE040B /* ftbdf.h in Headers */,
+				E4476A5E1B23D1DB00AE040B /* BitmapFontImpl.h in Headers */,
+				E4476A5F1B23D1DB00AE040B /* FontMesh.h in Headers */,
+				E4476A601B23D1DB00AE040B /* ftsynth.h in Headers */,
+				E4476A611B23D1DB00AE040B /* BufferFont.h in Headers */,
+				E4476A621B23D1DB00AE040B /* Library.h in Headers */,
+				E4476A631B23D1DB00AE040B /* OutlineFontImpl.h in Headers */,
+				E4476A641B23D1DB00AE040B /* fttrace.h in Headers */,
+				E4476A651B23D1DB00AE040B /* ftmodule.h in Headers */,
+				E4476A661B23D1DB00AE040B /* priorityq.h in Headers */,
+				E4476A671B23D1DB00AE040B /* ftserv.h in Headers */,
+				E4476A681B23D1DB00AE040B /* BitmapGlyph.h in Headers */,
+				E4476A691B23D1DB00AE040B /* Internals.h in Headers */,
+				E4476A6A1B23D1DB00AE040B /* pshints.h in Headers */,
+				E4476A6B1B23D1DB00AE040B /* Face.h in Headers */,
+				E4476A6C1B23D1DB00AE040B /* svgldict.h in Headers */,
+				E4476A6D1B23D1DB00AE040B /* ftconfig.h in Headers */,
+				E4476A6E1B23D1DB00AE040B /* svpostnm.h in Headers */,
+				E4476A6F1B23D1DB00AE040B /* BitmapGlyphImpl.h in Headers */,
+				E4476A701B23D1DB00AE040B /* SimpleLayoutImpl.h in Headers */,
+				E4476A711B23D1DB00AE040B /* ftgzip.h in Headers */,
+				E4476A721B23D1DB00AE040B /* svtteng.h in Headers */,
+				E4476A731B23D1DB00AE040B /* ftstdlib.h in Headers */,
+				E4476A741B23D1DB00AE040B /* ftotval.h in Headers */,
+				E4476A751B23D1DB00AE040B /* BBox.h in Headers */,
+				E4476A761B23D1DB00AE040B /* Size.h in Headers */,
+				E4476A771B23D1DB00AE040B /* ftbbox.h in Headers */,
+				E4476A781B23D1DB00AE040B /* ftsystem.h in Headers */,
+				E4476A791B23D1DB00AE040B /* TextureFontImpl.h in Headers */,
+				E4476A7A1B23D1DB00AE040B /* BitmapFont.h in Headers */,
+				E4476A7B1B23D1DB00AE040B /* Unicode.h in Headers */,
+				E4476A7C1B23D1DB00AE040B /* BufferGlyphImpl.h in Headers */,
+				E4476A7D1B23D1DB00AE040B /* ftdriver.h in Headers */,
+				E4476A7E1B23D1DB00AE040B /* svsfnt.h in Headers */,
+				E4476A7F1B23D1DB00AE040B /* fttrigon.h in Headers */,
+				E4476A801B23D1DB00AE040B /* t1types.h in Headers */,
+				E4476A811B23D1DB00AE040B /* PixmapFont.h in Headers */,
+				E4476A821B23D1DB00AE040B /* Point.h in Headers */,
+				E4476A831B23D1DB00AE040B /* mesh.h in Headers */,
+				E4476A841B23D1DB00AE040B /* svxf86nm.h in Headers */,
+				E4476A851B23D1DB00AE040B /* OutlineGlyph.h in Headers */,
+				E4476A861B23D1DB00AE040B /* pcftypes.h in Headers */,
+				E4476A871B23D1DB00AE040B /* gluos.h in Headers */,
+				E4476A881B23D1DB00AE040B /* ftsizes.h in Headers */,
+				E4476A891B23D1DB00AE040B /* Buffer.h in Headers */,
+				E4476A8A1B23D1DB00AE040B /* svttglyf.h in Headers */,
+				E4476A8B1B23D1DB00AE040B /* ftstream.h in Headers */,
+				E4476A8C1B23D1DB00AE040B /* geom.h in Headers */,
+				E4476A8D1B23D1DB00AE040B /* Layout.h in Headers */,
+				E4476A8E1B23D1DB00AE040B /* ftincrem.h in Headers */,
+				E4476A8F1B23D1DB00AE040B /* ttnameid.h in Headers */,
+				E4476A901B23D1DB00AE040B /* tttables.h in Headers */,
+				E4476A911B23D1DB00AE040B /* dict.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4D61C5518DF660C00B121ED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1358,9 +1726,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E4D61C5218DF660C00B121ED /* difont */ = {
+		E44769FC1B23D1DB00AE040B /* difont_ios_noglu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4D61CC618DF660C00B121ED /* Build configuration list for PBXNativeTarget "difont" */;
+			buildConfigurationList = E4476ADF1B23D1DB00AE040B /* Build configuration list for PBXNativeTarget "difont_ios_noglu" */;
+			buildPhases = (
+				E44769FD1B23D1DB00AE040B /* Headers */,
+				E4476A921B23D1DB00AE040B /* Sources */,
+				E4476ADA1B23D1DB00AE040B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = difont_ios_noglu;
+			productName = freetype;
+			productReference = E4476AE21B23D1DB00AE040B /* libdifont_ios_noglu.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E4D61C5218DF660C00B121ED /* difont.ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4D61CC618DF660C00B121ED /* Build configuration list for PBXNativeTarget "difont.ios" */;
 			buildPhases = (
 				E4D61C5518DF660C00B121ED /* Headers */,
 				E4D61C9718DF660C00B121ED /* Sources */,
@@ -1370,7 +1755,7 @@
 			);
 			dependencies = (
 			);
-			name = difont;
+			name = difont.ios;
 			productName = freetype;
 			productReference = E41BB13919B0736D00F9D8DF /* libdifont.a */;
 			productType = "com.apple.product-type.library.static";
@@ -1397,12 +1782,68 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4D61C5218DF660C00B121ED /* difont */,
+				E4D61C5218DF660C00B121ED /* difont.ios */,
+				E44769FC1B23D1DB00AE040B /* difont_ios_noglu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E4476A921B23D1DB00AE040B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4476A931B23D1DB00AE040B /* autofit.c in Sources */,
+				E4476A941B23D1DB00AE040B /* SimpleLayout.cpp in Sources */,
+				E4476A951B23D1DB00AE040B /* Contour.cpp in Sources */,
+				E4476A971B23D1DB00AE040B /* cff.c in Sources */,
+				E4476A981B23D1DB00AE040B /* pshinter.c in Sources */,
+				E4476A9C1B23D1DB00AE040B /* psnames.c in Sources */,
+				E4476A9D1B23D1DB00AE040B /* raster.c in Sources */,
+				E4476A9E1B23D1DB00AE040B /* FontMesh.cpp in Sources */,
+				E4476A9F1B23D1DB00AE040B /* sfnt.c in Sources */,
+				E4476AA01B23D1DB00AE040B /* smooth.c in Sources */,
+				E4476AA11B23D1DB00AE040B /* truetype.c in Sources */,
+				E4476AA21B23D1DB00AE040B /* PixmapFont.cpp in Sources */,
+				E4476AA31B23D1DB00AE040B /* PolygonGlyph.cpp in Sources */,
+				E4476AA51B23D1DB00AE040B /* OpenGLInterface.osx.cpp in Sources */,
+				E4476AA61B23D1DB00AE040B /* Face.cpp in Sources */,
+				E4476AA71B23D1DB00AE040B /* ftsynth.c in Sources */,
+				E4476AA91B23D1DB00AE040B /* BufferGlyph.cpp in Sources */,
+				E4476AAE1B23D1DB00AE040B /* BufferFont.cpp in Sources */,
+				E4476AAF1B23D1DB00AE040B /* basepic.c in Sources */,
+				E4476AB01B23D1DB00AE040B /* GlyphContainer.cpp in Sources */,
+				E4476AB11B23D1DB00AE040B /* ftapi.c in Sources */,
+				E4476AB21B23D1DB00AE040B /* PixmapGlyph.cpp in Sources */,
+				E4476AB31B23D1DB00AE040B /* TextureGlyph.cpp in Sources */,
+				E4476AB41B23D1DB00AE040B /* ftbbox.c in Sources */,
+				E4476AB51B23D1DB00AE040B /* Charmap.cpp in Sources */,
+				E4476AB71B23D1DB00AE040B /* ftsystem.c in Sources */,
+				E4476AB81B23D1DB00AE040B /* ftpic.c in Sources */,
+				E4476AB91B23D1DB00AE040B /* ftdbgmem.c in Sources */,
+				E4476ABB1B23D1DB00AE040B /* OutlineFont.cpp in Sources */,
+				E4476ABC1B23D1DB00AE040B /* Point.cpp in Sources */,
+				E4476ABD1B23D1DB00AE040B /* Buffer.cpp in Sources */,
+				E4476ABF1B23D1DB00AE040B /* OutlineGlyph.cpp in Sources */,
+				E4476AC01B23D1DB00AE040B /* ftinit.c in Sources */,
+				E4476AC21B23D1DB00AE040B /* Library.cpp in Sources */,
+				E4476AC31B23D1DB00AE040B /* BitmapFont.cpp in Sources */,
+				E4476AC41B23D1DB00AE040B /* BitmapGlyph.cpp in Sources */,
+				E4476AC51B23D1DB00AE040B /* Glyph.cpp in Sources */,
+				E4476AC71B23D1DB00AE040B /* ftbitmap.c in Sources */,
+				E4476AC91B23D1DB00AE040B /* ftdebug.c in Sources */,
+				E4476ACA1B23D1DB00AE040B /* Size.cpp in Sources */,
+				E4476ACB1B23D1DB00AE040B /* TextureFont.cpp in Sources */,
+				E4476ACC1B23D1DB00AE040B /* Vectoriser.cpp in Sources */,
+				E4476ACE1B23D1DB00AE040B /* PolygonFont.cpp in Sources */,
+				E4476AD41B23D1DB00AE040B /* ftstroke.c in Sources */,
+				E4476AD51B23D1DB00AE040B /* ftglyph.c in Sources */,
+				E4476AD71B23D1DB00AE040B /* Layout.cpp in Sources */,
+				E4476AD81B23D1DB00AE040B /* ftbase.c in Sources */,
+				E4476AD91B23D1DB00AE040B /* Font.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4D61C9718DF660C00B121ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1499,7 +1940,6 @@
 					"../../lib/iGLU-1.0.0/include",
 				);
 				MACH_O_TYPE = staticlib;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = difont;
 				SDKROOT = iphoneos;
 			};
@@ -1525,10 +1965,25 @@
 			};
 			name = Release;
 		};
+		E4476AE01B23D1DB00AE040B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = 2;
+				PRODUCT_NAME = difont_ios_noglu;
+			};
+			name = Debug;
+		};
+		E4476AE11B23D1DB00AE040B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = difont_ios_noglu;
+			};
+			name = Release;
+		};
 		E4D61CC718DF660C00B121ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				GCC_OPTIMIZATION_LEVEL = 2;
 			};
 			name = Debug;
@@ -1536,7 +1991,6 @@
 		E4D61CC818DF660C00B121ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 			};
 			name = Release;
@@ -1553,7 +2007,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4D61CC618DF660C00B121ED /* Build configuration list for PBXNativeTarget "difont" */ = {
+		E4476ADF1B23D1DB00AE040B /* Build configuration list for PBXNativeTarget "difont_ios_noglu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4476AE01B23D1DB00AE040B /* Debug */,
+				E4476AE11B23D1DB00AE040B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4D61CC618DF660C00B121ED /* Build configuration list for PBXNativeTarget "difont.ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4D61CC718DF660C00B121ED /* Debug */,
