@@ -57,7 +57,7 @@ static void __gluMakeIdentityf(GLfloat m[16])
 void GLAPIENTRY
 gluOrtho2D(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top)
 {
-    glOrthof(left, right, bottom, top, -1, 1);
+    //glOrthof(left, right, bottom, top, -1, 1);
 }
 
 #define __glPi 3.14159265358979323846
@@ -83,7 +83,7 @@ gluPerspective(GLdouble fovy, GLdouble aspect, GLdouble zNear, GLdouble zFar)
     m[2][3] = -1;
     m[3][2] = -2 * zNear * zFar / deltaZ;
     m[3][3] = 0;
-    glMultMatrixf(&m[0][0]);
+    //glMultMatrixf(&m[0][0]);
 }
 
 static void normalize(float v[3])
@@ -143,8 +143,8 @@ gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble centerx,
     m[1][2] = -forward[1];
     m[2][2] = -forward[2];
 
-    glMultMatrixf(&m[0][0]);
-    glTranslatef(-eyex, -eyey, -eyez);
+    //glMultMatrixf(&m[0][0]);
+    //glTranslatef(-eyex, -eyey, -eyez);
 }
 
 static void __gluMultMatrixVecd(const GLdouble matrix[16], const GLdouble in[4],
@@ -354,7 +354,7 @@ gluPickMatrix(GLdouble x, GLdouble y, GLdouble deltax, GLdouble deltay,
     }
 
     /* Translate and scale the picked region to the entire window */
-    glTranslatef((viewport[2] - 2 * (x - viewport[0])) / deltax,
-	    (viewport[3] - 2 * (y - viewport[1])) / deltay, 0);
-    glScalef(viewport[2] / deltax, viewport[3] / deltay, 1.0);
+    //glTranslatef((viewport[2] - 2 * (x - viewport[0])) / deltax,
+	//    (viewport[3] - 2 * (y - viewport[1])) / deltay, 0);
+   // glScalef(viewport[2] / deltax, viewport[3] / deltay, 1.0);
 }
