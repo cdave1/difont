@@ -45,7 +45,7 @@ namespace difont {
 
     class GlyphContainer
     {
-        typedef std::vector<Glyph*> GlyphVector;
+        typedef std::vector<difont::Glyph*> GlyphVector;
     public:
         /**
          * Constructor
@@ -92,7 +92,7 @@ namespace difont {
          * @return              An Glyph or <code>null</code> is it hasn't been
          * loaded.
          */
-        const Glyph* const Glyph(const unsigned int characterCode) const;
+        const difont::Glyph* const Glyph(const unsigned int characterCode) const;
 
         /**
          * Get the bounding box for a character.
