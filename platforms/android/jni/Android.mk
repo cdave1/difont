@@ -97,4 +97,14 @@ LOCAL_SRC_FILES := $(FREETYPE2_SRC_FILES) $(IGLU_SRC_FILES) $(DIFONT_SRC_FILES)
 
 LOCAL_LDLIBS := -lGLESv3 -llog -ldl -lstdc++
 
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
+
+#include $(CLEAR_VARS)
+
+#LOCAL_MODULE := difont
+
+#LOCAL_STATIC_LIBRARIES := difont-static
+
+#LOCAL_LDLIBS := -llog -ldl
+
+#include $(BUILD_SHARED_LIBRARY)
