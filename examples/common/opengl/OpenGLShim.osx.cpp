@@ -60,7 +60,7 @@ GLuint difont::examples::OpenGL::loadVertexShader(const char *path) {
 
 
 GLuint difont::examples::OpenGL::loadShaderProgram(const char *vertexShaderPath, const char *fragmentShaderPath) {
-    GLint compiled = 0;
+    GLint status = 0;
     GLint linked = 0;
     GLuint vertexShader = 0;
     GLuint fragmentShader = 0;
@@ -68,10 +68,9 @@ GLuint difont::examples::OpenGL::loadShaderProgram(const char *vertexShaderPath,
 
     vertexShader = loadVertexShader(vertexShaderPath);
     glCompileShader(vertexShader);
-    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &compiled);
+    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status);
 
-    if (!compiled)
-    {
+    if (status == GL_FALSE) {
         m_shaderInfoLog = shaderInfoLog(vertexShader);
         glDeleteShader(vertexShader);
 
@@ -85,15 +84,12 @@ GLuint difont::examples::OpenGL::loadShaderProgram(const char *vertexShaderPath,
 
         m_shaderInfoLog = output.str();
         fprintf(stderr, "%s\n", m_shaderInfoLog.c_str());
-    }
-    else
-    {
+    } else {
         fragmentShader = loadFragmentShader(fragmentShaderPath);
         glCompileShader(fragmentShader);
-        glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &compiled);
+        glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &status);
 
-        if (!compiled)
-        {
+        if (status == GL_FALSE) {
             m_shaderInfoLog = shaderInfoLog(fragmentShader);
             glDeleteShader(vertexShader);
             glDeleteShader(fragmentShader);
@@ -108,9 +104,7 @@ GLuint difont::examples::OpenGL::loadShaderProgram(const char *vertexShaderPath,
 
             m_shaderInfoLog = output.str();
             fprintf(stderr, "%s\n", m_shaderInfoLog.c_str());
-        }
-        else
-        {
+        } else {
             shaderProgram = glCreateProgram();
             glAttachShader(shaderProgram, vertexShader);
             glAttachShader(shaderProgram, fragmentShader);
@@ -120,8 +114,7 @@ GLuint difont::examples::OpenGL::loadShaderProgram(const char *vertexShaderPath,
             glDeleteShader(vertexShader);
             glDeleteShader(fragmentShader);
 
-            if (!linked)
-            {
+            if (!linked) {
                 m_programInfoLog = programInfoLog(shaderProgram);
                 glDeleteProgram(shaderProgram);
                 
@@ -148,8 +141,7 @@ GLuint difont::examples::OpenGL::loadShader(const char *filename, GLenum shaderT
     std::string source;
     std::ifstream file(filename, std::ios::binary);
 
-    if (file.is_open())
-    {
+    if (file.is_open()) {
         file.seekg(0, std::ios::end);
 
         unsigned int fileSize = static_cast<unsigned int>(file.tellg());
@@ -168,8 +160,7 @@ GLuint difont::examples::OpenGL::loadShader(const char *filename, GLenum shaderT
 }
 
 
-std::string difont::examples::OpenGL::programInfoLog(GLuint program)
-{
+std::string difont::examples::OpenGL::programInfoLog(GLuint program) {
     GLsizei infoLogSize = 0;
     std::string infoLog;
 
@@ -180,14 +171,18 @@ std::string difont::examples::OpenGL::programInfoLog(GLuint program)
     return infoLog;
 }
 
-std::string difont::examples::OpenGL::shaderInfoLog(GLuint shader)
-{
-    GLsizei infoLogSize = 0;
-    std::string infoLog;
+std::string difont::examples::OpenGL::shaderInfoLog(GLuint shader) {
+    GLint length;
+    GLint status;
+    std::string infoLog = "";
 
-    glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &infoLogSize);
-    infoLog.resize(infoLogSize);
-    glGetShaderInfoLog(shader, infoLogSize, &infoLogSize, &infoLog[0]);
-    
+    glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &length);
+    if (length > 0) {
+        char *log = (char *)calloc(1, length);
+        glGetShaderInfoLog(shader, length, &status, log);
+        infoLog = std::string(log);
+        free(log);
+    }
+
     return infoLog;
 }

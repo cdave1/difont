@@ -40,6 +40,7 @@
 
 static HelloWorld *helloWorld;
 static GLuint shaderProgram;
+static bool isSetup = false;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
@@ -70,16 +71,25 @@ static GLuint shaderProgram;
     [self.glView setRenderProxy:self];
     [self.window makeKeyAndOrderFront:self];
     [self.window makeFirstResponder:self.glView];
+}
 
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Diavlo_BLACK_II_37.otf"];
-    helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
-    helloWorld->SetupFonts([path UTF8String]);
 
-    NSString *fragmentShaderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"quad.frag"];
-    NSString *vertexShaderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"quad.vert"];
+- (void)applicationDidBecomeActive:(NSNotification *)aNotification {
+    if (!isSetup) {
+        NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
+        NSRect viewRect = NSMakeRect(0.0, 0.0, 0.5 * mainDisplayRect.size.width, 0.5 * mainDisplayRect.size.height);
 
-    shaderProgram = difont::examples::OpenGL::loadShaderProgram([vertexShaderPath UTF8String], [fragmentShaderPath UTF8String]);
-    helloWorld->SetupVertexArrays(shaderProgram);
+        NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Diavlo_BLACK_II_37.otf"];
+        helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
+        helloWorld->SetupFonts([path UTF8String]);
+
+        NSString *fragmentShaderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"quad.frag"];
+        NSString *vertexShaderPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"quad.vert"];
+
+        shaderProgram = difont::examples::OpenGL::loadShaderProgram([vertexShaderPath UTF8String], [fragmentShaderPath UTF8String]);
+        helloWorld->SetupVertexArrays(shaderProgram);
+        isSetup = true;
+    }
 }
 
 

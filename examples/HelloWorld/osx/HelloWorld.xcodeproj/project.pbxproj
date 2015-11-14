@@ -231,7 +231,7 @@
 		6318E91B1339AA3B008BCE29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = n/a;
 			};
 			buildConfigurationList = 6318E91E1339AA3B008BCE29 /* Build configuration list for PBXProject "HelloWorld" */;
@@ -325,6 +325,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = YES;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* (*) .DS_Store CVS .svn .git .hg experimental";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -397,6 +398,7 @@
 				);
 				INFOPLIST_FILE = BaseInfo.plist;
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = HelloWorld;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				WRAPPER_EXTENSION = app;
@@ -414,6 +416,7 @@
 				GCC_PREFIX_HEADER = BasePrefix.pch;
 				INFOPLIST_FILE = BaseInfo.plist;
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = HelloWorld;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				WRAPPER_EXTENSION = app;
