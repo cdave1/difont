@@ -94,14 +94,12 @@ inline difont::Point OutlineFontImpl::RenderI(const T* string, const int len,
     difont::FontMeshSet::AddMesh(GL_LINES);
 	if (preRendered)
 	{
-		tmp = FontImpl::Render(string, len,
-										 position, spacing, renderMode);
+		tmp = FontImpl::Render(string, len, position, spacing, renderMode);
 	}
 	else 
 	{
 		PreRender();
-		tmp = FontImpl::Render(string, len,
-										 position, spacing, renderMode);
+		tmp = FontImpl::Render(string, len, position, spacing, renderMode);
 		PostRender();
 	}
     difont::FontMeshSet::End();

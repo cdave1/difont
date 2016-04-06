@@ -34,11 +34,11 @@
 #endif
 
 #if defined __APPLE_CC__ && __APPLE_CC__ < 5465
-    typedef GLvoid (*GLUTesselatorFunction) (...);
+typedef GLvoid (*GLUTesselatorFunction) (...);
 #elif defined WIN32 && !defined __CYGWIN__
-    typedef GLvoid (CALLBACK *GLUTesselatorFunction) ();
+typedef GLvoid (CALLBACK *GLUTesselatorFunction) ();
 #else
-    typedef GLvoid (*GLUTesselatorFunction) ();
+typedef GLvoid (*GLUTesselatorFunction) ();
 #endif
 
 
@@ -75,7 +75,7 @@ void CALLBACK ftglEndTess(difont::Mesh* mesh)
 
 difont::Mesh::Mesh()
 : currentTesselation(0),
-    err(0)
+err(0)
 {
     tesselationList.reserve(16);
 }
@@ -125,9 +125,9 @@ const difont::Tesselation* const difont::Mesh::Tesselation(size_t index) const
 
 difont::Vectoriser::Vectoriser(const FT_GlyphSlot glyph)
 :   contourList(0),
-    mesh(0),
-    ftContourCount(0),
-    contourFlag(0)
+mesh(0),
+ftContourCount(0),
+contourFlag(0)
 {
     if(glyph)
     {
@@ -215,8 +215,8 @@ void difont::Vectoriser::ProcessContours()
 
                 /* FIXME: combinations of >= > <= and < do not seem stable */
                 if((p1.Y() < leftmost.Y() && p2.Y() < leftmost.Y())
-                    || (p1.Y() >= leftmost.Y() && p2.Y() >= leftmost.Y())
-                    || (p1.X() > leftmost.X() && p2.X() > leftmost.X()))
+                   || (p1.Y() >= leftmost.Y() && p2.Y() >= leftmost.Y())
+                   || (p1.X() > leftmost.X() && p2.X() > leftmost.X()))
                 {
                     continue;
                 }
@@ -267,7 +267,7 @@ void difont::Vectoriser::MakeMesh(double zNormal, int outsetType, float outsetSi
     }
 
     mesh = new difont::Mesh;
-	
+
     GLUtesselator* tobj = gluNewTess();
 
     gluTessCallback(tobj, GLU_TESS_BEGIN_DATA,     (GLUTesselatorFunction)ftglBeginTess);
@@ -284,42 +284,42 @@ void difont::Vectoriser::MakeMesh(double zNormal, int outsetType, float outsetSi
     {
         gluTessProperty(tobj, GLU_TESS_WINDING_RULE, GLU_TESS_WINDING_NONZERO);
     }
-	
+
 
     gluTessProperty(tobj, GLU_TESS_TOLERANCE, 0);
     gluTessNormal(tobj, 0.0f, 0.0f, zNormal);
     gluTessBeginPolygon(tobj, mesh);
 
-        for(size_t c = 0; c < ContourCount(); ++c)
+    for(size_t c = 0; c < ContourCount(); ++c)
+    {
+        switch(outsetType)
         {
+            case 1 : contourList[c]->buildFrontOutset(outsetSize); break;
+            case 2 : contourList[c]->buildBackOutset(outsetSize); break;
+        }
+        const difont::Contour* contour = contourList[c];
+
+
+        gluTessBeginContour(tobj);
+        for(size_t p = 0; p < contour->PointCount(); ++p)
+        {
+            const double* d;
             switch(outsetType)
             {
-                case 1 : contourList[c]->buildFrontOutset(outsetSize); break;
-                case 2 : contourList[c]->buildBackOutset(outsetSize); break;
+                case 1: d = contour->FrontPoint(p); break;
+                case 2: d = contour->BackPoint(p); break;
+                case 0: default: d = contour->Point(p); break;
             }
-            const difont::Contour* contour = contourList[c];
-
-
-           gluTessBeginContour(tobj);
-                for(size_t p = 0; p < contour->PointCount(); ++p)
-                {
-                    const double* d;
-                    switch(outsetType)
-                    {
-                        case 1: d = contour->FrontPoint(p); break;
-                        case 2: d = contour->BackPoint(p); break;
-                        case 0: default: d = contour->Point(p); break;
-                    }
-                    // XXX: gluTessVertex doesn't modify the data but does not
-                    // specify "const" in its prototype, so we cannot cast to
-                    // a const type.
-                    gluTessVertex(tobj, (GLdouble *)d, (GLvoid *)d);
-                }
-
-            gluTessEndContour(tobj);
+            // XXX: gluTessVertex doesn't modify the data but does not
+            // specify "const" in its prototype, so we cannot cast to
+            // a const type.
+            gluTessVertex(tobj, (GLdouble *)d, (GLvoid *)d);
         }
+
+        gluTessEndContour(tobj);
+    }
     gluTessEndPolygon(tobj);
 
-	gluDeleteTess(tobj);
+    gluDeleteTess(tobj);
 }
 

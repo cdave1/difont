@@ -1,7 +1,7 @@
 #ifndef _FT_FONT_MESH_H_
 #define _FT_FONT_MESH_H_
 
-#define DIFONT_MESH_MAX_VERTICES 128
+#define DIFONT_MESH_MAX_VERTICES 512
 
 namespace difont {
     class FontVertex {

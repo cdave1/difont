@@ -106,11 +106,6 @@ const difont::Point& OutlineGlyphImpl::RenderImpl(const difont::Point& pen,
 
 void OutlineGlyphImpl::RenderContours(const difont::Point& pen)
 {
-    for(unsigned int c = 0; c < vectoriser->ContourCount(); ++c)
-    {
-        const difont::Contour* contour = vectoriser->Contour(c);
-    }
-
 	for(unsigned int c = 0; c < vectoriser->ContourCount(); ++c)
     {
         const difont::Contour* contour = vectoriser->Contour(c);

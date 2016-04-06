@@ -57,6 +57,6 @@ namespace difont {
 #include "Layout.h"
 #include "SimpleLayout.h"
 
-#include "vectoriser/FontMesh.h"
+#include "mesh/FontMesh.h"
 
 #endif
