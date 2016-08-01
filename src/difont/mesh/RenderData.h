@@ -17,6 +17,8 @@ namespace difont {
 
         int MeshCount() const;
 
+        void Clear();
+
         const std::vector<difont::GlyphData> & GetGlyphData() const;
 
         const std::vector<difont::FontMesh> & GetMeshes() const;

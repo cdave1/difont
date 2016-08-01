@@ -4,11 +4,6 @@
 #include <assert.h>
 #include <algorithm>
 
-
-///
-/// difont::FontMesh
-///
-
 void difont::RenderData::AddMesh(const difont::FontMesh &mesh) {
     meshes.push_back(mesh);
 }
@@ -21,6 +16,12 @@ void difont::RenderData::AddGlyph(const difont::GlyphData &glyphData) {
 
 int difont::RenderData::MeshCount() const{
     return meshes.size();
+}
+
+
+void difont::RenderData::Clear() {
+    meshes.clear();
+    glyphs.clear();
 }
 
 

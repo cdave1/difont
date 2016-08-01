@@ -46,6 +46,8 @@ namespace difont {
         
         unsigned long GetVertexCount() const;
 
+        std::string ToSVG() const;
+
     };
 }
 

@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include <algorithm>
+#include <string>
+#include <sstream>
 
 ///
 /// difont::FontVertex
@@ -49,4 +51,19 @@ void difont::FontMesh::SetTextureId(unsigned int texId) {
 
 unsigned long difont::FontMesh::GetVertexCount() const {
     return vertices.size();
+}
+
+
+std::string difont::FontMesh::ToSVG() const {
+    std::stringstream svg;
+
+    svg << "M" << vertices[0].position[0] << "," << vertices[0].position[1] << " ";
+
+    for (int i = 0; i < vertices.size(); ++i) {
+        difont::FontVertex v1 = vertices[i];
+        difont::FontVertex v2 = vertices[(i + 1) % vertices.size()];
+        svg << "L" << v1.position[0] << "," << v1.position[1] << " " << v2.position[0] << "," << v2.position[1] << " ";
+    }
+
+    return svg.str();
 }
