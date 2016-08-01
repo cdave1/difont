@@ -91,6 +91,16 @@ namespace difont {
         virtual difont::Point Render(const wchar_t *s, const int len,
                                      difont::Point, difont::Point, int);
 
+        virtual difont::Point Render(const char *s,
+                                     difont::RenderData &renderData,
+                                     const int len,
+                                     difont::Point, difont::Point, int);
+
+        virtual difont::Point Render(const wchar_t *s,
+                                     difont::RenderData &renderData,
+                                     const int len,
+                                     difont::Point, difont::Point, int);
+
         virtual void PreRender() {}
 
 
@@ -159,6 +169,11 @@ namespace difont {
         /* Internal generic Render() implementation */
         template <typename T>
         inline difont::Point RenderI(const T *s, const int len,
+                                     difont::Point position, difont::Point spacing, int mode);
+
+        template <typename T>
+        inline difont::Point RenderMeshI(const T *s,
+                                     difont::RenderData &renderData, const int len,
                                      difont::Point position, difont::Point spacing, int mode);
     };
 }

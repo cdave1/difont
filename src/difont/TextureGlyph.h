@@ -57,7 +57,6 @@ namespace difont {
          * Destructor
          */
         virtual ~TextureGlyph();
-
         /**
          * Render this glyph at the current pen position.
          *
@@ -66,6 +65,15 @@ namespace difont {
          * @return  The advance distance for this glyph.
          */
         virtual const difont::Point& Render(const difont::Point& pen, int renderMode);
+        
+        /**
+         * Render this glyph at the current pen position.
+         *
+         * @param pen  The current pen position.
+         * @param renderMode  Render mode to display
+         * @return  The advance distance for this glyph.
+         */
+        virtual const difont::Point& Render(const difont::Point& pen, difont::RenderData &renderData, int renderMode);
     };
 }
 

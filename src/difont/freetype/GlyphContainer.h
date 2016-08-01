@@ -122,6 +122,12 @@ namespace difont {
                              const unsigned int nextCharacterCode,
                              difont::Point penPosition, int renderMode);
 
+
+        difont::Point RenderMesh(const unsigned int charCode,
+                                 const unsigned int nextCharCode,
+                                 difont::RenderData &renderData,
+                                 difont::Point penPosition, int renderMode);
+
         /**
          * Queries the Font for errors.
          *

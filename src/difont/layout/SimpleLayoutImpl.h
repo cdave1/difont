@@ -96,6 +96,12 @@ namespace difont {
                                  difont::Point position, int renderMode,
                                  const float extraSpace);
 
+        virtual void Render(const char *string, difont::RenderData &renderData, const int len,
+                            difont::Point position, int renderMode);
+
+        virtual void Render(const wchar_t *string, difont::RenderData &renderData, const int len,
+                            difont::Point position, int renderMode);
+
     private:
         /**
          * Either render a string of characters and wrap lines
@@ -232,7 +238,18 @@ namespace difont {
         inline void RenderSpaceI(const T* string, const int len,
                                  difont::Point position, int renderMode,
                                  const float extraSpace);
-        
+
+        /* Internal generic Render() implementation */
+        template <typename T>
+        inline void RenderI(const T* string, difont::RenderData &fontMesh, const int len,
+                            difont::Point position, int renderMode);
+
+        /* Internal generic RenderSpace() implementation */
+        template <typename T>
+        inline void RenderSpaceI(const T* string, difont::RenderData &fontMesh, const int len,
+                                 difont::Point position, int renderMode,
+                                 const float extraSpace);
+
         /* Internal generic WrapText() implementation */
         template <typename T>
         void WrapTextI(const T* buf, const int len,

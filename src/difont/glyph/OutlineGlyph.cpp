@@ -47,10 +47,10 @@ OutlineGlyph::~OutlineGlyph()
 {}
 
 
-const difont::Point& OutlineGlyph::Render(const difont::Point& pen, int renderMode)
+const difont::Point& OutlineGlyph::Render(const difont::Point& pen, difont::RenderData &renderData, int renderMode)
 {
     OutlineGlyphImpl *myimpl = dynamic_cast<OutlineGlyphImpl *>(impl);
-    return myimpl->RenderImpl(pen, renderMode);
+    return myimpl->RenderImpl(pen, renderData, renderMode);
 }
 
 
@@ -92,24 +92,29 @@ OutlineGlyphImpl::~OutlineGlyphImpl()
 }
 
 
-const difont::Point& OutlineGlyphImpl::RenderImpl(const difont::Point& pen,
+const difont::Point& OutlineGlyphImpl::RenderImpl(const difont::Point& pen, difont::RenderData &renderData,
                                               int renderMode)
 {
     if(vectoriser)
     {
-        RenderContours(pen);
+        RenderContours(pen, renderData);
     }
 
     return advance;
 }
 
 
-void OutlineGlyphImpl::RenderContours(const difont::Point& pen)
-{
-    for(unsigned int c = 0; c < vectoriser->ContourCount(); ++c)
-    {
-        const difont::Contour* contour = vectoriser->Contour(c);
+void OutlineGlyphImpl::RenderContours(const difont::Point& pen, difont::RenderData &renderData) {
+    difont::GlyphData glyphData;
+    for(unsigned int c = 0; c < vectoriser->ContourCount(); ++c) {
+        const difont::Contour *contour = vectoriser->Contour(c);
+        difont::Path path;
+        path.AddPath(contour->GetPath(), pen, contour->Clockwise());
+        glyphData.AddPath(path);
     }
+    renderData.AddGlyph(glyphData);
+
+    difont::FontMesh mesh(GL_LINES);
 
 	for(unsigned int c = 0; c < vectoriser->ContourCount(); ++c)
     {
@@ -129,13 +134,15 @@ void OutlineGlyphImpl::RenderContours(const difont::Point& pen)
             difont::FontVertex vertex1;
             vertex1.SetVertex2f((point1.Xf() / 64.0f) + pen.Xf(),
 						        (point1.Yf() / 64.0f) + pen.Yf());
-            difont::FontMeshSet::AddVertex(vertex1);
+            mesh.AddVertex(vertex1);
 
             difont::FontVertex vertex2;
             vertex2.SetVertex2f((point2.Xf() / 64.0f) + pen.Xf(),
 						        (point2.Yf() / 64.0f) + pen.Yf());
-            difont::FontMeshSet::AddVertex(vertex2);
+            mesh.AddVertex(vertex2);
 		}
     }
+
+    renderData.AddMesh(mesh);
 }
 

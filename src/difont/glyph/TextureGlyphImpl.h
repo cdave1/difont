@@ -40,7 +40,9 @@ namespace difont {
 
         virtual ~TextureGlyphImpl();
 
-        virtual const difont::Point& RenderImpl(const difont::Point& pen, int renderMode);
+        virtual const difont::Point& RenderImpl(const difont::Point& pen,
+                                                difont::RenderData &renderData,
+                                                int renderMode);
 
     private:
         /**

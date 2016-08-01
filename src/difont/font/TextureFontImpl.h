@@ -158,6 +158,10 @@ namespace difont {
         template <typename T>
         inline difont::Point RenderI(const T *s, const int len,
                                      difont::Point position, difont::Point spacing, int mode);
+
+        template <typename T>
+        inline difont::Point RenderMeshI(const T *s, difont::RenderData &renderData, const int len,
+                                     difont::Point position, difont::Point spacing, int mode);
     };
 }
 

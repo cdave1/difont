@@ -82,7 +82,7 @@ OutlineFontImpl::OutlineFontImpl(Font *ftFont,
     load_flags = FT_LOAD_NO_HINTING;
 	preRendered = false;
 }
-
+/*
 
 template <typename T>
 inline difont::Point OutlineFontImpl::RenderI(const T* string, const int len,
@@ -90,8 +90,8 @@ inline difont::Point OutlineFontImpl::RenderI(const T* string, const int len,
                                           int renderMode)
 {
 	difont::Point tmp;
-    difont::FontMeshSet::Begin();
-    difont::FontMeshSet::AddMesh(GL_LINES);
+    difont::RenderData::Begin();
+    difont::RenderData::AddMesh(GL_LINES);
 	if (preRendered)
 	{
 		tmp = FontImpl::Render(string, len, position, spacing, renderMode);
@@ -102,7 +102,7 @@ inline difont::Point OutlineFontImpl::RenderI(const T* string, const int len,
 		tmp = FontImpl::Render(string, len, position, spacing, renderMode);
 		PostRender();
 	}
-    difont::FontMeshSet::End();
+    difont::RenderData::End();
     return tmp;
 }
 
@@ -132,5 +132,5 @@ difont::Point OutlineFontImpl::Render(const wchar_t * string, const int len,
                                   int renderMode)
 {
     return RenderI(string, len, position, spacing, renderMode);
-}
+}*/
 

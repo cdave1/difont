@@ -48,7 +48,7 @@ namespace difont {
          *
          * @param fontFilePath  font file path.
          */
-        Face(const char* fontFilePath, bool precomputeKerning = true);
+        Face(const char* fontFilePath, bool precomputeKerning = false);
 
         /**
          * Read face data from an in-memory buffer. Error is set.
@@ -57,7 +57,7 @@ namespace difont {
          * @param bufferSizeInBytes  the length of the buffer in bytes
          */
         Face(const unsigned char *pBufferBytes, size_t bufferSizeInBytes,
-             bool precomputeKerning = true);
+             bool precomputeKerning = false);
 
         /**
          * Destructor
@@ -168,7 +168,7 @@ namespace difont {
          * If this face has kerning tables, we can cache them.
          */
         void BuildKerningCache();
-        static const unsigned int MAX_PRECOMPUTED = 128;
+        static const unsigned int MAX_PRECOMPUTED = 512;
         float *kerningCache;
         
         /**

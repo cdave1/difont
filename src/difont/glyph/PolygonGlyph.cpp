@@ -50,6 +50,13 @@ const difont::Point& PolygonGlyph::Render(const difont::Point& pen, int renderMo
 }
 
 
+const difont::Point& PolygonGlyph::Render(const difont::Point& pen, difont::RenderData &renderData, int renderMode)
+{
+    PolygonGlyphImpl *myimpl = dynamic_cast<PolygonGlyphImpl *>(impl);
+    return myimpl->RenderImpl(pen, renderData, renderMode);
+}
+
+
 PolygonGlyphImpl::PolygonGlyphImpl(FT_GlyphSlot glyph, float _outset,
                                        bool useDisplayList)
 :   GlyphImpl(glyph),
@@ -89,36 +96,52 @@ PolygonGlyphImpl::~PolygonGlyphImpl()
 
 
 const difont::Point& PolygonGlyphImpl::RenderImpl(const difont::Point& pen,
-                                              int renderMode)
-{
-	if (vectoriser)
-	{
-		DoRender(pen);
+                                                  int renderMode) {
+    
+}
+
+
+const difont::Point& PolygonGlyphImpl::RenderImpl(const difont::Point& pen,
+                                                  difont::RenderData &renderData, int renderMode) {
+	if (vectoriser) {
+		DoRender(pen, renderData);
 	}
     return advance;
 }
 
 
-void PolygonGlyphImpl::DoRender(const difont::Point& pen)
-{
+void PolygonGlyphImpl::DoRender(const difont::Point& pen, difont::RenderData &renderData) {
+    difont::GlyphData glyphData;
+    for(unsigned int c = 0; c < vectoriser->ContourCount(); ++c) {
+        const difont::Contour *contour = vectoriser->Contour(c);
+        difont::Path path;
+        path.AddPath(contour->GetPath(), pen, contour->Clockwise());
+        glyphData.AddPath(path);
+    }
+    renderData.AddGlyph(glyphData);
+
     const difont::Mesh *mesh = vectoriser->GetMesh();
 
-    for(unsigned int t = 0; t < mesh->TesselationCount(); ++t)
-    {
+    for(unsigned int t = 0; t < mesh->TesselationCount(); ++t) {
         const difont::Tesselation* subMesh = mesh->Tesselation(t);
         unsigned int polygonType = subMesh->PolygonType();
 
-        difont::FontMeshSet::AddMesh(polygonType);
+        difont::FontMesh mesh(polygonType);
 
-		for(unsigned int i = 0; i < subMesh->PointCount(); ++i)
-		{
+		for(unsigned int i = 0; i < subMesh->PointCount(); ++i) {
 			difont::Point point = subMesh->Point(i);
 
+            difont::Point point1 = difont::Point(point.X() + outset,
+                                                 point.Y() + outset,
+                                                 0);
+
             difont::FontVertex vertex;
-            vertex.SetTexCoord2f(point.Xf() / hscale, point.Yf() / vscale);
+            vertex.SetTexCoord2f(point1.Xf() / hscale, point.Yf() / vscale);
             vertex.SetVertex3f(pen.Xf() + point.Xf() / 64.0f, pen.Yf() + point.Yf() / 64.0f, 0.0f);
-            difont::FontMeshSet::AddVertex(vertex);
+            mesh.AddVertex(vertex);
 		}
+
+        renderData.AddMesh(mesh);
     }
 }
 

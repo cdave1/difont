@@ -90,7 +90,8 @@ namespace difont {
          * @param position  The pen position of the first character (optional).
          * @param renderMode  Render mode to display (optional)
          */
-        virtual void Render(const char *string, const int len = -1,
+        virtual void Render(const char *string,
+                            const int len = -1,
                             difont::Point position = difont::Point(),
                             int renderMode = difont::RENDER_ALL);
 
@@ -104,7 +105,40 @@ namespace difont {
          * @param position  The pen position of the first character (optional).
          * @param renderMode  Render mode to display (optional)
          */
-        virtual void Render(const wchar_t *string, const int len = -1,
+        virtual void Render(const wchar_t *string,
+                            const int len = -1,
+                            difont::Point position = difont::Point(),
+                            int renderMode = difont::RENDER_ALL);
+
+        /**
+         * Render a string of characters.
+         *
+         * @param string    'C' style string to be output.
+         * @param len  The length of the string. If < 0 then all characters
+         *             will be displayed until a null character is encountered
+         *             (optional).
+         * @param position  The pen position of the first character (optional).
+         * @param renderMode  Render mode to display (optional)
+         */
+        virtual void Render(const char *string,
+                            difont::RenderData &renderData,
+                            const int len = -1,
+                            difont::Point position = difont::Point(),
+                            int renderMode = difont::RENDER_ALL);
+
+        /**
+         * Render a string of characters.
+         *
+         * @param string    wchar_t string to be output.
+         * @param len  The length of the string. If < 0 then all characters
+         *             will be displayed until a null character is encountered
+         *             (optional).
+         * @param position  The pen position of the first character (optional).
+         * @param renderMode  Render mode to display (optional)
+         */
+        virtual void Render(const wchar_t *string,
+                            difont::RenderData &renderData,
+                            const int len = -1,
                             difont::Point position = difont::Point(),
                             int renderMode = difont::RENDER_ALL);
 

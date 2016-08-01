@@ -55,7 +55,7 @@ Face::Face(const char* fontFilePath, bool precomputeKerning)
 
     if(hasKerningTable && precomputeKerning)
     {
-        BuildKerningCache();
+        //BuildKerningCache();
     }
 }
 
@@ -85,7 +85,7 @@ Face::Face(const unsigned char *pBufferBytes, size_t bufferSizeInBytes,
 
     if(hasKerningTable && precomputeKerning)
     {
-        BuildKerningCache();
+        //BuildKerningCache();
     }
 }
 
@@ -167,20 +167,18 @@ difont::Point Face::KernAdvance(unsigned int index1, unsigned int index2)
     }
 
     if(kerningCache && index1 < Face::MAX_PRECOMPUTED
-        && index2 < Face::MAX_PRECOMPUTED)
-    {
+        && index2 < Face::MAX_PRECOMPUTED) {
         x = kerningCache[2 * (index2 * Face::MAX_PRECOMPUTED + index1)];
         y = kerningCache[2 * (index2 * Face::MAX_PRECOMPUTED + index1) + 1];
+
         return difont::Point(x, y);
     }
 
     FT_Vector kernAdvance;
     kernAdvance.x = kernAdvance.y = 0;
 
-    err = FT_Get_Kerning(*ftFace, index1, index2, ft_kerning_unfitted,
-                         &kernAdvance);
-    if(err)
-    {
+    err = FT_Get_Kerning(*ftFace, index1, index2, ft_kerning_unfitted, &kernAdvance);
+    if (err) {
         return difont::Point(0.0f, 0.0f);
     }
 
@@ -214,8 +212,7 @@ void Face::BuildKerningCache()
     {
         for(unsigned int i = 0; i < Face::MAX_PRECOMPUTED; i++)
         {
-            err = FT_Get_Kerning(*ftFace, i, j, ft_kerning_unfitted,
-                                 &kernAdvance);
+            err = FT_Get_Kerning(*ftFace, i, j, ft_kerning_unfitted, &kernAdvance);
             if(err)
             {
                 delete[] kerningCache;
@@ -223,10 +220,12 @@ void Face::BuildKerningCache()
                 return;
             }
 
-            kerningCache[2 * (j * Face::MAX_PRECOMPUTED + i)] =
-                                static_cast<float>(kernAdvance.x) / 64.0f;
-            kerningCache[2 * (j * Face::MAX_PRECOMPUTED + i) + 1] =
-                                static_cast<float>(kernAdvance.y) / 64.0f;
+            if (kernAdvance.x != 0 || kernAdvance.y != 0) {
+                fprintf(stderr, "Kerning advance: %d, %d (%d, %d)\n", kernAdvance.x, kernAdvance.y, i, j);
+            }
+
+            kerningCache[2 * (j * Face::MAX_PRECOMPUTED + i)] =     static_cast<float>(kernAdvance.x) / 64.0f;
+            kerningCache[2 * (j * Face::MAX_PRECOMPUTED + i) + 1] = static_cast<float>(kernAdvance.y) / 64.0f;
         }
     }
 }

@@ -48,10 +48,10 @@ TextureGlyph::~TextureGlyph()
 {}
 
 
-const difont::Point& TextureGlyph::Render(const difont::Point& pen, int renderMode)
+const difont::Point& TextureGlyph::Render(const difont::Point& pen, difont::RenderData &renderData, int renderMode)
 {
     TextureGlyphImpl *myimpl = dynamic_cast<TextureGlyphImpl *>(impl);
-    return myimpl->RenderImpl(pen, renderMode);
+    return myimpl->RenderImpl(pen, renderData, renderMode);
 }
 
 
@@ -106,6 +106,7 @@ TextureGlyphImpl::~TextureGlyphImpl()
 
 
 const difont::Point& TextureGlyphImpl::RenderImpl(const difont::Point& pen,
+                                                  difont::RenderData &renderData,
                                                   int renderMode)
 {
     float dx, dy;
@@ -127,12 +128,12 @@ const difont::Point& TextureGlyphImpl::RenderImpl(const difont::Point& pen,
     v4.SetTexCoord2f(uv[1].Xf(), uv[0].Yf());
     v4.SetVertex2f(dx + destWidth, dy);
 
-    difont::FontMeshSet::AddMesh(GL_QUADS);
-    difont::FontMeshSet::SetTextureId(glTextureID);
-    difont::FontMeshSet::AddVertex(v1);
-    difont::FontMeshSet::AddVertex(v2);
-    difont::FontMeshSet::AddVertex(v3);
-    difont::FontMeshSet::AddVertex(v4);
+    difont::FontMesh mesh(GL_QUADS);
+    mesh.SetTextureId(glTextureID);
+    mesh.AddVertex(v1);
+    mesh.AddVertex(v2);
+    mesh.AddVertex(v3);
+    mesh.AddVertex(v4);
     
     return advance;
 }

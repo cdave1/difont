@@ -115,3 +115,23 @@ difont::Point difont::GlyphContainer::Render(const unsigned int charCode,
     return kernAdvance;
 }
 
+
+difont::Point difont::GlyphContainer::RenderMesh(const unsigned int charCode,
+                                             const unsigned int nextCharCode,
+                                             difont::RenderData &renderData,
+                                             difont::Point penPosition, int renderMode)
+{
+    unsigned int left = charMap->FontIndex(charCode);
+    unsigned int right = charMap->FontIndex(nextCharCode);
+
+    difont::Point kernAdvance = face->KernAdvance(left, right);
+
+    if(!face->Error())
+    {
+        unsigned int index = charMap->GlyphListIndex(charCode);
+        kernAdvance += glyphs[index]->Render(penPosition, renderData, renderMode);
+    }
+
+    return kernAdvance;
+}
+

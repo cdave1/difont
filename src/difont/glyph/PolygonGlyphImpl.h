@@ -40,14 +40,16 @@ namespace difont {
                          bool useDisplayList);
 
         virtual ~PolygonGlyphImpl();
-
+        
         virtual const difont::Point& RenderImpl(const difont::Point& pen, int renderMode);
+
+        virtual const difont::Point& RenderImpl(const difont::Point& pen, difont::RenderData &renderData, int renderMode);
 
     private:
         /**
          * Private rendering method.
          */
-        void DoRender(const difont::Point& pen);
+        void DoRender(const difont::Point& pen, difont::RenderData &renderData);
 
         /**
          * Private rendering variables.
@@ -55,6 +57,8 @@ namespace difont {
         unsigned int hscale, vscale;
         difont::Vectoriser *vectoriser;
         float outset;
+
+        difont::Path *path;
 
         /**
          * OpenGL display list

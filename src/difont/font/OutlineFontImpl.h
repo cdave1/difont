@@ -48,7 +48,7 @@ namespace difont {
          * @param outset  The outset distance.
          */
         virtual void Outset(float o) { outset = o; }
-
+/*
         virtual difont::Point Render(const char *s, const int len,
                                      difont::Point position, difont::Point spacing,
                                      int renderMode);
@@ -56,8 +56,7 @@ namespace difont {
         virtual difont::Point Render(const wchar_t *s, const int len,
                                      difont::Point position, difont::Point spacing,
                                      int renderMode);
-
-
+*/
 
     private:
         /**
@@ -69,14 +68,14 @@ namespace difont {
         bool preRendered;
 
         /* Internal generic Render() implementation */
-        template <typename T>
-        inline difont::Point RenderI(const T *s, const int len,
-                                     difont::Point position, difont::Point spacing, int mode);
+        //template <typename T>
+        //inline difont::Point RenderI(const T *s, const int len,
+        //                             difont::Point position, difont::Point spacing, int mode);
         
-        void PreRender();
+        //void PreRender();
         
         
-        void PostRender();
+        //void PostRender();
         
     };
 }

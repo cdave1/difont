@@ -43,16 +43,20 @@ namespace difont {
 
         virtual const difont::Point& RenderImpl(const difont::Point& pen, int renderMode);
 
+        virtual const difont::Point& RenderImpl(const difont::Point& pen, difont::RenderData &renderData, int renderMode);
+
     private:
         /**
          * Renders contours of vectoriser.
          */
-        void RenderContours(const difont::Point& pen);
+        void RenderContours(const difont::Point& pen, difont::RenderData &renderData);
 
         /**
          * Private rendering variables.
          */
         difont::Vectoriser *vectoriser;
+
+        difont::Path *path;
 
         /**
          * Private rendering variables.

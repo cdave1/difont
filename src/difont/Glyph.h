@@ -42,6 +42,7 @@
  */
 namespace difont {
     class GlyphImpl;
+    class RenderData;
 
     class Glyph {
     protected:
@@ -84,6 +85,16 @@ namespace difont {
          * @return  The advance distance for this glyph.
          */
         virtual const difont::Point& Render(const difont::Point& pen, int renderMode) = 0;
+
+        /**
+         * Renders this glyph at the current pen position.
+         *
+         * @param pen  The current pen position.
+         * @param meshSet A mesh data structure.
+         * @param renderMode  Render mode to display
+         * @return  The advance distance for this glyph.
+         */
+        virtual const difont::Point& Render(const difont::Point& pen, difont::RenderData &renderData, int renderMode) = 0;
 
         /**
          * Return the advance width for this glyph.

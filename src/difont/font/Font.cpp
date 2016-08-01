@@ -174,6 +174,22 @@ difont::Point Font::Render(const wchar_t * string, const int len,
 }
 
 
+difont::Point Font::Render(const char * string,
+                           difont::RenderData &renderData, const int len,
+                           difont::Point position, difont::Point spacing, int renderMode)
+{
+    return impl->Render(string, renderData, len, position, spacing, renderMode);
+}
+
+
+difont::Point Font::Render(const wchar_t * string,
+                           difont::RenderData &renderData, const int len,
+                           difont::Point position, difont::Point spacing, int renderMode)
+{
+    return impl->Render(string, renderData, len, position, spacing, renderMode);
+}
+
+
 
 void Font::PreRender() { impl->PreRender(); }
 
@@ -495,19 +511,43 @@ inline difont::Point FontImpl::RenderI(const T* string, const int len,
         unsigned int thisChar = *ustr++;
         unsigned int nextChar = *ustr;
 
-        if(CheckGlyph(thisChar))
-        {
-
+        if (CheckGlyph(thisChar)) {
             position += glyphList->Render(thisChar, nextChar,
                                           position, renderMode);
         }
 
-        if(nextChar)
-        {
+        if (nextChar) {
             position += spacing;
         }
     }
 
+    return position;
+}
+
+
+template <typename T>
+inline difont::Point FontImpl::RenderMeshI(const T* string, difont::RenderData &renderData,
+                                       const int len,
+                                       difont::Point position, difont::Point spacing,
+                                       int renderMode)
+{
+    // for multibyte - we can't rely on sizeof(T) == character
+    FTUnicodeStringItr<T> ustr(string);
+
+    for(int i = 0; (len < 0 && *ustr) || (len >= 0 && i < len); i++)
+    {
+        unsigned int thisChar = *ustr++;
+        unsigned int nextChar = *ustr;
+
+        if (CheckGlyph(thisChar)) {
+            position += glyphList->RenderMesh(thisChar, nextChar, renderData, position, renderMode);
+        }
+
+        if (nextChar) {
+            position += spacing;
+        }
+    }
+    
     return position;
 }
 
@@ -524,6 +564,23 @@ difont::Point FontImpl::Render(const wchar_t * string, const int len,
                            difont::Point position, difont::Point spacing, int renderMode)
 {
     difont::Point tmp = FontImpl::RenderI(string, len, position, spacing, renderMode);
+    return tmp;
+}
+
+difont::Point FontImpl::Render(const char *string,
+                             difont::RenderData &renderData, const int len,
+                             difont::Point position, difont::Point spacing, int renderMode)
+{
+    difont::Point tmp = FontImpl::RenderMeshI(string, renderData, len, position, spacing, renderMode);
+    return tmp;
+}
+
+
+difont::Point FontImpl::Render(const wchar_t *string,
+                             difont::RenderData &renderData,  const int len,
+                             difont::Point position, difont::Point spacing, int renderMode)
+{
+    difont::Point tmp = FontImpl::RenderMeshI(string, renderData, len, position, spacing, renderMode);
     return tmp;
 }
 

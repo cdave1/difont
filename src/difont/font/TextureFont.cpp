@@ -163,6 +163,8 @@ difont::Glyph* difont::TextureFontImpl::MakeGlyphImpl(FT_GlyphSlot ftGlyph)
 	
 	--remGlyphs;
 
+    fprintf(stderr, "%3.3f %3.3f, (%3.3f)\n", tempGlyph->BBox().Upper().X(), tempGlyph->BBox().Lower().X(), charSize.Width());
+
     return tempGlyph;
 }
 

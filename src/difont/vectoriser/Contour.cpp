@@ -29,7 +29,7 @@
 
 #include <math.h>
 
-static const unsigned int BEZIER_STEPS = 64;
+static const unsigned int BEZIER_STEPS = 2;
 
 
 void difont::Contour::AddPoint(difont::Point point)
@@ -161,7 +161,7 @@ void difont::Contour::SetParity(int parity)
 }
 
 
-difont::Contour::Contour(FT_Vector* contour, char* tags, unsigned int n)
+difont::Contour::Contour(FT_Vector* contour, char* tags, unsigned int n) : path(contour, tags, n)
 {
     difont::Point prev, cur(contour[(n - 1) % n]), next(contour[0]);
     difont::Point a, b = next - cur;

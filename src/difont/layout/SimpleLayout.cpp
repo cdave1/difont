@@ -63,19 +63,37 @@ difont::BBox SimpleLayout::BBox(const wchar_t *string, const int len, difont::Po
 }
 
 
-void SimpleLayout::Render(const char *string, const int len, difont::Point pos,
-                            int renderMode)
+void SimpleLayout::Render(const char *string,
+                           const int len, difont::Point pos,
+                           int renderMode)
 {
-    return dynamic_cast<SimpleLayoutImpl*>(impl)->Render(string, len, pos,
-                                                           renderMode);
+    return dynamic_cast<SimpleLayoutImpl*>(impl)->Render(string, len, pos, renderMode);
 }
 
 
-void SimpleLayout::Render(const wchar_t* string, const int len, difont::Point pos,
-                            int renderMode)
+void SimpleLayout::Render(const wchar_t* string,
+                          const int len, difont::Point pos,
+                          int renderMode)
 {
-    return dynamic_cast<SimpleLayoutImpl*>(impl)->Render(string, len, pos,
-                                                           renderMode);
+    return dynamic_cast<SimpleLayoutImpl*>(impl)->Render(string, len, pos, renderMode);
+}
+
+
+void SimpleLayout::Render(const char *string,
+                          difont::RenderData &renderData,
+                          const int len, difont::Point pos,
+                          int renderMode)
+{
+    return dynamic_cast<SimpleLayoutImpl*>(impl)->Render(string, renderData, len, pos, renderMode);
+}
+
+
+void SimpleLayout::Render(const wchar_t* string,
+                          difont::RenderData &renderData,
+                          const int len, difont::Point pos,
+                          int renderMode)
+{
+    return dynamic_cast<SimpleLayoutImpl*>(impl)->Render(string, renderData, len, pos, renderMode);
 }
 
 

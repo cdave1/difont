@@ -28,7 +28,7 @@
 #ifndef _DIFONT_CONTOUR_H_
 #define _DIFONT_CONTOUR_H_
 
-#include  <difont/difont.h>
+#include <difont/difont.h>
 #include <vector>
 
 /**
@@ -125,6 +125,10 @@ namespace difont {
         void buildFrontOutset(float outset);
         void buildBackOutset(float outset);
 
+        bool Clockwise() const { return clockwise; }
+
+        const difont::Path GetPath() const { return path; }
+
     private:
         /**
          * Add a point to this contour. This function tests for duplicate
@@ -196,6 +200,8 @@ namespace difont {
         PointVector outsetPointList;
         PointVector frontPointList;
         PointVector backPointList;
+
+        difont::Path path;
         
         /**
          *  Is this contour clockwise or anti-clockwise?

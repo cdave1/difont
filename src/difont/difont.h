@@ -41,7 +41,6 @@ namespace difont {
 #include "BufferGlyph.h"
 //#include "ExtrdGlyph.h"
 #include "OutlineGlyph.h"
-#include "PixmapGlyph.h"
 #include "PolyGlyph.h"
 #include "TextureGlyph.h"
 
@@ -50,13 +49,16 @@ namespace difont {
 #include "BufferFont.h"
 //#include "ExtrdFont.h"
 #include "OutlineFont.h"
-#include "PixmapFont.h"
 #include "PolygonFont.h"
 #include "TextureFont.h"
 
 #include "Layout.h"
 #include "SimpleLayout.h"
 
+#include "mesh/Curve.h"
+#include "mesh/Path.h"
+#include "mesh/GlyphData.h"
 #include "mesh/FontMesh.h"
+#include "mesh/RenderData.h"
 
 #endif

@@ -1,7 +1,9 @@
+#include <difont/difont.h>
+
 #ifndef _FT_FONT_MESH_H_
 #define _FT_FONT_MESH_H_
 
-#define DIFONT_MESH_MAX_VERTICES 512
+#include <vector>
 
 namespace difont {
     class FontVertex {
@@ -24,42 +26,25 @@ namespace difont {
 
     class FontMesh {
     public:
-        FontMesh();
+
+        unsigned int textureId = 0;
+
+        unsigned int primitive = 0;
+
+        std::vector <difont::FontVertex> vertices;
+
+    public:
+        FontMesh() : primitive(0) {}
+
+        FontMesh(unsigned int prim) : primitive(prim) {}
 
         void AddVertex(difont::FontVertex vertex);
 
         void SetTextureId(unsigned int texId);
 
         void SetPrimitive(unsigned int prim);
-
-        unsigned int GetVertexCount() const;
-
-        FontVertex vertices[DIFONT_MESH_MAX_VERTICES];
-
-        unsigned int currIndex;
-
-        unsigned int textureId;
-
-        unsigned int primitive;
-    };
-
-
-    class FontMeshSet {
-    public:
-
-        static void Begin();
-
-        static void AddMesh(unsigned int prim);
-
-        static void SetTextureId(unsigned int texId);
-
-        static void AddVertex(difont::FontVertex vertex);
-
-        static void End();
-
-        static int MeshCount();
-
-        static difont::FontMesh * GetMeshes();
+        
+        unsigned long GetVertexCount() const;
 
     };
 }

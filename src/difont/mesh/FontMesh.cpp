@@ -4,10 +4,6 @@
 #include <assert.h>
 #include <algorithm>
 
-static difont::FontMesh meshes[65536];
-static int meshCount = 0;
-
-
 ///
 /// difont::FontVertex
 ///
@@ -35,19 +31,14 @@ void difont::FontVertex::SetTexCoord2f(float s, float t) {
 ///
 /// difont::Mesh
 ///
-difont::FontMesh::FontMesh() : currIndex(0), textureId(0), primitive(0) {
-}
-
-
 void difont::FontMesh::SetPrimitive(unsigned int prim) {
     primitive = prim;
-    currIndex = 0;
+    vertices.clear();
 }
 
 
 void difont::FontMesh::AddVertex(difont::FontVertex vertex) {
-    vertices[currIndex] = vertex;
-    currIndex++;
+    vertices.push_back(vertex);
 }
 
 
@@ -56,48 +47,6 @@ void difont::FontMesh::SetTextureId(unsigned int texId) {
 }
 
 
-unsigned int difont::FontMesh::GetVertexCount() const {
-    return currIndex;
-}
-
-
-///
-/// difont::FontMesh
-///
-
-void difont::FontMeshSet::Begin() {
-    meshCount = 0;
-}
-
-
-void difont::FontMeshSet::AddMesh(unsigned int prim) {
-    meshes[meshCount].SetPrimitive(prim);
-    meshes[meshCount].currIndex = 0;
-    meshCount++;
-}
-
-
-void difont::FontMeshSet::SetTextureId(unsigned int texId) {
-    int meshIndex = std::max(0, meshCount - 1);
-    meshes[meshIndex].SetTextureId(texId);
-}
-
-
-void difont::FontMeshSet::AddVertex(difont::FontVertex vertex) {
-    int meshIndex = std::max(0, meshCount - 1);
-    meshes[meshIndex].AddVertex(vertex);
-}
-
-
-void difont::FontMeshSet::End() {
-}
-
-
-int difont::FontMeshSet::MeshCount() {
-    return meshCount;
-}
-
-
-difont::FontMesh * difont::FontMeshSet::GetMeshes() {
-    return meshes;
+unsigned long difont::FontMesh::GetVertexCount() const {
+    return vertices.size();
 }
