@@ -68,50 +68,9 @@ difont::Path::Path(void* _contour, char* tags, unsigned int n) : m_curves() {
     //clockwise = (angle < 0.0);
 }
 
-/*
-difont::Path::Path(const difont::Path &path, const difont::Point &pen, bool clockwise) {
-    difont::Point offset(pen.X(), pen.Y());
-
-    difont::Point a(offset.X() + path.GetCurves()[0].points[0].X() / 64.0,
-                    offset.Y() + path.GetCurves()[0].points[0].Y() / 64.0);
-    AddPoint(a);
-
-    for (difont::Curve curve : path.GetCurves()) {
-        if (curve.curveType == difont::CurveType::Point) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0);
-            AddPoint(a);
-        } else if (curve.curveType == difont::CurveType::Line) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0);
-            difont::Point b(offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / 64.0);
-            AddLine(a, b);
-        } else if (curve.curveType == difont::CurveType::Quadratic) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0);
-            difont::Point b(offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / 64.0);
-            difont::Point c(offset.X() + curve.points[2].X() / 64.0, offset.Y() + curve.points[2].Y() / 64.0);
-            AddQuadratic(a, b, c);
-
-        } else if (curve.curveType == difont::CurveType::Cubic) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0);
-            difont::Point b(offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / 64.0);
-            difont::Point c(offset.X() + curve.points[2].X() / 64.0, offset.Y() + curve.points[2].Y() / 64.0);
-            difont::Point d(offset.X() + curve.points[3].X() / 64.0, offset.Y() + curve.points[3].Y() / 64.0);
-            AddCubic(a, b, c, d);
-        }
-    }
-
-    if (!clockwise) {
-        difont::Point first(offset.X() + path.GetCurves()[0].points[0].X() / 64.0,
-                            offset.Y() + path.GetCurves()[0].points[0].Y() / 64.0);
-        AddPoint(first);
-    }
-}*/
 
 void difont::Path::AddPath(const Path &path, const difont::Point &pen, bool clockwise) {
     difont::Point offset(pen.X(), 500.0 + pen.Y());
-
-    //difont::Point a(offset.X() + path.GetCurves()[0].points[0].X() / 64.0,
-    //                offset.Y() + path.GetCurves()[0].points[0].Y() / 64.0);
-    //AddPoint(a);
 
     for (difont::Curve curve : path.GetCurves()) {
         if (curve.curveType == difont::CurveType::Point) {
@@ -136,11 +95,11 @@ void difont::Path::AddPath(const Path &path, const difont::Point &pen, bool cloc
         }
     }
 
-    if (!clockwise) {
+    //if (!clockwise) {
         difont::Point first(offset.X() + path.GetCurves()[0].points[0].X() / 64.0,
                             offset.Y() + path.GetCurves()[0].points[0].Y() / -64.0);
         AddPoint(first);
-    }
+    //}
 }
 
 
@@ -166,39 +125,3 @@ void difont::Path::AddCubic(difont::Point &a, difont::Point &b, difont::Point &c
     difont::Curve cubic(a, b, c, d);
     m_curves.push_back(cubic);
 }
-
-/*
-void difont::Path::DEBUG_toSVG(const difont::Point &pen, bool clockwise) const {
-    difont::Point offset(pen.X(), pen.Y());
-
-    printf("M%f,%f ", offset.X() + m_curves[0].points[0].X() / 64.0, offset.Y() + m_curves[0].points[0].Y() / 64.0);
-
-    for (int i = 0; i < m_curves.size(); ++i) {
-        difont::Curve curve = m_curves[i];
-
-        if (curve.curveType == difont::CurveType::Point) {
-            printf("L%f,%f ",
-                   offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0);
-        } else if (curve.curveType == difont::CurveType::Line) {
-            printf("L%f,%f %f,%f ",
-                   offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0,
-                   offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / 64.0);
-        } else if (curve.curveType == difont::CurveType::Quadratic) {
-            printf("L%f,%f Q%f,%f %f,%f ",
-                   offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0,
-                   offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / 64.0,
-                   offset.X() + curve.points[2].X() / 64.0, offset.Y() + curve.points[2].Y() / 64.0);
-
-        } else if (curve.curveType == difont::CurveType::Cubic) {
-            printf("L%f,%f C%f,%f %f,%f %f,%f ",
-                   offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / 64.0,
-                   offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / 64.0,
-                   offset.X() + curve.points[2].X() / 64.0, offset.Y() + curve.points[2].Y() / 64.0,
-                   offset.X() + curve.points[3].X() / 64.0, offset.Y() + curve.points[3].Y() / 64.0);
-        }
-    }
-
-    if (!clockwise) {
-        printf("L%f,%f ", offset.X() + m_curves[0].points[0].X() / 64.0, offset.Y() + m_curves[0].points[0].Y() / 64.0);
-    }
-}*/
