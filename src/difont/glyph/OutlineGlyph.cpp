@@ -112,7 +112,6 @@ void OutlineGlyphImpl::RenderContours(const difont::Point& pen, difont::RenderDa
         path.AddPath(contour->GetPath(), pen, contour->Clockwise());
         glyphData.AddPath(path);
     }
-    renderData.AddGlyph(glyphData);
 
     difont::FontMesh mesh(GL_LINES);
 
@@ -140,9 +139,9 @@ void OutlineGlyphImpl::RenderContours(const difont::Point& pen, difont::RenderDa
             vertex2.SetVertex2f((point2.Xf() / 64.0f) + pen.Xf(),
 						        (point2.Yf() / 64.0f) + pen.Yf());
             mesh.AddVertex(vertex2);
-		}
+        }
+        glyphData.AddMesh(mesh);
     }
-
-    renderData.AddMesh(mesh);
+    renderData.AddGlyph(glyphData);
 }
 

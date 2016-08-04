@@ -118,7 +118,6 @@ void PolygonGlyphImpl::DoRender(const difont::Point& pen, difont::RenderData &re
         path.AddPath(contour->GetPath(), pen, contour->Clockwise());
         glyphData.AddPath(path);
     }
-    renderData.AddGlyph(glyphData);
 
     const difont::Mesh *mesh = vectoriser->GetMesh();
 
@@ -141,7 +140,8 @@ void PolygonGlyphImpl::DoRender(const difont::Point& pen, difont::RenderData &re
             mesh.AddVertex(vertex);
 		}
 
-        renderData.AddMesh(mesh);
+        glyphData.AddMesh(mesh);
     }
+    renderData.AddGlyph(glyphData);
 }
 
