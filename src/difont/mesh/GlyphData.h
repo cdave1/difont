@@ -22,6 +22,22 @@ class GlyphData {
             return m_meshes;
         }
 
+        void SetBaseline(const difont::Point &baseline) {
+            m_baseline = baseline;
+        }
+
+        difont::Point GetBaseline() const {
+            return m_baseline;
+        }
+
+        void SetBoundingBox(const difont::BBox &box) {
+            m_boundingBox = box;
+        }
+
+        difont::BBox GetBoundingBox() const {
+            return m_boundingBox;
+        }
+
         void AddPath(difont::Path &path){
             m_paths.push_back(path);
         }
@@ -31,6 +47,10 @@ class GlyphData {
         }
 
     private:
+        difont::Point m_baseline;
+
+        difont::BBox m_boundingBox;
+
         std::vector<difont::Path> m_paths;
 
         std::vector<difont::FontMesh> m_meshes;

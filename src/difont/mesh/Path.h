@@ -6,6 +6,9 @@
 #include <vector>
 
 namespace difont {
+
+class Contour;
+
 class Path {
     public:
 
@@ -13,7 +16,7 @@ class Path {
 
         Path(void* contour, char* tags, unsigned int n);
 
-        void AddPath(const Path &path, const difont::Point &pen, bool clockwise=true);
+        void AddContour(const difont::Contour *contour, const difont::Point &pen, float adjustmentFactor);
 
         void SetLocation(difont::Point &a);
 

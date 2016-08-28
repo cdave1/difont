@@ -106,10 +106,20 @@ const difont::Point& OutlineGlyphImpl::RenderImpl(const difont::Point& pen, difo
 
 void OutlineGlyphImpl::RenderContours(const difont::Point& pen, difont::RenderData &renderData) {
     difont::GlyphData glyphData;
-    for(unsigned int c = 0; c < vectoriser->ContourCount(); ++c) {
+
+    glyphData.SetBaseline(pen);
+
+    difont::Point lower(pen.X() +  this->BBox().Lower().X(),
+                        pen.Y() + -this->BBox().Lower().Y());
+    difont::Point upper(pen.X() +  this->BBox().Upper().X(),
+                        pen.Y() + -this->BBox().Upper().Y());
+
+    glyphData.SetBoundingBox(difont::BBox(lower, upper));
+
+    for (unsigned int c = 0; c < vectoriser->ContourCount(); ++c) {
         const difont::Contour *contour = vectoriser->Contour(c);
         difont::Path path;
-        path.AddPath(contour->GetPath(), pen, contour->Clockwise());
+        path.AddContour(contour, pen, 1.0 / 64.0);
         glyphData.AddPath(path);
     }
 

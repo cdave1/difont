@@ -5,6 +5,7 @@
 #include <assert.h>
 
 #include <difont/difont.h>
+#include <difont/vectoriser/Contour.h>
 
 difont::Path::Path(void* _contour, char* tags, unsigned int n) : m_curves() {
     FT_Vector *contour = static_cast<FT_Vector *>(_contour);
@@ -69,37 +70,46 @@ difont::Path::Path(void* _contour, char* tags, unsigned int n) : m_curves() {
 }
 
 
-void difont::Path::AddPath(const Path &path, const difont::Point &pen, bool clockwise) {
-    difont::Point offset(pen.X(), 500.0 + pen.Y());
+void difont::Path::AddContour(const difont::Contour *contour, const difont::Point &pen, float adjustmentFactor) {
+    difont::Point offset(pen.X(), pen.Y());
+    fprintf(stderr, "%3.3f, %3.3f\n", pen.X(), pen.Y());
 
-    for (difont::Curve curve : path.GetCurves()) {
+    for (difont::Curve curve : contour->GetPath().GetCurves()) {
         if (curve.curveType == difont::CurveType::Point) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / -64.0);
+            difont::Point a(offset.X() + curve.points[0].X() * adjustmentFactor,
+                            offset.Y() + curve.points[0].Y() * -adjustmentFactor);
             AddPoint(a);
         } else if (curve.curveType == difont::CurveType::Line) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / -64.0);
-            difont::Point b(offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / -64.0);
+            difont::Point a(offset.X() + curve.points[0].X() * adjustmentFactor,
+                            offset.Y() + curve.points[0].Y() * -adjustmentFactor);
+            difont::Point b(offset.X() + curve.points[1].X() * adjustmentFactor,
+                            offset.Y() + curve.points[1].Y() * -adjustmentFactor);
             AddLine(a, b);
         } else if (curve.curveType == difont::CurveType::Quadratic) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / -64.0);
-            difont::Point b(offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / -64.0);
-            difont::Point c(offset.X() + curve.points[2].X() / 64.0, offset.Y() + curve.points[2].Y() / -64.0);
+            difont::Point a(offset.X() + curve.points[0].X() * adjustmentFactor,
+                            offset.Y() + curve.points[0].Y() * -adjustmentFactor);
+            difont::Point b(offset.X() + curve.points[1].X() * adjustmentFactor,
+                            offset.Y() + curve.points[1].Y() * -adjustmentFactor);
+            difont::Point c(offset.X() + curve.points[2].X() * adjustmentFactor,
+                            offset.Y() + curve.points[2].Y() * -adjustmentFactor);
             AddQuadratic(a, b, c);
 
         } else if (curve.curveType == difont::CurveType::Cubic) {
-            difont::Point a(offset.X() + curve.points[0].X() / 64.0, offset.Y() + curve.points[0].Y() / -64.0);
-            difont::Point b(offset.X() + curve.points[1].X() / 64.0, offset.Y() + curve.points[1].Y() / -64.0);
-            difont::Point c(offset.X() + curve.points[2].X() / 64.0, offset.Y() + curve.points[2].Y() / -64.0);
-            difont::Point d(offset.X() + curve.points[3].X() / 64.0, offset.Y() + curve.points[3].Y() / -64.0);
+            difont::Point a(offset.X() + curve.points[0].X() * adjustmentFactor,
+                            offset.Y() + curve.points[0].Y() * -adjustmentFactor);
+            difont::Point b(offset.X() + curve.points[1].X() * adjustmentFactor,
+                            offset.Y() + curve.points[1].Y() * -adjustmentFactor);
+            difont::Point c(offset.X() + curve.points[2].X() * adjustmentFactor,
+                            offset.Y() + curve.points[2].Y() * -adjustmentFactor);
+            difont::Point d(offset.X() + curve.points[3].X() * adjustmentFactor,
+                            offset.Y() + curve.points[3].Y() * -adjustmentFactor);
             AddCubic(a, b, c, d);
         }
     }
 
-    //if (!clockwise) {
-        difont::Point first(offset.X() + path.GetCurves()[0].points[0].X() / 64.0,
-                            offset.Y() + path.GetCurves()[0].points[0].Y() / -64.0);
-        AddPoint(first);
-    //}
+    difont::Point first(offset.X() + contour->GetPath().GetCurves()[0].points[0].X() * adjustmentFactor,
+                        offset.Y() + contour->GetPath().GetCurves()[0].points[0].Y() * -adjustmentFactor);
+    AddPoint(first);
 }
 
 
