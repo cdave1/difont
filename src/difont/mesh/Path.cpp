@@ -72,7 +72,6 @@ difont::Path::Path(void* _contour, char* tags, unsigned int n) : m_curves() {
 
 void difont::Path::AddContour(const difont::Contour *contour, const difont::Point &pen, float adjustmentFactor) {
     difont::Point offset(pen.X(), pen.Y());
-    fprintf(stderr, "%3.3f, %3.3f\n", pen.X(), pen.Y());
 
     for (difont::Curve curve : contour->GetPath().GetCurves()) {
         if (curve.curveType == difont::CurveType::Point) {
