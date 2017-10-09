@@ -53,7 +53,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
     glEnable(GL_TEXTURE_2D);
     m_font = new difont::PolygonFont(fontpath);
     if (m_font->Error()) {
-        fprintf(stderr, "Could not load font at `%s'\n", fontpath);
+        fprintf(stderr, "Could not load font at '%s'\n", fontpath);
         delete m_font;
         m_font = NULL;
     } else {
@@ -63,7 +63,7 @@ void HelloWorld::SetupFonts(const char *fontpath) {
 
     m_textureFont = new difont::TextureFont(fontpath);
     if (m_textureFont->Error()) {
-        fprintf(stderr, "Could not load font at `%s'\n", fontpath);
+        fprintf(stderr, "Could not load font at '%s'\n", fontpath);
         delete m_textureFont;
         m_textureFont = NULL;
     } else {

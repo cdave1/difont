@@ -79,7 +79,7 @@ static bool isSetup = false;
         NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
         NSRect viewRect = NSMakeRect(0.0, 0.0, 0.5 * mainDisplayRect.size.width, 0.5 * mainDisplayRect.size.height);
 
-        NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Diavlo_BLACK_II_37.otf"];
+        NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DIN Alternate Bold.ttf"];
         helloWorld = new HelloWorld(viewRect.size.width, viewRect.size.height, 1.0f);
         helloWorld->SetupFonts([path UTF8String]);
 

@@ -62,6 +62,10 @@ void difont::Contour::AddBackPoint(difont::Point point)
 
 void difont::Contour::evaluateQuadraticCurve(difont::Point A, difont::Point B, difont::Point C)
 {
+    fprintf(stderr, "A: (%3.3f, %3.3f %3.3f), B: (%3.3f, %3.3f %3.3f), C: (%3.3f, %3.3f %3.3f)\n", A.X(), A.Y(), A.Z(),
+            B.X(), B.Y(), B.Z(),
+            C.X(), C.Y(), C.Z());
+
     for(unsigned int i = 1; i < BEZIER_STEPS; i++)
     {
         float t = static_cast<float>(i) / BEZIER_STEPS;
@@ -76,6 +80,12 @@ void difont::Contour::evaluateQuadraticCurve(difont::Point A, difont::Point B, d
 
 void difont::Contour::evaluateCubicCurve(difont::Point A, difont::Point B, difont::Point C, difont::Point D)
 {
+    fprintf(stderr, "A: (%3.3f, %3.3f %3.3f), B: (%3.3f, %3.3f %3.3f), C: (%3.3f, %3.3f %3.3f), D: (%3.3f, %3.3f %3.3f)\n",
+            A.X(), A.Y(), A.Z(),
+            B.X(), B.Y(), B.Z(),
+            C.X(), C.Y(), C.Z(),
+            D.X(), D.Y(), D.Z());
+
     for(unsigned int i = 0; i < BEZIER_STEPS; i++)
     {
         float t = static_cast<float>(i) / BEZIER_STEPS;
